@@ -11,7 +11,7 @@ CREATE TABLE EMSUser
 
 CREATE TABLE Employee
 (
-	eId INT NOT NULL AUTO_INCREMENT,
+	eId INT NOT NULL IDENTITY(1,1),
 	hiringCompanyName VARCHAR(50),
 	employFirstName VARCHAR(50),
 	employLastName VARCHAR(50),
