@@ -1,6 +1,6 @@
 USE emspss;
 
-CREATE TABLE User
+CREATE TABLE EMSUser
 (
 	userId VARCHAR(50),
 	FirstName VARCHAR(50),
