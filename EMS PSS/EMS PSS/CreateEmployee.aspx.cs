@@ -125,7 +125,7 @@ namespace EMS_PSS
                     lbSIN.ForeColor = System.Drawing.Color.Black;
                 }
 
-                if (!newGuy.SetEmployedWithCompany(employeeCompany))
+                if (!newGuy.SetCompany(employeeCompany))
                 {
                     isValid = false;
                     lbCompany.ForeColor = System.Drawing.Color.Red;
@@ -145,7 +145,7 @@ namespace EMS_PSS
                     lbDateOfBirth.ForeColor = System.Drawing.Color.Black;
                 }
 
-                if (!newGuy.SetSeason(employeeSeason))
+                if (!newGuy.SetSeason(employeeSeason, employeeYear))
                 {
                     isValid = false;
                     lbSeason.ForeColor = System.Drawing.Color.Red;
@@ -153,16 +153,6 @@ namespace EMS_PSS
                 else
                 {
                     lbSeason.ForeColor = System.Drawing.Color.Black;
-                }
-
-                if (!newGuy.SetSeasonYear(employeeYear))
-                {
-                    isValid = false;
-                    lbSeason.ForeColor = System.Drawing.Color.Red;
-                }
-                else
-                {
-                    lbYear.ForeColor = System.Drawing.Color.Black;
                 }
 
                 if (isValid)
@@ -214,7 +204,7 @@ namespace EMS_PSS
                     lbSIN.ForeColor = System.Drawing.Color.Black;
                 }
 
-                if (!newGuy.SetEmployedWithCompany(employeeCompany))
+                if (!newGuy.SetCompany(employeeCompany))
                 {
                     isValid = false;
                     lbCompany.ForeColor = System.Drawing.Color.Red;
@@ -293,7 +283,7 @@ namespace EMS_PSS
                     lbSIN.ForeColor = System.Drawing.Color.Black;
                 }
 
-                if (!newGuy.SetEmployedWithCompany(employeeCompany))
+                if (!newGuy.SetCompany(employeeCompany))
                 {
                     isValid = false;
                     lbCompany.ForeColor = System.Drawing.Color.Red;
@@ -372,7 +362,7 @@ namespace EMS_PSS
                         string query = "INSERT INTO Employee " +
                             "(hiringCompanyName, employFirstName, employLastName, employSIN, employeeStatus, employeeType, dateOfBirth) " +
                             "VALUES (" +
-                            "'" + newGuy.EmployedWithCompany + "', " +
+                            "'" + newGuy.Company + "', " +
                             "'" + newGuy.FirstName + "', " +
                             "'" + newGuy.LastName + "', " +
                             "'" + newGuy.Sin + "', " +
@@ -654,7 +644,7 @@ namespace EMS_PSS
             string userName = "root";
             string password = "admin";
             string employID;
-            string dateBuilder;
+            string dateBuilder = newGuy.SeasonYear;
             string ConnectionString =
                 "server=" + ipAddress +
                 ";port=" + portNumber +
@@ -666,22 +656,6 @@ namespace EMS_PSS
 
             mySqlConnection.ConnectionString = ConnectionString;
 
-            if (newGuy.Season == "WINTER")
-            {
-                dateBuilder = newGuy.SeasonYear + "-12-01";
-            }
-            else if (newGuy.Season == "SPRING")
-            {
-                dateBuilder = newGuy.SeasonYear + "-05-01";
-            }
-            else if (newGuy.Season == "SUMMER")
-            {
-                dateBuilder = newGuy.SeasonYear + "-07-01";
-            }
-            else
-            {
-                dateBuilder = newGuy.SeasonYear + "-0912-01";
-            }
             try
             {
                 mySqlConnection.Open();

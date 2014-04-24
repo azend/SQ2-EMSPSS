@@ -31,13 +31,13 @@ namespace AllEmployees
             this.ValidateEmployeeType("SN");
         }
 
-        public SeasonalEmployee(string addSeason, string addPiecePay, string fName, string lName, string addDateOfBirth, string addSin)
-            :base (fName, lName, addDateOfBirth, addSin)
+        public SeasonalEmployee(string addYear, string addSeason, string addPiecePay, string fName, string lName, string addDateOfBirth, string addSin, string addCompany)
+            :base (fName, lName, addDateOfBirth, addSin, addCompany)
         {
             ValidateEmployeeType("SN");
-            SetSeason(addSeason);
+            SetSeason(addSeason, addYear);
             SetPiecePay(addPiecePay);
-
+            SetCompany(addCompany);
         }
 
         public  readonly string[] Seasons = { "WINTER", "SUMMER", "SPRING", "FALL" };
@@ -47,7 +47,7 @@ namespace AllEmployees
             get { return piecePay; }
             set { piecePay = value; }
         }
-        public string Season
+        public string SeasonYear
         {
             get { return season; }
             set { season = value; }
@@ -94,25 +94,51 @@ namespace AllEmployees
         /// </summary>
         /// <param name="Season"></param>
         /// <returns>A bool representing pass or fail.</returns>
-        public bool SetSeason(string newSeason)
+        public bool SetSeason(string newSeason, string year)
         {
             bool returnVal = false;
+            int yearNum = 0;
             foreach (string CurrentSeason in Seasons)
             {
                 //make sure the value is one of four seasons
                
                 if (CurrentSeason == newSeason.ToUpper() || newSeason == "")
                 {
-                    Season = newSeason.ToUpper();
+                    season = newSeason.ToUpper();
                     //Logging.Log("SeasonalEmployee.SetSeason", "SeasonalEmployee Set (" + Season + ") - VALID");
                     returnVal = true;
+                }
+            }
+
+            // ToInt32 can throw FormatException or OverflowException. 
+            try
+            {
+                yearNum = Convert.ToInt32(year);
+            }
+            catch (FormatException e)
+            {
+                //Console.WriteLine("Input string is not a sequence of digits.");
+            }
+            catch (OverflowException e)
+            {
+                //Console.WriteLine("The number cannot fit in an Int32.");
+            }
+            finally
+            {
+                if (yearNum < 2014)
+                {
+                    returnVal = false;
+                }
+                else
+                {
+                    returnVal = true;
+                    season += " " + year;
                 }
             }
             
             if (returnVal == false)
             {
                 //Logging.Log("SeasonalEmployee.SetSeason", "SeasonalEmployee Set (" + newSeason + ") - INVALID");
-                returnVal = false;
             }
 
             return returnVal;
@@ -210,12 +236,6 @@ namespace AllEmployees
             {
                 //Logging.Log("SeasonalEmployee.Validate", "SeasonalEmployee Validate Piece Pay (" + PiecePay + ") - INVALID");
                 PiecePay = 0;
-                return false;
-            }
-
-            if (Season != "WINTER" && Season != "SUMMER" && Season != "FALL" && Season != "SPRING")
-            {
-                //Logging.Log("SeasonalEmployee.Validate", "SeasonalEmployee Validate Season (" + Season + ") - INVALID");
                 return false;
             }
 

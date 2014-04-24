@@ -33,6 +33,10 @@
 		{
 			clear:both;
 		}
+        .auto-style1
+        {
+            height: 26px;
+        }
     </style>
 </head>
 <body onload="noBack();"
@@ -72,8 +76,8 @@
                         <td><asp:TextBox id="tbSIN" runat="server" /></td>
                     </tr>
                     <tr>
-                        <td><asp:label id="lbDateOfBirth" runat="server">Date of Birth*:</asp:label></td>
-                        <td><asp:TextBox id="tbDateOfBirth" runat="server" /></td>
+                        <td class="auto-style1"><asp:label id="lbDateOfBirth" runat="server">Date of Birth*:</asp:label></td>
+                        <td class="auto-style1"><asp:TextBox id="tbDateOfBirth" runat="server" /></td>
                     </tr>
 
                     <tr>

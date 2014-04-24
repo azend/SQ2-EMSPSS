@@ -31,6 +31,7 @@ namespace AllEmployees
         private string lastName = string.Empty;
         private string employeeType= string.Empty;
         private string sin= string.Empty;
+        private string company = "";
         private DateTime dateOfBirth;
         readonly string[] EmployeeTypes = {"FT","PT","SN","CT"};
 
@@ -63,6 +64,11 @@ namespace AllEmployees
             get { return employeeType; }
             set { employeeType = value; }
         }
+        public string Company
+        {
+            get { return company; }
+            set { company = value; }
+        }
         //accessors end
 
         public Employee()
@@ -81,15 +87,27 @@ namespace AllEmployees
         /// <param name="lName"> Employees last name </param>
         /// <param name="sNum"> Employees SIN NUMBER </param>
         /// <param name="dBirth"> Employees date of birth </param>
-        public Employee(string fName, string lName, string sNum, string dBirth)
+        public Employee(string fName, string lName, string sNum, string dBirth, string company)
         {
             SetFirstName(fName);
             SetLastName(lName);
             SetSin(sNum);
             SetDateOfBirth(dBirth);
+            SetCompany(company);
         }
 
+        public bool SetCompany(string tempCompany)
+        {
+            bool returnVal = false;
 
+            if (tempCompany != "")
+            {
+                returnVal = true;
+                company = tempCompany;
+            }
+
+            return returnVal;
+        }
 
         /// <summary>
         /// Method name: SetFirstName

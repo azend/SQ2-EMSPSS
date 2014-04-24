@@ -32,8 +32,8 @@ namespace AllEmployees
             this.ValidateEmployeeType("CT");
         }
 
-        public ContractEmployee(string fName, string lName, string newDateOfBirth, string addSin, string newContract, string stopContract, string newAmount)
-            : base(fName, lName, newDateOfBirth, addSin)
+        public ContractEmployee(string fName, string lName, string newDateOfBirth, string addSin, string newContract, string stopContract, string newAmount, string addCompany)
+            : base(fName, lName, newDateOfBirth, addSin, addCompany)
         {
             ValidateEmployeeType("CT");
             SetContractStartDate(newContract);

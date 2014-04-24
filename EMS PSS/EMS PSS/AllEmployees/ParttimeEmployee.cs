@@ -32,8 +32,8 @@ namespace AllEmployees
             ValidateEmployeeType("PT");
         }
 
-        public ParttimeEmployee(string fName, string lName, string newDateOfBirth, string addSin, string newDateOfHire, string newDateOfTermination, string newHourlyRate)
-            : base(fName, lName, newDateOfBirth, addSin)
+        public ParttimeEmployee(string fName, string lName, string newDateOfBirth, string addSin, string newDateOfHire, string newDateOfTermination, string newHourlyRate, string addCompany)
+            : base(fName, lName, newDateOfBirth, addSin, addCompany)
         {
             ValidateEmployeeType("PT");
             SetDateofHire(newDateOfHire);
