@@ -1,0 +1,187 @@
+﻿@{ Layout = "~/_Layout.cshtml"; Page.Title = "Readme File"; }
+<style type="text/css">
+    div.readme{ padding-left:10em; padding-right:16em; padding-top: 3em;}
+    tr.tr_header{background-color:#4b6c9e; color:White; font-weight:bold; }
+    tr.tr_even{ background-color: #ddd; }
+    td {vertical-align: top; padding:4px;}
+    td > ul {margin-top:0px;margin-left:-1em;}
+    code{ font-family: Consolas; font-size: 10pt; color: #A52A2A; }
+</style>
+<div class="readme">
+    <h1>
+        About the WebPagesMovies Site</h1>
+    <p>
+        This website accompanies the <strong>Introducing ASP.NET Web Pages&nbsp;2</strong> tutorial that's on
+        the ASP.NET Web site (<a href="http://asp.net/web-pages">http://asp.net/web-pages</a>). The 
+        example site lets you keep a simple list your favorite movies, and add, edit, and delete 
+        movie listings. The site was designed to help people learn how to work with ASP.NET Web Pages 
+        and with <a href="http://www.microsoft.com/web/webmatrix/">Microsoft WebMatrix</a>,
+        a free toolset for creating websites.</p>
+    <p>
+        The site includes finished versions of all the pages that are illustrated in the
+        tutorial:</p>
+    <ul>
+        <li><p><a href="~/Movies">Movies.cshtml</a>. This page lists movies and includes links
+            to let you add, edit, and delete movies.</p></li>
+        <li><p><a href="~/AddMovie">AddMovie.cshtml</a>. This page lets you create a new movie
+            listing.</p></li>
+        <li><p><strong>EditMovie.cshtml</strong>. This lets you change the information for an existing
+            movie. You can get to this page from the <em>Movies.cshtml</em> page.</p></li>
+        <li><p><strong>DeleteMovie.cshtml</strong>. This lets you delete a movie listing. As with <em>EditMovie.cshtml</em>,
+            you get to this page from the <em>Movies.cshtml</em> page.</p></li>
+    </ul>
+    <p>
+        There's also a database (<em>WebPagesMovies.sdf</em>) with a Movies table that contains
+        sample data.</p>
+    <p>There are two versions of the main pages. The finished pages use a layout page that provides
+       a consistent look for all the pages. There are also versions of the pages that show how the
+       pages were created originally, in the early part of the tutorial set. The earlier versions 
+       in this website project have <em>-&nbsp;BeforeLayout</em> as part of their file name.</p>
+    <p>Finally, there are <em>three</em> versions of the main Movies page. In addition to a version without
+       the layout, there's a version of the page (<em>-&nbsp;BeforeEditLinks</em>) that reflects the page as of
+       the end of Tutorial&nbsp;4.</p>
+    
+    <h2>What the Tutorials Show</h2>
+    <p>
+        The tutorials that are associated with this website provide an introduction to ASP.NET
+        Web Pages and to WebMatrix. They cover the following concepts and features:</p>
+    <table >
+        <tr class="tr_header">
+            <th>
+                <strong>Tutorial</strong>
+            </th>
+            <th>
+                <strong>Major Points</strong>
+            </th>
+        </tr>
+        <tr class="tr_odd">
+            <td>
+                <em>Tutorial 1: Getting Started</em>
+            </td>
+            <td>
+                <ul>
+                    <li>What ASP.NET Web Pages (<em>.cshtml</em> files) are.</li>
+                    <li>What WebMatrix is.</li>
+                    <li>How to install everything using the Microsoft Web Platform Installer.</li>
+                    <li>How to create a website by using WebMatrix.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="tr_even">
+            <td>
+                <em>Tutorial 2: Programming Basics</em>
+            </td>
+            <td>
+                <ul>
+                    <li>How you use Razor syntax (<code>@@</code> and <code>{&nbsp;}</code> ) to embed C# code
+                        in the markup (HTML) of a page.</li>
+                    <li>How server-side code runs and how it returns markup to the browser.</li>
+                    <li>C# basics: statements with semicolons, variables, strings, operators, comments,&nbsp;
+                        objects (methods and properties), data types and converting them, <code>if</code>
+                        blocks.</li>
+                    <li>How to use <code>IsPost</code> to see if a page was submitted (posted). </li>
+                    <li>What helpers are, how to install them (if required), and how to use them in a
+                        page.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="tr_odd">
+            <td>
+                <em>Tutorial 3: Displaying Data</em>
+            </td>
+            <td>
+                <ul>
+                    <li>How to use WebMatrix tools to create a database, create a table, and add data to the
+                        table.</li>
+                    <li>How to use code to open a database and retrieve data.</li>
+                    <li>How to use the <code>WebGrid</code> helper to display data in an HTML table.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="tr_even">
+            <td>
+                <em>Tutorial 4: HTML Form Basics</em>
+            </td>
+            <td>
+                <ul>
+                    <li>How to process an HTML form.</li>
+                    <li>The difference between using a <code>GET</code> and a <code>POST</code> request when working with forms.</li>
+                    <li>How to use <code>Request.QueryString["<em>name</em>"]</code> to read the value entered into a form element.</li>
+                    <li>How to search for specific data using a SQL <code>Where</code> clause and placeholders.</li>
+                    <li>How to use <code>IsEmpty()</code> to determine whether a form field contains a value.</li>
+                    <li>How to "remember" what a user entered in a field.</li>
+                    <li>How to use a SQL statement to create a "contains" search.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="tr_odd">
+            <td>
+                <em>Tutorial 5: Entering Database Data By Using Forms</em>
+            </td>
+            <td>
+                <ul>
+                    <li>More about how to work with HTML forms.</li>
+                    <li>How to test for a <code>POST</code> request using <code>IsPost</code>.</li>
+                    <li>How to read form values using <code>Request.Form</code>.</li>
+                    <li>How to add (insert) data in a database using a SQL <code>Insert Into</code> statement.</li>
+                    <li>How to use the <code>Validation</code> helper to check user input.</li>
+                    <li>How to display validation errors.</li>
+                    <li>How to use code to redirect to another page.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="tr_even">
+            <td>
+                <em>Tutorial 6: Updating Database Data</em>
+            </td>
+            <td>
+                <ul>
+                    <li>How to add a column to the <code>WebGrid</code> helper that links to another page
+                        and passes a value from the current row to that page.</li>
+                    <li>How to read a single value from a database using a SQL <code>Where</code> clause and placeholders.</li>
+                    <li>How to update an existing row in a database using the SQL <code>Update</code> statement.</li>
+                    <li>How to validate data that's passed to the page in a query string.</li>
+                    <li>How to use a hidden field to store information in a page without displaying it.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="tr_odd">
+            <td>
+                <em>Tutorial 7: Deleting Database Data Using ASP.NET Web Pages</em>
+            </td>
+            <td>
+                <ul>
+                    <li>How to delete a row in a database using the SQL <code>Delete</code> statement.</li>
+                    <li>How to determine which button in a form cause the submit (post).</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="tr_even">
+            <td>
+                <em>Tutorial 8: Creating a Consistent Look for ASP.NET Web Pages Sites</em>
+            </td>
+            <td>
+                <ul>
+                    <li>How to create a layout page (<em>_Layout.cshtml</em>) to act as a "container" for the site content.</li>
+                    <li>How to create individual content pages that contain only the code and markup that isn't already in
+                        the layout page and how to link them to the layout page.</li>
+                    <li>How to use the <code>Page</code> object to pass information from the content page
+                        to the layout page so that can customize layout details for each page.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr class="tr_odd">
+            <td>
+                <em>Tutorial 9: Publishing an ASP.NET Web Pages Site using WebMatrix</em>
+            </td>
+            <td>
+                <ul>
+                    <li>How to find a hosting provider using WebMatrix and sign up for a hosting account.</li>
+                    <li>How to use the WebMatrix Publish tool (and publish settings from the hosting provider) to 
+                        deploy your site to the hosting provider.</li>
+                    <li>How to republish your site after making changes.</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</div>

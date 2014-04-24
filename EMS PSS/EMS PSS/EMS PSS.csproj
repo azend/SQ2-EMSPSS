@@ -79,40 +79,84 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\style.css" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="HelloWorld.cshtml" />
-    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\jquery-1.9.1.js" />
-    <Content Include="Scripts\jquery-1.9.1.min.js" />
-    <Content Include="Web.config" />
-    <Content Include="_Layout.cshtml" />
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
-    <Content Include="Scripts\jquery-1.9.1.min.map" />
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
+    <Content Include="AddMovie - BeforeLayout.cshtml" />
+    <Content Include="AddMovie.cshtml" />
+    <Content Include="App_Data\WebPagesMovies.sdf" />
+    <Content Include="bin\AMD64\Microsoft.VC90.CRT\msvcr90.dll" />
+    <Content Include="bin\AMD64\Microsoft.VC90.CRT\README_ENU.txt" />
+    <Content Include="bin\AMD64\sqlceca40.dll" />
+    <Content Include="bin\AMD64\sqlcecompact40.dll" />
+    <Content Include="bin\AMD64\sqlceer40EN.dll" />
+    <Content Include="bin\AMD64\sqlceme40.dll" />
+    <Content Include="bin\AMD64\sqlceqp40.dll" />
+    <Content Include="bin\AMD64\sqlcese40.dll" />
+    <Content Include="bin\EMS PSS.dll" />
+    <Content Include="bin\EMS PSS.pdb" />
+    <Content Include="bin\EN\System.Data.SqlServerCe.xml" />
+    <Content Include="bin\Microsoft.Web.Helpers.dll" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\System.Data.SqlServerCe.dll" />
+    <Content Include="bin\System.Data.SqlServerCe.Entity\System.Data.SqlServerCe.Entity.dll" />
+    <Content Include="bin\System.Web.Helpers.dll" />
+    <Content Include="bin\System.Web.Helpers.xml" />
+    <Content Include="bin\System.Web.Razor.dll" />
+    <Content Include="bin\System.Web.Razor.xml" />
+    <Content Include="bin\System.Web.WebPages.Deployment.dll" />
+    <Content Include="bin\System.Web.WebPages.Deployment.xml" />
+    <Content Include="bin\System.Web.WebPages.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.xml" />
+    <Content Include="bin\System.Web.WebPages.xml" />
+    <Content Include="bin\WebMatrix.Data.dll" />
+    <Content Include="bin\WebMatrix.WebData.dll" />
+    <Content Include="bin\X86\Microsoft.VC90.CRT\msvcr90.dll" />
+    <Content Include="bin\X86\Microsoft.VC90.CRT\README_ENU.txt" />
+    <Content Include="bin\X86\sqlceca40.dll" />
+    <Content Include="bin\X86\sqlcecompact40.dll" />
+    <Content Include="bin\X86\sqlceer40EN.dll" />
+    <Content Include="bin\X86\sqlceme40.dll" />
+    <Content Include="bin\X86\sqlceqp40.dll" />
+    <Content Include="bin\X86\sqlcese40.dll" />
+    <Content Include="Default.cshtml" />
+    <Content Include="DeleteMovie - BeforeLayout.cshtml" />
+    <Content Include="DeleteMovie.cshtml" />
+    <Content Include="EditMovie - BeforeLayout.cshtml" />
+    <Content Include="EditMovie.cshtml" />
+    <Content Include="GravatarTest.cshtml" />
+    <Content Include="HelloWorld.cshtml" />
+    <Content Include="Movies - BeforeEditLinks.cshtml" />
+    <Content Include="Movies - BeforeLayout.cshtml" />
+    <Content Include="Movies.cshtml" />
+    <Content Include="Readme.cshtml" />
+    <Content Include="Styles\Movies.css" />
+    <Content Include="TestRazor.cshtml" />
+    <Content Include="TestRazorPart2.cshtml" />
+    <Content Include="web.config" />
+    <Content Include="bin\AMD64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
+    <Content Include="bin\EMS PSS.dll.config" />
+    <Content Include="bin\X86\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
+    <Content Include="App_Data\packages\microsoft-web-helpers.2.1.20710.2\microsoft-web-helpers.2.1.20710.2.nupkg" />
+    <Content Include="App_Data\packages\Microsoft.AspNet.Razor.2.0.30506.0\Microsoft.AspNet.Razor.2.0.30506.0.nupkg" />
+    <Content Include="App_Data\packages\Microsoft.AspNet.WebPages.2.0.30506.0\Microsoft.AspNet.WebPages.2.0.30506.0.nupkg" />
+    <Content Include="App_Data\packages\Microsoft.AspNet.WebPages.Data.2.0.20710.0\Microsoft.AspNet.WebPages.Data.2.0.20710.0.nupkg" />
+    <Content Include="App_Data\packages\Microsoft.AspNet.WebPages.WebData.2.0.30506.0\Microsoft.AspNet.WebPages.WebData.2.0.30506.0.nupkg" />
+    <Content Include="App_Data\packages\Microsoft.Web.Infrastructure.1.0.0.0\Microsoft.Web.Infrastructure.1.0.0.0.nupkg" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
     </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
     </None>
+    <Content Include="_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
