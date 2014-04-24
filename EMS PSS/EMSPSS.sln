@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMSPSS", "EMS PSS\EMSPSS.csproj", "{253EEAD2-1B9F-42B4-BE20-D5AB611528B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllEmployees", "..\..\..\Year2Projects\SQI\EMS\AllEmployees\AllEmployees.csproj", "{85CD6008-2E5F-43C8-8F61-7D92251CF5B4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllEmployees", "EMS PSS\AllEmployees\AllEmployees.csproj", "{85CD6008-2E5F-43C8-8F61-7D92251CF5B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

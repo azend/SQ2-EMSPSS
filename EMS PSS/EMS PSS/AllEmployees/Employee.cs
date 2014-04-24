@@ -18,7 +18,7 @@ using System.Text;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using Supporting;
+//using Supporting;
 
 
 
@@ -106,18 +106,17 @@ namespace AllEmployees
             if (Regex.IsMatch(tempName, "^[a-zA-Z'-]{1,20}$"))
             {
                 FirstName = tempName;
-                Logging.Log("Employee.SetFirstName", "First Name Set (" + FirstName + ") - VALID");
+                //Logging.Log("Employee.SetFirstName", "First Name Set (" + FirstName + ") - VALID");
                 return true;
             }
             else if (tempName == "")
             {
-                Logging.Log("Employee.SetFirstName", "First Name Set (" + FirstName + ") - VALID");
+                //Logging.Log("Employee.SetFirstName", "First Name Set (" + FirstName + ") - VALID");
                 return true;
             }
             else
             {
-                Console.WriteLine("Invalid Name - may only contain Letters, dashes, or hyphens.");
-                Logging.Log("Employee.SetFirstName", "First Name Set (" + tempName + ") - INVALID");
+                //Logging.Log("Employee.SetFirstName", "First Name Set (" + tempName + ") - INVALID");
                 return false;
             }
         }
@@ -139,18 +138,17 @@ namespace AllEmployees
             if (Regex.IsMatch(tempName, "^[a-zA-Z'-]{1,20}$"))
             {
                 LastName = tempName;
-                Logging.Log("Employee.SetLastName", "Last Name Set (" + LastName + ") - VALID");
+                //Logging.Log("Employee.SetLastName", "Last Name Set (" + LastName + ") - VALID");
                 return true;
             }
             else if (tempName == "")
             {
-                Logging.Log("Employee.SetLastName", "Last Name Set (" + LastName + ") - VALID");
+                //Logging.Log("Employee.SetLastName", "Last Name Set (" + LastName + ") - VALID");
                 return true;
             }
             else
             {
-                Console.WriteLine("Invalid Name - may only contain Letters, dashes, or hyphens.");
-                Logging.Log("Employee.SetLastName", "Last Name Set (" + tempName + ") - INVALID");
+                //Logging.Log("Employee.SetLastName", "Last Name Set (" + tempName + ") - INVALID");
                 return false;
             }
         }
@@ -181,12 +179,11 @@ namespace AllEmployees
             if (result || toValidate == "")
             {
                 returnVal = true;
-                Logging.Log("Employee.SetDateOfBirth", "Date of Birth Set (" + DateOfBirth.ToShortDateString() + ") - VALID");
+                //Logging.Log("Employee.SetDateOfBirth", "Date of Birth Set (" + DateOfBirth.ToShortDateString() + ") - VALID");
             }
             else
             {
-                Logging.Log("Employee.SetDateOfBirth", "Date of Birth Set (" + toValidate + ") - INVALID");
-                Console.WriteLine("Must be in format yyyy-MM-dd\n");
+                //Logging.Log("Employee.SetDateOfBirth", "Date of Birth Set (" + toValidate + ") - INVALID");
 
                 returnVal = false;
             }
@@ -217,12 +214,12 @@ namespace AllEmployees
             {
                 Sin = sinNumber;
                 returnVal = true;
-                Logging.Log("Employee.SetSin", "Sin Set (" + Sin + ") - VALID");
+                //Logging.Log("Employee.SetSin", "Sin Set (" + Sin + ") - VALID");
             }
             else
             {
                 Console.WriteLine("SIN is invalid");
-                Logging.Log("Employee.SetSin", "Sin Set (" + sinNumber + ") - INVALID");
+                //Logging.Log("Employee.SetSin", "Sin Set (" + sinNumber + ") - INVALID");
             }
 
             return returnVal;
@@ -307,8 +304,7 @@ namespace AllEmployees
             }
             if (returnVal == false)
             {
-                Logging.Log("Employee.ValidateEmployeeType", "Employee Type (" + toValidate + ") - INVALID");
-                Console.WriteLine("Invalid Employee Type - must be one of: SN, PT, FT, CT.");
+                //Logging.Log("Employee.ValidateEmployeeType", "Employee Type (" + toValidate + ") - INVALID");
             }
             return returnVal;
 

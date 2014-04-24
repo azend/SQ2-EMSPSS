@@ -15,7 +15,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Supporting;
+//using Supporting;
 
 
 
@@ -95,13 +95,12 @@ namespace AllEmployees
                 out dateOfTermination);
             if (result || toValidate == "")
             {
-                Logging.Log("ParttimeEmployee.SetDateofTermination", "ParttimeEmployee Set (" + DateofTermination.ToShortDateString() + ") - VALID");
+                //Logging.Log("ParttimeEmployee.SetDateofTermination", "ParttimeEmployee Set (" + DateofTermination.ToShortDateString() + ") - VALID");
                 returnVal = true;
             }
             else
             {
-                Logging.Log("ParttimeEmployee.SetDateofTermination", "ParttimeEmployee Set (" + toValidate + ") - INVALID");
-                Console.WriteLine("Please enter a valid date in the format yyyy-MM-dd");
+                //Logging.Log("ParttimeEmployee.SetDateofTermination", "ParttimeEmployee Set (" + toValidate + ") - INVALID");
                 returnVal = false;
 
             }
@@ -130,13 +129,12 @@ namespace AllEmployees
                 out dateOfHire);
             if (result || toValidate == "")
             {
-                Logging.Log("ParttimeEmployee.SetDateofHire", "ParttimeEmployee Set (" + DateOfHire.ToShortDateString() + ") - VALID");
+                //Logging.Log("ParttimeEmployee.SetDateofHire", "ParttimeEmployee Set (" + DateOfHire.ToShortDateString() + ") - VALID");
                 returnVal = true;
             }
             else
             {
-                Logging.Log("ParttimeEmployee.SetDateofHire", "ParttimeEmployee Set (" + toValidate + ") - INVALID");
-                Console.WriteLine("Please enter a valid date in the format yyyy-MM-dd");
+                //Logging.Log("ParttimeEmployee.SetDateofHire", "ParttimeEmployee Set (" + toValidate + ") - INVALID");
                 returnVal = false;
             }
             return returnVal;
@@ -162,13 +160,12 @@ namespace AllEmployees
             if (rate > 0 || toValidate == "")
             {
                 HourlyRate = rate;
-                Logging.Log("ParttimeEmployee.SetHourlyRate", "ParttimeEmployee Set (" + HourlyRate.ToString() + ") - VALID");
+                //Logging.Log("ParttimeEmployee.SetHourlyRate", "ParttimeEmployee Set (" + HourlyRate.ToString() + ") - VALID");
                 returnVal = true;
             }
             else
             {
-                Logging.Log("ParttimeEmployee.SetHourlyRate", "ParttimeEmployee Set (" + toValidate + ") - INVALID");
-                Console.WriteLine("Please enter a valid number.");
+                //Logging.Log("ParttimeEmployee.SetHourlyRate", "ParttimeEmployee Set (" + toValidate + ") - INVALID");
             }
             return returnVal;
         }
@@ -183,7 +180,7 @@ namespace AllEmployees
         /// Dumps base employee info and
         /// Date of Hire , Date of Termination , hourlyRate
         /// </summary>
-        public override void Details()
+        /*public override void Details()
         {
             Console.WriteLine("First Name : {0}", FirstName);
             Console.WriteLine("Last Name : {0}", LastName);
@@ -216,7 +213,7 @@ namespace AllEmployees
             }
             Console.WriteLine("Hourly Rate : {0}", hourlyRate);
 
-            Logging.Log("ParttimeEmployee.Details", "Printed "
+            //Logging.Log("ParttimeEmployee.Details", "Printed "
                 + "First name: " + FirstName + "\n"
                 + "Last name: " + LastName + "\n"
                 + "Date of Birth: " + DateOfBirth.ToShortDateString() + "\n"
@@ -224,7 +221,7 @@ namespace AllEmployees
                 + "Date of Hire: " + DateOfHire.ToShortDateString() + "\n"
                 + "Date of Termination: " + DateofTermination.ToShortDateString() + "\n"
                 + "Hourly Rate: " + HourlyRate.ToString());
-        }
+        }*/
 
 
 
@@ -255,27 +252,27 @@ namespace AllEmployees
         {
             if (FirstName.Length == 0)
             {
-                Logging.Log("ParttimeEmployee.Validate", "ParttimeEmployee Validate First Name (" + FirstName + ") - INVALID");
+                //Logging.Log("ParttimeEmployee.Validate", "ParttimeEmployee Validate First Name (" + FirstName + ") - INVALID");
                 SetFirstName("");
                 return false;
             }
 
             if (LastName.Length == 0)
             {
-                Logging.Log("ParttimeEmployee.Validate", "ParttimeEmployee Validate Last Name (" + LastName + ") - INVALID");
+                //Logging.Log("ParttimeEmployee.Validate", "ParttimeEmployee Validate Last Name (" + LastName + ") - INVALID");
                 SetLastName("");
                 return false;
             }
 
             if (DateOfBirth == DateTime.MinValue)
             {
-                Logging.Log("ParttimeEmployee.Validate", "ParttimeEmployee Validate Date of Birth (" + DateOfBirth.ToShortDateString() + ") - INVALID");
+                //Logging.Log("ParttimeEmployee.Validate", "ParttimeEmployee Validate Date of Birth (" + DateOfBirth.ToShortDateString() + ") - INVALID");
                 return false;
             }
 
             if (!IsValidSIN(Sin))
             {
-                Logging.Log("ParttimeEmployee.Validate", "ParttimeEmployee Validate Sin (" + Sin + ") - INVALID");
+                //Logging.Log("ParttimeEmployee.Validate", "ParttimeEmployee Validate Sin (" + Sin + ") - INVALID");
                 SetSin("");
                 return false;
             }
@@ -284,14 +281,14 @@ namespace AllEmployees
             {
                 if (dateOfHire < DateOfBirth)
                 {
-                    Logging.Log("ParttimeEmployee.Validate", "ParttimeEmployee Validate Date of Hire (" + DateOfHire.ToShortDateString() + ") - INVALID");
+                    //Logging.Log("ParttimeEmployee.Validate", "ParttimeEmployee Validate Date of Hire (" + DateOfHire.ToShortDateString() + ") - INVALID");
                     SetDateOfBirth("");
                     return false;
                 }
             }
             else
             {
-                Logging.Log("ParttimeEmployee.Validate", "ParttimeEmployee Validate Date of Hire (" + DateOfHire.ToShortDateString() + ") - INVALID");
+                //Logging.Log("ParttimeEmployee.Validate", "ParttimeEmployee Validate Date of Hire (" + DateOfHire.ToShortDateString() + ") - INVALID");
                 return false;
             }
 
@@ -299,7 +296,7 @@ namespace AllEmployees
             {
                 if ((dateOfTermination < dateOfHire) || (dateOfTermination < DateOfBirth))
                 {
-                    Logging.Log("ParttimeEmployee.Validate", "ParttimeEmployee Validate Date of Termination (" + DateofTermination.ToShortDateString() + ") - INVALID");
+                    //Logging.Log("ParttimeEmployee.Validate", "ParttimeEmployee Validate Date of Termination (" + DateofTermination.ToShortDateString() + ") - INVALID");
                     SetDateofTermination("");
                     return false;
                 }
@@ -307,12 +304,12 @@ namespace AllEmployees
 
             if (hourlyRate <= 0)
             {
-                Logging.Log("ParttimeEmployee.Validate", "ParttimeEmployee Validate Hourly Rate (" + HourlyRate.ToString() + ") - INVALID");
+                //Logging.Log("ParttimeEmployee.Validate", "ParttimeEmployee Validate Hourly Rate (" + HourlyRate.ToString() + ") - INVALID");
                 HourlyRate = 0;
                 return false;
             }
 
-            Logging.Log("ParttimeEmployee.Validate", "ParttimeEmployee Validate (" + FirstName + ", " + LastName + ", " + Sin.ToString() + ") - VALID");
+            //Logging.Log("ParttimeEmployee.Validate", "ParttimeEmployee Validate (" + FirstName + ", " + LastName + ", " + Sin.ToString() + ") - VALID");
 
             return true;
         }

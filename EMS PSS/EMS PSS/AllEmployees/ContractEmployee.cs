@@ -15,7 +15,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Supporting;
+//using Supporting;
 
 
 
@@ -82,13 +82,12 @@ namespace AllEmployees
                 out contractStartDate);
             if (result || toValidate == "")
             {
-                Logging.Log("ContractEmployee.SetContractStartDate", "ContractEmployee Set (" + ContractStartDate.ToShortDateString() + ") - VALID");
+                //Logging.Log("ContractEmployee.SetContractStartDate", "ContractEmployee Set (" + ContractStartDate.ToShortDateString() + ") - VALID");
                 returnVal = true;
             }
             else
             {
-                Logging.Log("ContractEmployee.SetContractStartDate", "ContractEmployee Set (" + toValidate + ") - INVALID");
-                Console.WriteLine("Invalid date, please enter in the format yyyy-MM-dd");
+                //Logging.Log("ContractEmployee.SetContractStartDate", "ContractEmployee Set (" + toValidate + ") - INVALID");
                 returnVal = false;
             }
             return returnVal;
@@ -117,13 +116,12 @@ namespace AllEmployees
                 out contractStopDate);
             if (result || toValidate == "")
             {
-                Logging.Log("ContractEmployee.SetContractStopDate", "ContractEmployee Set (" + ContractStopDate.ToShortDateString() + ") - VALID");
+                //Logging.Log("ContractEmployee.SetContractStopDate", "ContractEmployee Set (" + ContractStopDate.ToShortDateString() + ") - VALID");
                 returnVal = true;
             }
             else
             {
-                Logging.Log("ContractEmployee.SetContractStopDate", "ContractEmployee Set (" + toValidate + ") - INVALID");
-                Console.WriteLine("Must be in format yyyy-MM-dd\n");
+                //Logging.Log("ContractEmployee.SetContractStopDate", "ContractEmployee Set (" + toValidate + ") - INVALID");
             }
             return returnVal;
         }
@@ -148,12 +146,11 @@ namespace AllEmployees
             {
                 FixedContractAmount = pay;
                 returnVal = true;
-                Logging.Log("ContractEmployee.SetFixedContractRate", "ContractEmployee Set (" + FixedContractAmount.ToString() + ") - VALID");
+                //Logging.Log("ContractEmployee.SetFixedContractRate", "ContractEmployee Set (" + FixedContractAmount.ToString() + ") - VALID");
             }
             else
             {
-                Logging.Log("ContractEmployee.SetFixedContractRate", "ContractEmployee Set (" + toValidate + ") - INVALID");
-                Console.WriteLine("Please enter an above 0 number.");
+                //Logging.Log("ContractEmployee.SetFixedContractRate", "ContractEmployee Set (" + toValidate + ") - INVALID");
                 returnVal = false;
             }
             return returnVal;
@@ -168,7 +165,7 @@ namespace AllEmployees
         /// Dumps base employee info and
         /// Contract start date , Contract end date , Fixed Contract amount
         /// </summary>
-        public override void Details()
+        /*public override void Details()
         {
             Console.WriteLine("Corporation name : {0}", LastName);
             Console.WriteLine("Employee Type : {0}", EmployeeType);
@@ -207,7 +204,7 @@ namespace AllEmployees
                 + "Contract Start Date: " + ContractStartDate.ToShortDateString() + "\n"
                 + "Contract Stop Date: " + ContractStopDate.ToShortDateString() + "\n"
                 + "Fixed Contract Amount: " + FixedContractAmount.ToString());
-        }
+        }*/
 
 
         /// <summary>
@@ -260,20 +257,20 @@ namespace AllEmployees
         {
             if (LastName.Length == 0)
             {
-                Logging.Log("ContractEmployee.Validate", "ContractEmployee Validate Corporation Name (" + LastName + ") - INVALID");
+                //Logging.Log("ContractEmployee.Validate", "ContractEmployee Validate Corporation Name (" + LastName + ") - INVALID");
                 SetLastName("");
                 return false;
             }
 
             if (DateOfBirth == DateTime.MinValue)
             {
-                Logging.Log("ContractEmployee.Validate", "ContractEmployee Validate Incorporation Date (" + DateOfBirth.ToShortDateString() + ") - INVALID");
+                //Logging.Log("ContractEmployee.Validate", "ContractEmployee Validate Incorporation Date (" + DateOfBirth.ToShortDateString() + ") - INVALID");
                 return false;
             }
 
             if (!IsValidSIN(Sin))
             {
-                Logging.Log("ContractEmployee.Validate", "ContractEmployee Validate Business Number (" + Sin + ") - INVALID");
+                //Logging.Log("ContractEmployee.Validate", "ContractEmployee Validate Business Number (" + Sin + ") - INVALID");
                 SetSin("");
                 return false;
             }
@@ -282,7 +279,7 @@ namespace AllEmployees
 
                 if (!SetContractSin())
                 {
-                    Logging.Log("ContractEmployee.Validate", "ContractEmployee Validate Business Number (" + Sin + ") - INVALID");
+                    //Logging.Log("ContractEmployee.Validate", "ContractEmployee Validate Business Number (" + Sin + ") - INVALID");
                     SetSin("");
                     return false;
                 }
@@ -293,14 +290,14 @@ namespace AllEmployees
             {
                 if (contractStartDate < DateOfBirth)
                 {
-                    Logging.Log("ContractEmployee.Validate", "ContractEmployee Validate Contract Start Date (" + ContractStartDate.ToShortDateString() + ") - INVALID");
+                    //Logging.Log("ContractEmployee.Validate", "ContractEmployee Validate Contract Start Date (" + ContractStartDate.ToShortDateString() + ") - INVALID");
                     SetContractStartDate("");
                     return false;
                 }
             }
             else
             {
-                Logging.Log("ContractEmployee.Validate", "ContractEmployee Validate Contract Start Date (" + ContractStartDate.ToShortDateString() + ") - INVALID");
+                //Logging.Log("ContractEmployee.Validate", "ContractEmployee Validate Contract Start Date (" + ContractStartDate.ToShortDateString() + ") - INVALID");
                 return false;
             }
 
@@ -308,25 +305,25 @@ namespace AllEmployees
             {
                 if ((contractStopDate < contractStartDate) || (contractStartDate < DateOfBirth))
                 {
-                    Logging.Log("ContractEmployee.Validate", "ContractEmployee Validate Contract Stop Date(" + ContractStopDate.ToShortDateString() + ") - INVALID");
+                    //Logging.Log("ContractEmployee.Validate", "ContractEmployee Validate Contract Stop Date(" + ContractStopDate.ToShortDateString() + ") - INVALID");
                     SetContractStartDate("");
                     return false;
                 }
             }
             else
             {
-                Logging.Log("ContractEmployee.Validate", "ContractEmployee Validate Contract Stop Date (" + ContractStopDate.ToShortDateString() + ") - INVALID");
+                //Logging.Log("ContractEmployee.Validate", "ContractEmployee Validate Contract Stop Date (" + ContractStopDate.ToShortDateString() + ") - INVALID");
                 return false;
             }
 
             if (fixedContractAmount <= 0)
             {
-                Logging.Log("ContractEmployee.Validate", "ContractEmployee Validate Fixed Contract Amount(" + FixedContractAmount.ToString() + ") - INVALID");
+                //Logging.Log("ContractEmployee.Validate", "ContractEmployee Validate Fixed Contract Amount(" + FixedContractAmount.ToString() + ") - INVALID");
                 fixedContractAmount = 0;
                 return false;
             }
 
-            Logging.Log("ContractEmployee.Validate", "ContractEmployee Validate (" + FirstName + ", " + LastName + ", " + Sin.ToString() + ") - VALID");
+            //Logging.Log("ContractEmployee.Validate", "ContractEmployee Validate (" + FirstName + ", " + LastName + ", " + Sin.ToString() + ") - VALID");
 
             return true;
         }
@@ -346,12 +343,11 @@ namespace AllEmployees
 
             if (sinCheck == year)
             {
-                Logging.Log("ContractEmployee.SetContractSin", "ContractEmployee Set (" + Sin + ") - VALID");
+                //Logging.Log("ContractEmployee.SetContractSin", "ContractEmployee Set (" + Sin + ") - VALID");
                 return true;
             }
 
-            Console.WriteLine("Invalid business number");
-            Logging.Log("ContractEmployee.SetContractSin", "ContractEmployee Set (" + Sin + ") - INVALID");
+            //Logging.Log("ContractEmployee.SetContractSin", "ContractEmployee Set (" + Sin + ") - INVALID");
             return false;
         }
 

@@ -15,7 +15,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Supporting;
+//using Supporting;
 
 
 
@@ -72,12 +72,12 @@ namespace AllEmployees
             if (pay > 0 || toValidate == "")
             {
                 PiecePay = pay;
-                Logging.Log("SeasonalEmployee.SetPiecePay", "SeasonalEmployee Set (" + PiecePay + ") - VALID");
+                //Logging.Log("SeasonalEmployee.SetPiecePay", "SeasonalEmployee Set (" + PiecePay + ") - VALID");
                 returnVal = true;
             }
             else
             {
-                Logging.Log("SeasonalEmployee.SetPiecePay", "SeasonalEmployee Set (" + toValidate + ") - INVALID");
+                //Logging.Log("SeasonalEmployee.SetPiecePay", "SeasonalEmployee Set (" + toValidate + ") - INVALID");
                 Console.WriteLine("Must enter a number.");
                 returnVal = false;
             }
@@ -104,16 +104,15 @@ namespace AllEmployees
                 if (CurrentSeason == newSeason.ToUpper() || newSeason == "")
                 {
                     Season = newSeason.ToUpper();
-                    Logging.Log("SeasonalEmployee.SetSeason", "SeasonalEmployee Set (" + Season + ") - VALID");
+                    //Logging.Log("SeasonalEmployee.SetSeason", "SeasonalEmployee Set (" + Season + ") - VALID");
                     returnVal = true;
                 }
             }
             
             if (returnVal == false)
             {
-                Logging.Log("SeasonalEmployee.SetSeason", "SeasonalEmployee Set (" + newSeason + ") - INVALID");
+                //Logging.Log("SeasonalEmployee.SetSeason", "SeasonalEmployee Set (" + newSeason + ") - INVALID");
                 returnVal = false;
-                Console.WriteLine("Invalid season. Please enter either: WINTER, SUMMER, FALL, SPRING");
             }
 
             return returnVal;
@@ -128,7 +127,7 @@ namespace AllEmployees
         /// Dumps base employee info and
         /// PiecePay , and Season .
         /// </summary>
-        public override void Details()
+        /*public override void Details()
         {
             Console.WriteLine("First Name : {0}", FirstName);
             Console.WriteLine("Last Name : {0}", LastName);
@@ -145,14 +144,14 @@ namespace AllEmployees
             Console.WriteLine("PiecePay : {0}", piecePay);
             Console.WriteLine("Season : {0}", season);
 
-            Logging.Log("SeasonalEmployee.Details", "Printed "
+            //Logging.Log("SeasonalEmployee.Details", "Printed "
                 + "First name: " + FirstName + "\n"
                 + "last name: " + LastName + "\n"
                 + "Date of Birth: " + DateOfBirth.ToShortDateString() + "\n"
                 + "SIN: " + Sin + "\n"
                 + "Piece Pay: " + PiecePay.ToString() + "\n"
                 + "Season: " + Season + "\n");
-        }
+        }*/
         
         
 
@@ -181,7 +180,7 @@ namespace AllEmployees
         {
             if (FirstName.Length == 0)
             {
-                Logging.Log("SeasonalEmployee.Validate", "SeasonalEmployee Validate First Name (" + FirstName +  ") - INVALID");
+                //Logging.Log("SeasonalEmployee.Validate", "SeasonalEmployee Validate First Name (" + FirstName +  ") - INVALID");
                 SetFirstName("");
                 
                 return false;
@@ -189,38 +188,38 @@ namespace AllEmployees
 
             if (LastName.Length == 0)
             {
-                Logging.Log("SeasonalEmployee.Validate", "SeasonalEmployee Validate Last Name (" + LastName + ") - INVALID");
+                //Logging.Log("SeasonalEmployee.Validate", "SeasonalEmployee Validate Last Name (" + LastName + ") - INVALID");
                 SetLastName("");
                 return false;
             }
 
             if (DateOfBirth == DateTime.MinValue)
             {
-                Logging.Log("SeasonalEmployee.Validate", "SeasonalEmployee Validate Date of Birth (" + DateOfBirth.ToShortDateString() + ") - INVALID");
+                //Logging.Log("SeasonalEmployee.Validate", "SeasonalEmployee Validate Date of Birth (" + DateOfBirth.ToShortDateString() + ") - INVALID");
                 return false;
             }
 
             if (!IsValidSIN(Sin))
             {
-                Logging.Log("SeasonalEmployee.Validate", "SeasonalEmployee Validate Sin (" + Sin + ") - INVALID");
+                //Logging.Log("SeasonalEmployee.Validate", "SeasonalEmployee Validate Sin (" + Sin + ") - INVALID");
                 SetSin("");
                 return false;
             }
 
             if (piecePay <= 0)
             {
-                Logging.Log("SeasonalEmployee.Validate", "SeasonalEmployee Validate Piece Pay (" + PiecePay + ") - INVALID");
+                //Logging.Log("SeasonalEmployee.Validate", "SeasonalEmployee Validate Piece Pay (" + PiecePay + ") - INVALID");
                 PiecePay = 0;
                 return false;
             }
 
             if (Season != "WINTER" && Season != "SUMMER" && Season != "FALL" && Season != "SPRING")
             {
-                Logging.Log("SeasonalEmployee.Validate", "SeasonalEmployee Validate Season (" + Season + ") - INVALID");
+                //Logging.Log("SeasonalEmployee.Validate", "SeasonalEmployee Validate Season (" + Season + ") - INVALID");
                 return false;
             }
 
-            Logging.Log("SeasonalEmployee.Validate", "SeasonalEmployee Validate (" + FirstName + ", " + LastName + ", " + Sin.ToString() + ") - VALID");
+            //Logging.Log("SeasonalEmployee.Validate", "SeasonalEmployee Validate (" + FirstName + ", " + LastName + ", " + Sin.ToString() + ") - VALID");
 
             return true;
         }

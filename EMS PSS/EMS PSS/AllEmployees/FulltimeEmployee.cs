@@ -15,7 +15,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Supporting;
+//using Supporting;
 
 
 
@@ -99,12 +99,11 @@ namespace AllEmployees
             if (result || toValidate == "")
             {
                 returnVal = true;
-                Logging.Log("FulltimeEmployee.SetDateofTermination", "Date of Termination Set (" + DateofTermination.ToShortDateString() + ") - VALID");
+                ////Logging.Log("FulltimeEmployee.SetDateofTermination", "Date of Termination Set (" + DateofTermination.ToShortDateString() + ") - VALID");
             }
             else
             {
-                Logging.Log("FulltimeEmployee.SetDateofTermination", "Date of Termination Set (" + toValidate + ") - INVALID");
-                Console.WriteLine("Must be in format yyyy-MM-dd\n");
+                ////Logging.Log("FulltimeEmployee.SetDateofTermination", "Date of Termination Set (" + toValidate + ") - INVALID");
             }
             return returnVal;
         }
@@ -131,13 +130,12 @@ namespace AllEmployees
             if (result || toValidate == "")
             {
                 returnVal = true;
-                Logging.Log("FulltimeEmployee.SetDateofHire", "Date of Hire Set (" + DateOfHire.ToShortDateString() + ") - VALID");
+                ////Logging.Log("FulltimeEmployee.SetDateofHire", "Date of Hire Set (" + DateOfHire.ToShortDateString() + ") - VALID");
 
             }
             else
             {
-                Logging.Log("FulltimeEmployee.SetDateofHire", "Date of Hire Set (" + toValidate + ") - INVALID");
-                Console.WriteLine("Must be in format yyyy-MM-dd\n");
+                ////Logging.Log("FulltimeEmployee.SetDateofHire", "Date of Hire Set (" + toValidate + ") - INVALID");
             }
             return returnVal;
         }
@@ -163,13 +161,12 @@ namespace AllEmployees
             {
                 Salary = Wage;
                 returnVal = true;
-                Logging.Log("FulltimeEmployee.SetSalary", "Salary Set (" + Salary + ") - VALID");
+                ////Logging.Log("FulltimeEmployee.SetSalary", "Salary Set (" + Salary + ") - VALID");
 
             }
             else
             {
-                Logging.Log("FulltimeEmployee.SetSalary", "Salary Set (" + toValidate + ") - INVALID");
-                Console.WriteLine("Must be a number.");
+                ////Logging.Log("FulltimeEmployee.SetSalary", "Salary Set (" + toValidate + ") - INVALID");
                 returnVal = false;
             }
             return returnVal;
@@ -185,7 +182,7 @@ namespace AllEmployees
         /// Dumps base employee info and
         /// Date of Hire , Date of Termination ,Salary
         /// </summary>
-        public override void Details()
+        /*public override void Details()
         {
             Console.WriteLine("First Name : {0}", FirstName);
             Console.WriteLine("Last Name : {0}", LastName);
@@ -217,7 +214,7 @@ namespace AllEmployees
             }
             Console.WriteLine("Salary : {0}", salary);
 
-            Logging.Log("FulltimeEmployee.Details", "Printed " 
+            //Logging.Log("FulltimeEmployee.Details", "Printed " 
                 + "First name: " + FirstName + "\n"
                 + "Last name: " + LastName + "\n"
                 + "Date of Birth: " + DateOfBirth.ToShortDateString() + "\n"
@@ -225,7 +222,7 @@ namespace AllEmployees
                 + "Date of Hire: " + DateOfHire.ToShortDateString() + "\n"
                 + "Date of Termination: " + DateofTermination.ToShortDateString() + "\n"
                 + "Salary: " + Salary.ToString());
-        }
+        }*/
 
 
         /// <summary>
@@ -248,7 +245,7 @@ namespace AllEmployees
         {
             if (FirstName.Length == 0)
             {
-                Logging.Log("FulltimeEmployee.Validate", "FulltimeEmployee Validated (" + FirstName + ") - INVALID");
+                ////Logging.Log("FulltimeEmployee.Validate", "FulltimeEmployee Validated (" + FirstName + ") - INVALID");
                 SetFirstName("");
                 
                 return false;
@@ -256,7 +253,7 @@ namespace AllEmployees
 
             if (LastName.Length == 0)
             {
-                Logging.Log("FulltimeEmployee.Validate", "FulltimeEmployee Validated (" + LastName + ") - INVALID");
+                ////Logging.Log("FulltimeEmployee.Validate", "FulltimeEmployee Validated (" + LastName + ") - INVALID");
                 SetLastName("");
                 
                 return false;
@@ -264,13 +261,13 @@ namespace AllEmployees
 
             if (DateOfBirth == DateTime.MinValue)
             {
-                Logging.Log("FulltimeEmployee.Validate", "FulltimeEmployee Validated (" + DateOfBirth.ToShortDateString() + ") - INVALID");
+                ////Logging.Log("FulltimeEmployee.Validate", "FulltimeEmployee Validated (" + DateOfBirth.ToShortDateString() + ") - INVALID");
                 return false;
             }
 
             if (!IsValidSIN(Sin))
             {
-                Logging.Log("FulltimeEmployee.Validate", "FulltimeEmployee Validated (" + Sin + ") - INVALID");
+                //Logging.Log("FulltimeEmployee.Validate", "FulltimeEmployee Validated (" + Sin + ") - INVALID");
                 SetSin("");
                 return false;
             }
@@ -279,14 +276,14 @@ namespace AllEmployees
             {
                 if (dateOfHire < DateOfBirth)
                 {
-                    Logging.Log("FulltimeEmployee.Validate", "FulltimeEmployee Validated (" + DateOfHire.ToShortDateString() + ") - INVALID");
+                    //Logging.Log("FulltimeEmployee.Validate", "FulltimeEmployee Validated (" + DateOfHire.ToShortDateString() + ") - INVALID");
                     SetDateOfBirth("");
                     return false;
                 }
             }
             else
             {
-                Logging.Log("FulltimeEmployee.Validate", "FulltimeEmployee Validated (" + DateOfHire.ToShortDateString() + ") - INVALID");
+                //Logging.Log("FulltimeEmployee.Validate", "FulltimeEmployee Validated (" + DateOfHire.ToShortDateString() + ") - INVALID");
                 return false;
             }
 
@@ -294,7 +291,7 @@ namespace AllEmployees
             {
                 if ((dateOfTermination < dateOfHire) || (dateOfTermination < DateOfBirth))
                 {
-                    Logging.Log("FulltimeEmployee.Validate", "FulltimeEmployee Validated (" + DateofTermination.ToShortDateString() + ") - INVALID");
+                    //Logging.Log("FulltimeEmployee.Validate", "FulltimeEmployee Validated (" + DateofTermination.ToShortDateString() + ") - INVALID");
                     SetDateofTermination("");
                     return false;
                 }
@@ -302,12 +299,12 @@ namespace AllEmployees
 
             if (salary <= 0)
             {
-                Logging.Log("FulltimeEmployee.Validate", "FulltimeEmployee Validated (" + Salary + ") - INVALID");
+                //Logging.Log("FulltimeEmployee.Validate", "FulltimeEmployee Validated (" + Salary + ") - INVALID");
                 salary = 0;
                 return false;
             }
 
-            Logging.Log("FulltimeEmployee.Validate", "FulltimeEmployee Validated ("+ FirstName + ", " + LastName + ", " + Sin.ToString() + ") - VALID");
+            //Logging.Log("FulltimeEmployee.Validate", "FulltimeEmployee Validated ("+ FirstName + ", " + LastName + ", " + Sin.ToString() + ") - VALID");
 
             return true;
         }
