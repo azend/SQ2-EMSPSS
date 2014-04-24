@@ -13,21 +13,11 @@ namespace EMS_PSS
 {
     public partial class AddEmployee : System.Web.UI.Page
     {
-<<<<<<< HEAD
-         string ipAddress = "localhost";
-         string portNumber="3306";
-         string dataBaseName="emspss";
-         string userName="emspss";
-         string password="Fattymilk123";
-                    
-=======
         string ipAddress = "localhost";
         string portNumber = "3306";
         string dataBaseName = "emspss";
         string userName = "root";
         string password = "admin";
-
->>>>>>> 54651d8119da5a5e107a808f982055278708f458
 
 
         protected void Page_Load(object sender, EventArgs e)
