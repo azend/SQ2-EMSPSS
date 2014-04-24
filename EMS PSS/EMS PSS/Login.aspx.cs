@@ -1,4 +1,13 @@
-﻿using System;
+﻿/* Program name: EMS-PSS
+ * File name: Login.aspx.cs
+ * Date: April 24, 2014
+ * Programmer's names: Kelson, Sean, Constantine, Richard, Verdi
+ * Description: Contains the server side code for the login page of the EMS-PSS web application.
+ */
+
+
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,15 +15,29 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using MySql.Data.MySqlClient;
 
+
+
+
 namespace EMS_PSS
 {
     public partial class Login : System.Web.UI.Page
     {
+        private static string userType;
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
+
+        /* Method: login_Click
+         * Parameters: not used
+         * Description: Called when the login button is clicked.  Checks for user name and password text fields to not
+         * be blank, then tries to find them in the database.  If found the user type is saved and the user is passed onto
+         * the appropriate page.  If the username or password is incorrect the user is brought back to the login page and
+         * informed their information was incorrect.
+         * Returns: nothing
+         */
         protected void login_Click(object sender, EventArgs e)
         {
             string name = userName.Text;
@@ -27,18 +50,37 @@ namespace EMS_PSS
                 lbUserName.ForeColor = System.Drawing.Color.Black;
                 lbPassword.ForeColor = System.Drawing.Color.Black;
 
-                ConnectToDatabase(name, pass);
                 //connect to database, check if userName/password combination is correct
-                //if correct, pass them to page depending what type of user they are
-
-                //if not correct, bring them back to login page displaying that their userName/password is not correct
+                if (ConnectToDatabase(name, pass))
+                {
+                    //else if is used for future considerations or other types of users being created
+                    //if correct, pass them to page depending what type of user they are
+                    if (userType == "GENERAL")
+                    {
+                        //go to general user page
+                       // loginPage.Visible = false;
+                        //generalUserPage.Visible = true;
+                        Session["username"] = name;
+                        Session["userType"] = userType;
+                        Response.Redirect("GeneralUserPage.aspx");
+                    }
+                    else if (userType == "ADMIN")
+                    {
+                        //go to admin user page
+                        loginPage.Visible = false;
+                    }
+                }
+                else
+                {
+                    //if not correct, bring them back to login page displaying that their userName/password is not correct
+                    lbErrorMessage.Text = "Username and/or Password were incorrect.";
+                }          
             }
-            else
+            else//username and/or password were blank, will change the labels to red
             {
                 if (name == "")
                 {
                     lbUserName.ForeColor = System.Drawing.Color.Red;
-                    lbErrorMessage.Text = "Connection could not be made to the database.";
                 }
 
                 if (pass == "")
@@ -48,6 +90,16 @@ namespace EMS_PSS
             }  
         }
 
+
+
+        /* Method: ConnectToDatabase
+         * Parameters:
+         *      string name - username
+         *      string pass - password
+         * Description: Connects to the database with the passed name and pass. If found stores the userType into the
+         * class string.
+         * Returns: boolean - true if user was found within the database, false if not
+         */
         protected bool ConnectToDatabase(string name, string pass)
         {
             string found = "";
@@ -76,10 +128,10 @@ namespace EMS_PSS
                 {
                     case System.Data.ConnectionState.Open:
 
-                        string query = "SELECT userID, userPassword " +
+                        string query = "SELECT userType " +
                                        "FROM EMSUser " +
-                                       "WHERE userID = " + name +
-                                       " AND userPassword = " + pass + ";";
+                                       "WHERE userID = '" + name +
+                                       "' AND userPassword = '" + pass + "';";
                         MySqlCommand command = new MySqlCommand(query, mySqlConnection);
                         // Connection has been made
                         using (MySqlDataReader reader = command.ExecuteReader())
@@ -118,11 +170,13 @@ namespace EMS_PSS
 
             if (found != "")
             {
-                //user is correct
+                //user exists and password is correct
+                userType = found;
                 return true;
             }
             else
             {
+                //bad password or username
                 return false;
             }
             
