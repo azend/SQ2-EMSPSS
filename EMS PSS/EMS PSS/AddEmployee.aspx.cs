@@ -16,7 +16,7 @@ namespace EMS_PSS
          string ipAddress = "localhost";
          string portNumber="3306";
          string dataBaseName="emspss";
-         string userName="root";
+         string userName="emspss";
          string password="Fattymilk123";
                     
 
