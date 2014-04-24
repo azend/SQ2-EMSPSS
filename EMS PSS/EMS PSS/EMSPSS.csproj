@@ -46,7 +46,10 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\MySql.Data.6.8.3\lib\net45\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -90,7 +93,6 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\style.css" />
-    <Content Include="CreateEmployee.aspx" />
     <Content Include="EmployeeManagement\Default.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -110,15 +112,7 @@
     <Content Include="_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Code\Employee.cs" />
-    <Content Include="App_Code\EmployeeModel.cs" />
-    <Compile Include="CreateEmployee.aspx.cs">
-      <DependentUpon>CreateEmployee.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CreateEmployee.aspx.designer.cs">
-      <DependentUpon>CreateEmployee.aspx</DependentUpon>
-    </Compile>
+    <Compile Include="App_Code\EmployeeModel.cs" />
     <Compile Include="EmployeeManagement\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -151,6 +145,12 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="AllEmployees\AllEmployees.csproj">
+      <Project>{85cd6008-2e5f-43c8-8f61-7d92251cf5b4}</Project>
+      <Name>AllEmployees</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
