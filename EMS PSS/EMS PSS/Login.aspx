@@ -23,32 +23,40 @@
         {
             text-align:center;
         }
+
+        p 
+        {
+            text-align:center;
+        }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
 
-    <h1>EMS-PSS Login Page</h1>
+        <h1>EMS-PSS Login Page</h1>
 
-    <div class="userInfo">
-        <table>
-            <tr>
-                <td><label for="userName">User Name:</label></td>
-                <td><input id="userName" type ="text" /></td>
-            </tr>
+        <p>Please enter your Username and Password.</p>
 
-            <tr>
-                <td><label for="password">Password:</label></td>
-                <td><input id="password" type="text" /></td>
-            </tr>
+        <div class="userInfo">
+            <table>
+                <tr>
+                    <td><asp:label id="lbUserName" runat="server">Username:</asp:label></td>
+                    <td><asp:TextBox id="userName" runat="server" /></td>
+                </tr>
+
+                <tr>
+                    <td><asp:label id="lbPassword" runat="server">Password:</asp:label></td>
+                    <td><asp:TextBox id="password" runat="server" /></td>
+                </tr>
             
-            <tr>
-                <td><input type="button" id="login" value="Login" /></td>
-                <td><input type="button" id="reset" value="Reset" /></td>
-            </tr>    
-        </table>
-         
-    </div>
+                <tr>
+                    <td><asp:Button id="login" runat="server" text="Login" onClick="login_Click" /></td>
+                    <td><asp:Button id="reset" runat="server" text="Reset" /></td>
+                </tr>
+            </table>      
+        </div>
+
+        <asp:label id="lbErrorMessage" runat="server"></asp:label>
     </form>
 </body>
 </html>
