@@ -17,30 +17,31 @@
             background-color:orange;
         }
 
-        table 
+        .userInfo 
         {
-            margin-left:auto;
-            margin-right:auto;
-            width:250px;
+            float:left;
+            width:300px;
         }
 
-        h1 
-        {
-            text-align:center;
-        }
-
-        p 
-        {
-            text-align:center;
-        }
+        .clearfix
+		{
+			clear:both;
+		}
     </style>
 </head>
 <body onload="noBack();"
     onpageshow="if (event.persisted) noBack();" onunload="">
     <form id="form1" runat="server">
-        <div>
-            <h1>Logged in as a General User</h1>
+        <div class="userInfo" id="userInfo" runat="server">
         </div>
+        <div id="menuView">
+            <p>Choose one of the options below</p>
+            <asp:Button ID="btnCreateEmployee" runat="server" Text="Create New Employee" OnClick="btnCreateEmployee_Click" />
+            <asp:Button ID="btnSeniorityReport" runat="server" Text="Generate Seniority Report" />
+            <asp:Button ID="btnWeeklyHoursWorkedReport" runat="server" Text="Generate Weekly Hours Worked Report" />
+        </div>
+
+        <div class="clearfix"></div>
     </form>
 </body>
 </html>

@@ -60,8 +60,6 @@ namespace EMS_PSS
                         //go to general user page
                        // loginPage.Visible = false;
                         //generalUserPage.Visible = true;
-                        Session["username"] = name;
-                        Session["userType"] = userType;
                         Response.Redirect("GeneralUserPage.aspx");
                     }
                     else if (userType == "ADMIN")
@@ -102,7 +100,10 @@ namespace EMS_PSS
          */
         protected bool ConnectToDatabase(string name, string pass)
         {
-            string found = "";
+            string type = "";
+            string first = "";
+            string last = "";
+            string id = "";
             string ipAddress = "localhost";
             string portNumber = "3306";
             string dataBaseName = "emspss";
@@ -128,7 +129,7 @@ namespace EMS_PSS
                 {
                     case System.Data.ConnectionState.Open:
 
-                        string query = "SELECT userType " +
+                        string query = "SELECT userType, firstName, lastName, userID " +
                                        "FROM EMSUser " +
                                        "WHERE userID = '" + name +
                                        "' AND userPassword = '" + pass + "';";
@@ -138,7 +139,42 @@ namespace EMS_PSS
                         {
                             while (reader.Read())
                             {
-                                found = reader.GetString(0);//read all the table names into a buffer
+                                try
+                                {
+                                    type = reader.GetString(0);//read all the table names into a buffer
+                                }
+                                catch
+                                {
+                                }
+
+                                try
+                                {
+                                    first = reader.GetString(1);
+                                }
+                                catch
+                                {
+                                }
+
+                                try
+                                {
+                                    last = reader.GetString(2);
+                                }
+                                catch
+                                {
+                                }
+
+                                try
+                                {
+                                    id = reader.GetString(3);
+                                }
+                                catch
+                                {
+                                }
+
+                                Session["userType"] = type;//this is the userType
+                                Session["firstName"] = first;
+                                Session["lastName"] = last;
+                                Session["userID"] = id;
                             }
                         }
 
@@ -168,10 +204,10 @@ namespace EMS_PSS
                 }
             }
 
-            if (found != "")
+            if (type != "")
             {
                 //user exists and password is correct
-                userType = found;
+                userType = type;//used to determine which page to send to
                 return true;
             }
             else
@@ -180,6 +216,12 @@ namespace EMS_PSS
                 return false;
             }
             
+        }
+
+        protected void reset_Click(object sender, EventArgs e)
+        {
+            userName.Text = "";
+            password.Text = "";
         }
     }
 }

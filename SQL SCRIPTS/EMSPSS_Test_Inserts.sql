@@ -16,23 +16,23 @@ INSERT INTO EMSUser (userId, userPassword, userType) VALUES
 ('admin', 'ems-pss-admin', 'ADMIN');
 
 /*  Load data into Employee */
-INSERT INTO Employee (eId, hiringCompanyName, employFirstName, employLastName, employSIN, employeeStatus, employeeType, dateOfBirth) VALUES
-(0001, 'Bob\'s Fish and Tackle', 'Bob', 'Smith', '555111228', 'ACTIVE', 'FULLTIME', '1945-06-20'),
-(0002, 'VeraCorp Inc', 'Larry', 'Budmelman', '851222125', 'ACTIVE', 'FULLTIME', '1958-08-30'),
-(0003, 'FF-Fresh Fruit Corp', 'Frank', 'Findley', '995642352', 'INCOMPLETE', 'FULLTIME', NULL),
-(0004, 'Bob\'s Fish and Tackle', 'Darryl', 'Smith', '193456787', 'INACTIVE', 'FULLTIME', '1960-02-29'),
-(0005, 'Joe\'s Gas and Feed', 'Darryl', 'Smith', '193456787', 'ACTIVE', 'PARTTIME', '1960-02-29'),
-(0006, 'VeraCorp Inc', 'Sally', 'Struthers', '654852458', 'ACTIVE', 'PARTTIME', '1971-07-03'),
-(0007, 'Joe\'s Gas and Feed', 'Ted', 'Martin', '546511247', 'INCOMPLETE', 'PARTTIME', '1995-07-26'),
-(0008, 'VeraCorp Inc', 'Alice', 'Kramdon', '876543216', 'INACTIVE', 'PARTTIME', '1950-09-11'),
-(0009, 'FF-Fresh Fruit Corp', 'Tom', 'Joad', '325440550', 'ACTIVE', 'SEASONAL', '1980-10-20'),
-(0010, 'FF-Fresh Fruit Corp', 'Pa', 'Joad', '540654654', 'ACTIVE', 'SEASONAL', '1950-01-10'),
-(0011, 'FF-Fresh Fruit Corp', 'Al', 'Joad', '252352133', 'INCOMPLETE', 'SEASONAL', '1987-04-20'),
-(0012, 'FF-Fresh Fruit Corp', 'Noah', 'Joad', '984372367', 'INACTIVE', 'SEASONAL', '1975-09-22'),
-(0013, 'VeraCorp Inc', 'poneSDLC', '', '', 'ACTIVE', 'CONTRACT', NULL),
-(0014, 'VeraCorp Inc', 'proFO-Code Inc', '', '', 'ACTIVE', 'CONTRACT', NULL),
-(0015, 'VeraCorp Inc', 'Sally\'s Cleaning Services Ltd', '', '', 'INCOMPLETE', 'CONTRACT', NULL),
-(0016, 'VeraCorp Inc', 'poneSDLC', '', '', 'INACTIVE', 'CONTRACT', NULL);
+INSERT INTO Employee (hiringCompanyName, employFirstName, employLastName, employSIN, employeeStatus, employeeType, dateOfBirth) VALUES
+('Bob\'s Fish and Tackle', 'Bob', 'Smith', '555111228', 'ACTIVE', 'FULLTIME', '1945-06-20'),
+('VeraCorp Inc', 'Larry', 'Budmelman', '851222125', 'ACTIVE', 'FULLTIME', '1958-08-30'),
+('FF-Fresh Fruit Corp', 'Frank', 'Findley', '995642352', 'INCOMPLETE', 'FULLTIME', NULL),
+('Bob\'s Fish and Tackle', 'Darryl', 'Smith', '193456787', 'INACTIVE', 'FULLTIME', '1960-02-29'),
+('Joe\'s Gas and Feed', 'Darryl', 'Smith', '193456787', 'ACTIVE', 'PARTTIME', '1960-02-29'),
+('VeraCorp Inc', 'Sally', 'Struthers', '654852458', 'ACTIVE', 'PARTTIME', '1971-07-03'),
+('Joe\'s Gas and Feed', 'Ted', 'Martin', '546511247', 'INCOMPLETE', 'PARTTIME', '1995-07-26'),
+('VeraCorp Inc', 'Alice', 'Kramdon', '876543216', 'INACTIVE', 'PARTTIME', '1950-09-11'),
+('FF-Fresh Fruit Corp', 'Tom', 'Joad', '325440550', 'ACTIVE', 'SEASONAL', '1980-10-20'),
+('FF-Fresh Fruit Corp', 'Pa', 'Joad', '540654654', 'ACTIVE', 'SEASONAL', '1950-01-10'),
+('FF-Fresh Fruit Corp', 'Al', 'Joad', '252352133', 'INCOMPLETE', 'SEASONAL', '1987-04-20'),
+('FF-Fresh Fruit Corp', 'Noah', 'Joad', '984372367', 'INACTIVE', 'SEASONAL', '1975-09-22'),
+('VeraCorp Inc', 'poneSDLC', '', '', 'ACTIVE', 'CONTRACT', NULL),
+('VeraCorp Inc', 'proFO-Code Inc', '', '', 'ACTIVE', 'CONTRACT', NULL),
+('VeraCorp Inc', 'Sally\'s Cleaning Services Ltd', '', '', 'INCOMPLETE', 'CONTRACT', NULL),
+('VeraCorp Inc', 'poneSDLC', '', '', 'INACTIVE', 'CONTRACT', NULL);
 
 /* Load data into FullTimeEmployee */
 INSERT INTO FullTimeEmployee (EId, dateOfHire, dateOfTerm, reason, salary) VALUES

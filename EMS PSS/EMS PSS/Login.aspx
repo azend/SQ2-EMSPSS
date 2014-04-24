@@ -58,15 +58,11 @@
             
                 <tr>
                     <td><asp:Button id="login" runat="server" text="Login" onClick="login_Click" /></td>
-                    <td><asp:Button id="reset" runat="server" text="Reset" /></td>
+                    <td><asp:Button id="reset" runat="server" text="Reset" OnClick="reset_Click"/></td>
                 </tr>
             </table>
 
             <asp:label id="lbErrorMessage" runat="server"></asp:label>      
-        </div>
-
-        <div id="generalUserPage" runat="server" visible="false">
-            <p>WE MADE IT!!!!!</p>
         </div>
     </form>
 </body>
