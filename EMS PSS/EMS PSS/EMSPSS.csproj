@@ -82,7 +82,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AddEmployee.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -95,7 +94,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
-    <Content Include="HelloWorld.cshtml" />
+    <Content Include="GeneralUserPage.aspx" />
+    <None Include="Properties\PublishProfiles\default.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Login.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -106,13 +106,6 @@
     <Content Include="_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddEmployee.aspx.cs">
-      <DependentUpon>AddEmployee.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AddEmployee.aspx.designer.cs">
-      <DependentUpon>AddEmployee.aspx</DependentUpon>
-    </Compile>
     <Content Include="App_Code\Employee.cs" />
     <Content Include="App_Code\EmployeeModel.cs" />
     <Compile Include="EmployeeManagement\Default.aspx.cs">
@@ -122,14 +115,21 @@
     <Compile Include="EmployeeManagement\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-      <Compile Include="Login.aspx.cs">
-        <DependentUpon>Login.aspx</DependentUpon>
-        <SubType>ASPXCodeBehind</SubType>
-      </Compile>
-      <Compile Include="Login.aspx.designer.cs">
-        <DependentUpon>Login.aspx</DependentUpon>
-      </Compile>
-      <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="GeneralUserPage.aspx.cs">
+      <DependentUpon>GeneralUserPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GeneralUserPage.aspx.designer.cs">
+      <DependentUpon>GeneralUserPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

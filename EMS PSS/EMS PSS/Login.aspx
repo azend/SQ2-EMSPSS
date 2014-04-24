@@ -4,6 +4,11 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <script type="text/javascript">
+        window.history.forward();
+        function noBack() { window.history.forward(); }
+    </script>
+
     <title>EMS-PSS</title>
     
     <style>
@@ -30,14 +35,16 @@
         }
     </style>
 </head>
-<body>
+<body onload="noBack();"
+    onpageshow="if (event.persisted) noBack();" onunload="">
     <form id="form1" runat="server">
+        <div id="loginPage" class="userInfo" runat="server">
 
-        <h1>EMS-PSS Login Page</h1>
+            <h1>EMS-PSS Login Page</h1>
 
-        <p>Please enter your Username and Password.</p>
+            <p>Please enter your Username and Password.</p>
 
-        <div class="userInfo">
+        
             <table>
                 <tr>
                     <td><asp:label id="lbUserName" runat="server">Username:</asp:label></td>
@@ -53,10 +60,14 @@
                     <td><asp:Button id="login" runat="server" text="Login" onClick="login_Click" /></td>
                     <td><asp:Button id="reset" runat="server" text="Reset" /></td>
                 </tr>
-            </table>      
+            </table>
+
+            <asp:label id="lbErrorMessage" runat="server"></asp:label>      
         </div>
 
-        <asp:label id="lbErrorMessage" runat="server"></asp:label>
+        <div id="generalUserPage" runat="server" visible="false">
+            <p>WE MADE IT!!!!!</p>
+        </div>
     </form>
 </body>
 </html>

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMS PSS", "EMS PSS\EMS PSS.csproj", "{253EEAD2-1B9F-42B4-BE20-D5AB611528B3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMSPSS", "EMS PSS\EMSPSS.csproj", "{253EEAD2-1B9F-42B4-BE20-D5AB611528B3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

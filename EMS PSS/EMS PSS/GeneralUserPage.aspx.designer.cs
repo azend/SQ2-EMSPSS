@@ -11,7 +11,7 @@ namespace EMS_PSS
 {
 
 
-    public partial class AddEmployee
+    public partial class GeneralUserPage
     {
 
         /// <summary>
