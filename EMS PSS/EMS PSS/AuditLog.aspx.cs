@@ -29,5 +29,6 @@ namespace EMS_PSS
                 "<tr><td>User Type: </td><td>" + userType + "</td></tr>" +
                 "</table>";
         }
+
     }
 }

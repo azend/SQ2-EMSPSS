@@ -58,3 +58,17 @@ CREATE TABLE ContractEmployee
 	fixedAmount DECIMAL(14,2),
 	FOREIGN KEY (EId) REFERENCES Employee(eId)
 );
+
+CREATE TABLE AuditLog
+(
+	auditLogId INT NOT NULL AUTO_INCREMENT,
+	eId INT,
+	action VARCHAR(15),
+	userId VARCHAR(50),
+	attributeChanged VARCHAR(50),
+	oldValue VARCHAR(100),
+	newValue VARCHAR(100),
+	eventTime DATETIME,
+	PRIMARY KEY (auditLogId),
+	FOREIGN KEY (eId) REFERENCES Employee(eId)
+);

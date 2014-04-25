@@ -92,6 +92,7 @@
     <Content Include="AdminPage.aspx" />
     <Content Include="assets\images\bg.gif" />
     <Content Include="assets\screenprint.css" />
+    <Content Include="AuditLog.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -126,6 +127,15 @@
     <Content Include="_Layout.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Code\AuditLogModel.cs" />
+    <Compile Include="App_Code\Log.cs" />
+    <Compile Include="AuditLog.aspx.cs">
+      <DependentUpon>AuditLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AuditLog.aspx.designer.cs">
+      <DependentUpon>AuditLog.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ManageEmployeesPage.aspx.cs">
       <DependentUpon>ManageEmployeesPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
