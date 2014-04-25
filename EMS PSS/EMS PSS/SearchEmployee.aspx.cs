@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace EMS_PSS
 {
-    public partial class ManageEmployeesPage : System.Web.UI.Page
+    public partial class SearchEmployee : System.Web.UI.Page
     {
         private string userID;
         private string firstName;
@@ -30,19 +30,14 @@ namespace EMS_PSS
                 "</table>";
         }
 
-        protected void btnCreateEmployee_Click(object sender, EventArgs e)
+        protected void Submit_Click(object sender, EventArgs e)
         {
-            Response.Redirect("CreateEmployee.aspx");
+
         }
 
-        protected void btnSearchEmployee_Click(object sender, EventArgs e)
+        protected void Reset_Click(object sender, EventArgs e)
         {
-            Response.Redirect("SearchEmployee.aspx");
-        }
-
-        protected void btnEditEmployee_Click(object sender, EventArgs e)
-        {
-            //Response.Redirect("EditEmployee.aspx");
+            tbLastName.Text = "";
         }
     }
 }

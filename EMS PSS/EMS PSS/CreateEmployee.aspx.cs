@@ -11,7 +11,7 @@ namespace EMS_PSS
 {
     public partial class CreateEmployee : System.Web.UI.Page
     {
-        private const string mysqlPass = "admin";
+        private const string mysqlPass = "password";
         private string userID;
         private string firstName;
         private string lastName;

@@ -23,7 +23,7 @@ namespace EMS_PSS
     public partial class Login : System.Web.UI.Page
     {
         // !Change to match your DB password
-        private static string mysqlPass = "admin";
+        private static string mysqlPass = "password";
         private static string userType;
 
         protected void Page_Load(object sender, EventArgs e)
