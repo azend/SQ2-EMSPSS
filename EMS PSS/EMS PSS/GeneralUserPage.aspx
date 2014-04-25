@@ -7,6 +7,7 @@
             <asp:Button ID="btnCreateEmployee" runat="server" Text="Create New Employee" OnClick="btnCreateEmployee_Click" /><br />
             <asp:Button ID="btnSeniorityReport" runat="server" Text="Generate Seniority Report" /><br />
             <asp:Button ID="btnWeeklyHoursWorkedReport" runat="server" Text="Generate Weekly Hours Worked Report" />
+
         </div>
     </form>
 

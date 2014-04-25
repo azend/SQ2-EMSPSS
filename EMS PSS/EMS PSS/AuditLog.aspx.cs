@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace EMS_PSS
 {
-    public partial class AdminPage : System.Web.UI.Page
+    public partial class AuditLog : System.Web.UI.Page
     {
         private string userID;
         private string firstName;

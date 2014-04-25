@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="_Layout.master.cs" Inherits="EMS_PSS._Layout" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ManageEmployeesPage.aspx.cs" Inherits="EMS_PSS.ManageEmployeesPage" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-AU">
@@ -10,9 +10,6 @@
 
     <title>EMS-PSS</title>
 
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
-
     <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
     <meta name="author" content="Internet Splash" />
     <meta name="keywords" content="" />
@@ -22,31 +19,29 @@
 <body onload="noBack();" onpageshow="if (event.persisted) noBack();" onunload="">
     <div id="main">
         <h1>:: <span>EMS</span>PSS ::</h1>
- 	    <div id="wrapper">
-            <asp:ContentPlaceHolder ID="content" runat="server">
-            </asp:ContentPlaceHolder>
+ 	    <div id="content">
+            <form id="form1" runat="server">
+
+                <div id="menuView">
+                    <p>Choose one of the options below</p>
+                    <asp:Button ID="btnCreateEmployee" runat="server" Text="Create New Employee" OnClick="btnCreateEmployee_Click" /><br />
+                </div>
+
+                <div class="clearfix"></div>
+            </form>
 
             <p class="footer">Copyright 2014 Default Team | <!-- leave that in there --> Design by <a href="http://www.internetsplash.com/">Internet Splash</a></p>
 	    </div>
         <div id="nav">
-        <h4>:: <span>EMS</span>PSS ::</h4>
-        <div id="navcontainer">
-            <ul id="navlist">
-            <li class="active">Navigation</li>
-            <li><a runat="server" id="liUserHome" href="#">Home</a></li>
-            <li><a href="GeneralUserPage.aspx" id="current">Home</a></li>
-            <li><a href="ManageEmployeesPage.aspx">Manage Employees</a></li>
-            <li><a href="ReportsPage.aspx">Reports</a></li>
-            <li><a href="#">Time Card</a></li>
-        
-            <asp:ContentPlaceHolder ID="debug" runat="server">
-            </asp:ContentPlaceHolder>
-        
-            </ul>
+            <h4>:: <span>EMS</span>PSS ::</h4>
+            <div id="navcontainer">
+                <ul id="navlist">
+                <li class="active">Navigation</li>
+                <li><a href="#" runat="server" id="liUserHome">Home</a></li>
+                <li class="active nobo"><div class="userInfo" id="userInfo" runat="server"></div></li>
+                </ul>
+            </div>
         </div>
-    </div>
-        
     </div>
 </body>
 </html>
-
