@@ -73,3 +73,29 @@ CREATE TABLE AuditLog
 	PRIMARY KEY (auditLogId),
 	FOREIGN KEY (eId) REFERENCES Employee(eId)
 );
+
+create table workweek
+(
+ StartDate date not null,
+ EndDate date ,
+ primary key(StartDate)
+);
+
+
+
+
+CREATE TABLE WeeklyTimeCard
+(
+	HoursMonday double,
+	HoursTuesday double,
+	HoursWednesday double,
+	HoursThursday double,
+	HoursFriday double,
+	HoursSaturday  double,
+	HoursSunday double,
+	EId INT,
+	StartDate date,
+	PRIMARY KEY (EId, StartDate),
+	FOREIGN KEY (StartDate) REFERENCES workweek(StartDate),
+	FOREIGN KEY (EId) REFERENCES Employee(eId)
+);
