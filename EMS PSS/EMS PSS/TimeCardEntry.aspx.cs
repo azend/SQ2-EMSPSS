@@ -11,6 +11,7 @@ namespace EMS_PSS
 {
     public partial class TimeCardEntry : System.Web.UI.Page
     {
+        private string mySqlPass = "admin";
         private string userID;
         private string firstName;
         private string lastName;
@@ -55,8 +56,8 @@ namespace EMS_PSS
             string ipAddress = "localhost";
             string portNumber = "3306";
             string dataBaseName = "emspss";
-            string userName = "emspss";
-            string password = "Fattymilk123";
+            string userName = "root";
+            string password = mySqlPass;
             bool success = false;
             string ConnectionString =
     "server=" + ipAddress +
@@ -149,8 +150,8 @@ namespace EMS_PSS
             string ipAddress = "localhost";
             string portNumber = "3306";
             string dataBaseName = "emspss";
-            string userName = "emspss";
-            string password = "Fattymilk123";
+            string userName = "root";
+            string password = mySqlPass;
 
             string ConnectionString =
                 "server=" + ipAddress +
@@ -235,20 +236,20 @@ namespace EMS_PSS
             bool success = false;
             try
             {
-                double.Parse(MondayHours.Text);
-                double.Parse(TuesdayHours.Text);
-                double.Parse(WednesdayHours.Text);
-                double.Parse(ThursdayHours.Text);
-                double.Parse(FridayHours.Text);
-                double.Parse(SaturdayHours.Text);
-                double.Parse(SundayHours.Text);
-
                 if (EnterNewWorkWeek.Visible)
                 {
                     success = AddNewWorkWeek(WeekStartDate);
                 }
                 else if (TimeCardForm.Visible)
                 {
+                    double.Parse(MondayHours.Text);
+                    double.Parse(TuesdayHours.Text);
+                    double.Parse(WednesdayHours.Text);
+                    double.Parse(ThursdayHours.Text);
+                    double.Parse(FridayHours.Text);
+                    double.Parse(SaturdayHours.Text);
+                    double.Parse(SundayHours.Text);
+
                     string query = "insert into WeeklyTimeCard(HoursMonday,HoursTuesday,HoursWednesday,HoursThursday,HoursFriday,HoursSaturday,HoursSunday,EId,StartDate)";
                     string[] lines = Workweek.SelectedItem.Text.ToString().Split('-');
                     DateTime startTime = DateTime.Parse(lines[0]);
@@ -259,8 +260,8 @@ namespace EMS_PSS
                     string ipAddress = "localhost";
                     string portNumber = "3306";
                     string dataBaseName = "emspss";
-                    string userName = "emspss";
-                    string password = "Fattymilk123";
+                    string userName = "root";
+                    string password = mySqlPass;
 
                     string ConnectionString =
                    "server=" + ipAddress +
@@ -290,7 +291,30 @@ namespace EMS_PSS
                                 catch(Exception except)
                                 {
                                     //insert did not work
-                                    lbMessage.Text = "Problems Loading dropdown!";
+                                    lbMessage.Text = "Insert into Time was not successful attempting to update!";
+                                    query = "UPDATE WeeklyTimeCard SET";
+                                    query += " HoursMonday=" + "" + MondayHours.Text + ", ";
+                                    query += "HoursTuesday=" + "" + TuesdayHours.Text + ", ";
+                                    query += "HoursWednesday=" + "" + WednesdayHours.Text + ", ";
+                                    query += "HoursThursday=" + "" + ThursdayHours.Text + ", ";
+                                    query += "HoursFriday=" + "" + FridayHours.Text + ",";
+                                    query += "HoursSaturday=" + "" + SaturdayHours.Text + ", ";
+                                    query += "HoursSunday=" + "" + SundayHours.Text + " ";
+                                    string[] line = Workweek.SelectedItem.Text.ToString().Split('-');
+                                    DateTime startdate = DateTime.Parse(line[0]);
+                                    query += "where EId=" + EmployeeId.Text + " and startDate=" + "'" + startdate.ToString("yyyy-MM-dd") + "';";
+                                    try
+                                    {
+                                        if (mySqlConnection.State == System.Data.ConnectionState.Open)
+                                        {
+                                            command = new MySqlCommand(query, mySqlConnection);
+                                            command.ExecuteNonQuery();
+                                        }
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        lbMessage.Text = "The employee id was not found in the database";
+                                    }
                                     break;
                                 }
                                 break;
@@ -308,31 +332,7 @@ namespace EMS_PSS
                     }
                     catch
                     {
-                        lbMessage.Text = "Insert into Time was not successful attempting to update!";
-                        query = "UPDATE WeeklyTimeCard SET";
-                        query += "HoursMonday=" + "" + MondayHours.Text + ", ";
-                        query += "HoursTuesday=" + "" + TuesdayHours.Text + ", ";
-                        query += "HoursWednesday=" + "" + WednesdayHours.Text + ", ";
-                        query += "HoursThursday=" + "" + ThursdayHours.Text + ", ";
-                        query += "HoursFriday=" + "" + FridayHours.Text + ",";
-                        query += "HoursSaturday=" + "" + SaturdayHours.Text + ", ";
-                        query += "HoursSunday=" + "" + SundayHours.Text + ", ";
-                        string[] line = Workweek.SelectedItem.Text.ToString().Split('-');
-                        DateTime startdate = DateTime.Parse(line[0]);
-                        query += "where EId=" + EmployeeId.Text + " and startDate=" + "'"+startdate.ToString("yyyy-MM-dd")+"'";
-                        try
-                        {
-                            mySqlConnection.Open();
-                            if (mySqlConnection.State == mySqlConnection.State)
-                            {
-                                MySqlCommand command = new MySqlCommand(query, mySqlConnection);
-                                command.ExecuteNonQuery();
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            lbMessage.Text = "The employee id was not found in the database";
-                        }
+                        
                     }
                     finally
                     {

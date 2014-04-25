@@ -32,7 +32,14 @@ namespace EMS_PSS
 
         protected void btnCreateEmployee_Click(object sender, EventArgs e)
         {
-            Response.Redirect("CreateEmployee.aspx");
+            if (userType == "ADMIN")
+            {
+                Response.Redirect("CreateEmployeeA.aspx");
+            }
+            else
+            {
+                Response.Redirect("CreateEmployee.aspx");
+            }
         }
 
         protected void btnSearchEmployee_Click(object sender, EventArgs e)
