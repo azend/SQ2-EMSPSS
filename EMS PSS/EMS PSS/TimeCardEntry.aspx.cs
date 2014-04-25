@@ -55,7 +55,7 @@ namespace EMS_PSS
             string ipAddress = "localhost";
             string portNumber = "3306";
             string dataBaseName = "emspss";
-            string userName = "root";
+            string userName = "emspss";
             string password = "Fattymilk123";
             bool success = false;
             string ConnectionString =
@@ -149,7 +149,7 @@ namespace EMS_PSS
             string ipAddress = "localhost";
             string portNumber = "3306";
             string dataBaseName = "emspss";
-            string userName = "root";
+            string userName = "emspss";
             string password = "Fattymilk123";
 
             string ConnectionString =
@@ -259,7 +259,7 @@ namespace EMS_PSS
                     string ipAddress = "localhost";
                     string portNumber = "3306";
                     string dataBaseName = "emspss";
-                    string userName = "root";
+                    string userName = "emspss";
                     string password = "Fattymilk123";
 
                     string ConnectionString =

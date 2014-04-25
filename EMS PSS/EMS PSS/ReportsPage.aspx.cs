@@ -37,7 +37,7 @@ namespace EMS_PSS
 
         protected void btnWeeklyHoursWorkedReport_Click(object sender, EventArgs e)
         {
-            Response.Redirect("SeniorityReport.aspx");
+            Response.Redirect("WeeklyHoursWorked.aspx");
         }
     }
 }
