@@ -3,7 +3,7 @@
 <asp:Content ID="Head" ContentPlaceHolderID="head" runat="server">
     <style>
         table {
-            display: block;
+            width: 100%;
         }
     </style>
 </asp:Content>
@@ -28,14 +28,69 @@
             
             <% foreach( KeyValuePair<string, List<Dictionary<string,string>>> company in employees ) { %>
             <h2><%=company.Key %></h2>
-            <table>
-                <% foreach(Dictionary<string, string> employee in company.Value) { %>
+            <h3>Full-time Employee</h3>
+            <table border="1">
+                <tr>
+                    <th>Employee Name</th>
+                    <th>SIN</th>
+                    <th>Hours Worked</th>
+                </tr>
+                <% foreach(Dictionary<string, string> employee in company.Value) {
+                    if (employee["EmployeeType"].Equals("FULLTIME")) { %>
                 <tr>
                     <td><%=employee["LastName"] %>, <%=employee["FirstName"] %></td>
                     <td><%=employee["SIN"] %></td>
                     <td><%=employee["NumHoursWorked"] %></td>
                 </tr>
-                <% } %>
+                <% } } %>
+            </table>
+                <h3>Part-time Employee</h3>
+                <table border="1">
+                    <tr>
+                    <th>Employee Name</th>
+                    <th>SIN</th>
+                    <th>Hours Worked</th>
+                </tr>
+                <% foreach(Dictionary<string, string> employee in company.Value) {
+                    if (employee["EmployeeType"].Equals("PARTTIME")) { %>
+                <tr>
+                    <td><%=employee["LastName"] %>, <%=employee["FirstName"] %></td>
+                    <td><%=employee["SIN"] %></td>
+                    <td><%=employee["NumHoursWorked"] %></td>
+                </tr>
+                <% } } %>
+            </table>
+                <h3>Seasonal Employee</h3>
+                <table border="1">
+                    <tr>
+                    <th>Employee Name</th>
+                    <th>SIN</th>
+                    <th>Hours Worked</th>
+                </tr>
+                <% foreach(Dictionary<string, string> employee in company.Value) {
+                    if (employee["EmployeeType"].Equals("SEASONAL")) { %>
+                <tr>
+                    <td><%=employee["LastName"] %>, <%=employee["FirstName"] %></td>
+                    <td><%=employee["SIN"] %></td>
+                    <td><%=employee["NumHoursWorked"] %></td>
+                </tr>
+                <% } } %>
+            </table>
+                <h3>Contract Employee</h3>
+                <table border="1">
+                    <tr>
+                    <th>Employee Name</th>
+                    <th>SIN</th>
+                    <th>Hours Worked</th>
+                </tr>
+                <% foreach(Dictionary<string, string> employee in company.Value) {
+                    if (employee["EmployeeType"].Equals("CONTRACT")) { %>
+                <tr>
+                    <td><%=employee["LastName"] %>, <%=employee["FirstName"] %></td>
+                    <td><%=employee["SIN"] %></td>
+                    <td><%=employee["NumHoursWorked"] %></td>
+                </tr>
+                <% } } %>
             </table>
             <% } %>
 

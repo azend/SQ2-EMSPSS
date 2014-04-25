@@ -59,7 +59,7 @@ namespace EMS_PSS
                         if (Request.QueryString["workWeek"] != null)
                         {
 
-                            query = "SELECT employFirstName, employLastName, employSIN, employeeStatus, employeeType, hiringCompanyName, IFNULL(( SELECT (HoursMonday + HoursTuesday + HoursWednesday + HoursThursday + HoursFriday) FROM WeeklyTimeCard WHERE WeeklyTimeCard.EId = Employee.eId AND StartDate=@startDate LIMIT 1 ), 0) AS HoursWorked FROM Employee";
+                            query = "SELECT employFirstName, employLastName, employSIN, employeeStatus, employeeType, hiringCompanyName, IFNULL(( SELECT (HoursMonday + HoursTuesday + HoursWednesday + HoursThursday + HoursFriday) FROM WeeklyTimeCard WHERE WeeklyTimeCard.EId = Employee.eId AND StartDate=@startDate LIMIT 1 ), 0) AS HoursWorked FROM Employee ORDER BY HoursWorked DESC, employLastName DESC";
                             command = new MySqlCommand(query, mySqlConnection);
                             command.Parameters.AddWithValue("@startDate", Request.QueryString["workWeek"]);
                             // Connection has been made
