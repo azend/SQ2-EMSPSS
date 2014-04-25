@@ -8,7 +8,7 @@
         function noBack() { window.history.forward(); }
     </script>
 
-    <title>EMS-PSS</title>
+    <title>EMS-PSS - Employee Management</title>
 
     <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
     <meta name="author" content="Internet Splash" />
@@ -25,6 +25,8 @@
                 <div id="menuView">
                     <p>Choose one of the options below</p>
                     <asp:Button ID="btnCreateEmployee" runat="server" Text="Create New Employee" OnClick="btnCreateEmployee_Click" /><br />
+                    <asp:Button ID="btnSearchEmployee" runat="server" Text="Search Employees" OnClick="btnSearchEmployee_Click" /><br />
+                    <asp:Button ID="btnEditEmployee" runat="server" Text="Edit Employee" OnClick="btnEditEmployee_Click" /><br />
                 </div>
 
                 <div class="clearfix"></div>

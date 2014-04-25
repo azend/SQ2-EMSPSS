@@ -47,7 +47,7 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+    <Reference Include="MySql.Data, Version=6.3.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Installer\MySql.Data.dll</HintPath>
     </Reference>
@@ -115,6 +115,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="TimeCardEntry.aspx" />
     <Content Include="Web.config" />
     <Content Include="_Layout.cshtml" />
   </ItemGroup>
@@ -183,6 +184,13 @@
     </Compile>
     <Compile Include="ReportsPage.aspx.designer.cs">
       <DependentUpon>ReportsPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TimeCardEntry.aspx.cs">
+      <DependentUpon>TimeCardEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TimeCardEntry.aspx.designer.cs">
+      <DependentUpon>TimeCardEntry.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

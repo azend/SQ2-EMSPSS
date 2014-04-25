@@ -8,7 +8,7 @@
         function noBack() { window.history.forward(); }
     </script>
 
-    <title>EMS-PSS</title>
+    <title>EMS-PSS - Create Employee</title>
 
     <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
     <meta name="author" content="Internet Splash" />

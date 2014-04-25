@@ -8,7 +8,7 @@
         function noBack() { window.history.forward(); }
     </script>
 
-    <title>EMS-PSS</title>
+    <title>EMS-PSS - General User Home</title>
 
     <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
     <meta name="author" content="Internet Splash" />
@@ -34,7 +34,7 @@
                 <li><a href="GeneralUserPage.aspx" id="current">Home</a></li>
                 <li><a href="ManageEmployeesPage.aspx">Manage Employees</a></li>
                 <li><a href="ReportsPage.aspx">Reports</a></li>
-                <li><a href="#">Time Card</a></li>
+                <li><a href="TimeCardEntry.aspx">Time Card</a></li>
                 <li class="active nobo"><div class="userInfo" id="userInfo" runat="server"></div></li>
                 </ul>
             </div>

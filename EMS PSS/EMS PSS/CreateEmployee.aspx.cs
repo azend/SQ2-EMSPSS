@@ -11,6 +11,7 @@ namespace EMS_PSS
 {
     public partial class CreateEmployee : System.Web.UI.Page
     {
+        private const string mysqlPass = "admin";
         private string userID;
         private string firstName;
         private string lastName;
@@ -347,7 +348,7 @@ namespace EMS_PSS
             string portNumber = "3306";
             string dataBaseName = "emspss";
             string userName = "root";
-            string password = "admin";
+            string password = mysqlPass;
             
             string ConnectionString =
                 "server=" + ipAddress +
@@ -410,7 +411,7 @@ namespace EMS_PSS
             }
             catch
             {
-                lbMessage.Text = "Insert into employee was not successful!";
+                lbMessage.Text = "Insert into employee was not successful!!";
                 success = false;
             }
             finally
@@ -432,7 +433,7 @@ namespace EMS_PSS
             string portNumber = "3306";
             string dataBaseName = "emspss";
             string userName = "root";
-            string password = "admin";
+            string password = mysqlPass;
             string employID;
             string ConnectionString =
                 "server=" + ipAddress +
@@ -542,7 +543,7 @@ namespace EMS_PSS
             string portNumber = "3306";
             string dataBaseName = "emspss";
             string userName = "root";
-            string password = "admin";
+            string password = mysqlPass;
             string employID;
             string ConnectionString =
                 "server=" + ipAddress +
@@ -651,7 +652,7 @@ namespace EMS_PSS
             string portNumber = "3306";
             string dataBaseName = "emspss";
             string userName = "root";
-            string password = "admin";
+            string password = mysqlPass;
             string employID;
             string dateBuilder = newGuy.SeasonYear;
             string ConnectionString =
