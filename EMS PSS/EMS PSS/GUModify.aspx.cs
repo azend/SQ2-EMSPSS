@@ -173,6 +173,7 @@ namespace EMS_PSS
                 {
                     ddlSeason.SelectedValue = employeeSeason;
                 }
+                ddlEmployeeType.Enabled = false;
                 if (employeeYear != "")
                 {
                     tbYear.Text = employeeYear;

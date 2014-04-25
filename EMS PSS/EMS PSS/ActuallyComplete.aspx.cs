@@ -178,6 +178,7 @@ namespace EMS_PSS
                 {
                     ddlEmployeeType.SelectedValue = "Contract";
                 }
+                ddlEmployeeType.Enabled = false;
                 if (employeeSeason != "")
                 {
                     ddlSeason.SelectedValue = employeeSeason;
