@@ -28,15 +28,6 @@ namespace EMS_PSS
                 "<tr><td>Last Name: </td><td>" + lastName + "</td></tr>" +
                 "<tr><td>User Type: </td><td>" + userType + "</td></tr>" +
                 "</table>";
-
-            if (userType == "GENERAL")
-            {
-                liUserHome.HRef = "GeneralUserPage.aspx";
-            }
-            else if (userType == "ADMIN")
-            {
-                liUserHome.HRef = "AdminPage.aspx";
-            }
         }
     }
 }

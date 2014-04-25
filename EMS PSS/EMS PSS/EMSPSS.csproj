@@ -110,6 +110,7 @@
     <None Include="Properties\PublishProfiles\default.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Login.aspx" />
+    <Content Include="ReportsPage.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
@@ -124,6 +125,13 @@
     <Content Include="_Layout.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ReportsPage.aspx.cs">
+      <DependentUpon>ReportsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportsPage.aspx.designer.cs">
+      <DependentUpon>ReportsPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="SeniorityReport.aspx.cs">
       <DependentUpon>SeniorityReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
