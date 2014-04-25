@@ -22,6 +22,8 @@ namespace EMS_PSS
             lastName = (string)Session["lastName"];
             userType = (string)Session["userType"];
 
+            
+
             userInfo.InnerHtml = "<table>" +
                 "<tr><td>Username: </td><td>" + userID + "</td></tr>" +
                 "<tr><td>First Name: </td><td>" + firstName + "</td></tr>" +

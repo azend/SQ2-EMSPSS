@@ -7,45 +7,54 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EMS_PSS.EmployeeManagement {
+namespace EMS_PSS {
     
     
-    public partial class Default {
+    public partial class _Layout {
         
         /// <summary>
-        /// form1 control.
+        /// Head1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
         
         /// <summary>
-        /// ListView1 control.
+        /// head control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView ListView1;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
         
         /// <summary>
-        /// EmployeeDataSource control.
+        /// content control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource EmployeeDataSource;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder content;
         
         /// <summary>
-        /// FormView1 control.
+        /// liUserHome control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FormView FormView1;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor liUserHome;
+        
+        /// <summary>
+        /// debug control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder debug;
     }
 }

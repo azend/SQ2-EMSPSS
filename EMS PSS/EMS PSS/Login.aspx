@@ -19,7 +19,7 @@
 <body onload="noBack();" onpageshow="if (event.persisted) noBack();" onunload="">
     <div id="main">
         <h1>:: <span>EMS</span>PSS ::</h1>
- 	    <div id="content">
+ 	    <div id="wrapper">
             <form id="form1" runat="server">
                 <div id="loginPage" class="userInfo" runat="server">
 

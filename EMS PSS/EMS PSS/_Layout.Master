@@ -1,0 +1,50 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="_Layout.master.cs" Inherits="EMS_PSS._Layout" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-AU">
+<head id="Head1" runat="server">
+    <script type="text/javascript">
+        window.history.forward();
+        function noBack() { window.history.forward(); }
+    </script>
+
+    <title>EMS-PSS</title>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+    <meta name="author" content="Internet Splash" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" type="text/css" href="assets/screenprint.css" media="screen, print" />
+</head>
+<body onload="noBack();" onpageshow="if (event.persisted) noBack();" onunload="">
+    <div id="main">
+        <h1>:: <span>EMS</span>PSS ::</h1>
+ 	    <div id="wrapper">
+            <asp:ContentPlaceHolder ID="content" runat="server">
+            </asp:ContentPlaceHolder>
+
+            <p class="footer">Copyright 2014 Default Team | <!-- leave that in there --> Design by <a href="http://www.internetsplash.com/">Internet Splash</a></p>
+	    </div>
+        <div id="nav">
+        <h4>:: <span>EMS</span>PSS ::</h4>
+        <div id="navcontainer">
+            <ul id="navlist">
+            <li class="active">Navigation</li>
+            <li><a runat="server" id="liUserHome" href="#">Home</a></li>
+            <li><a runat="server" href="CreateEmployee.aspx">Create Employee</a></li>
+            <li><a runat="server" href="#">Time cards</a></li>
+        
+            <asp:ContentPlaceHolder ID="debug" runat="server">
+            </asp:ContentPlaceHolder>
+        
+            </ul>
+        </div>
+    </div>
+        
+    </div>
+</body>
+</html>
+

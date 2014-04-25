@@ -44,14 +44,7 @@ namespace EMS_PSS
                 "<tr><td>User Type: </td><td>" + userType + "</td></tr>" +
                 "</table>";
 
-            if (userType == "GENERAL")
-            {
-                liUserHome.HRef = "GeneralUserPage.aspx";
-            }
-            else if (userType == "ADMIN")
-            {
-                liUserHome.HRef = "AdminPage.aspx";
-            }
+            
         }
 
         protected void Submit_Click(object sender, EventArgs e)
@@ -193,7 +186,7 @@ namespace EMS_PSS
                     lbFirstName.ForeColor = System.Drawing.Color.Black;
                 }
 
-                if(!newGuy.SetLastName(employeeLastName))
+                if (!newGuy.SetLastName(employeeLastName))
                 {
                     isValid = false;
                     lbLastName.ForeColor = System.Drawing.Color.Red;
@@ -336,7 +329,7 @@ namespace EMS_PSS
                     //tell user employee could not be entered
                 }
             }
-            
+
         }
 
 
@@ -348,7 +341,7 @@ namespace EMS_PSS
             string dataBaseName = "emspss";
             string userName = "root";
             string password = "admin";
-            
+
             string ConnectionString =
                 "server=" + ipAddress +
                 ";port=" + portNumber +
@@ -394,7 +387,7 @@ namespace EMS_PSS
                             success = false;
                             break;
                         }
-                        
+
                         break;
 
                     case System.Data.ConnectionState.Closed:
@@ -460,7 +453,7 @@ namespace EMS_PSS
                                         "employeeType = 'FULLTIME';";
 
                         MySqlCommand command = new MySqlCommand(query, mySqlConnection);
-                        
+
                         using (MySqlDataReader reader = command.ExecuteReader())
                         {
                             while (reader.Read())
@@ -481,7 +474,7 @@ namespace EMS_PSS
                                     break;
                                 }
 
-                                
+
                             }
 
                         }

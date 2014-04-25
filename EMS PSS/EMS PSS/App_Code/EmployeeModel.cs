@@ -11,7 +11,8 @@ namespace EMS_PSS.App_Code
 {
     public class EmployeeModel
     {
-        public void InsertEmployee(Employee employee)
+
+        public void InsertEmployee(string FirstName, string LastName, string SIN, string DateOfBirth, string EmployeeType, string Company)
         {
 
         }

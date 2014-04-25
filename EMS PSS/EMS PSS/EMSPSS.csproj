@@ -48,8 +48,8 @@
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Installer\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+      <HintPath>..\packages\MySql.Data.6.8.3\lib\net45\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -90,6 +90,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdminPage.aspx" />
+    <Content Include="assets\images\bg.gif" />
+    <Content Include="assets\screenprint.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -104,6 +106,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="GeneralUserPage.aspx" />
+    <Content Include="assets\images\Thumbs.db" />
     <None Include="Properties\PublishProfiles\default.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Login.aspx" />
@@ -112,7 +115,8 @@
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Web.config" />
-    <Content Include="_Layout.cshtml" />
+    <Content Include="Web.sitemap" />
+    <Content Include="_Layout.Master" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminPage.aspx.cs">
@@ -152,6 +156,13 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="_Layout.Master.cs">
+      <DependentUpon>_Layout.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_Layout.Master.designer.cs">
+      <DependentUpon>_Layout.Master</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
