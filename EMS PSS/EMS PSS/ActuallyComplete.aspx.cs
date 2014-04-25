@@ -841,6 +841,13 @@ namespace EMS_PSS
                         {
                             command.ExecuteNonQuery();
 
+                            App_Code.Log l = new App_Code.Log();
+                            l.EmployeeId = (int)command.LastInsertedId;
+                            l.Action = "COMPLETED FULLTIME";
+                            l.UserId = (string)Session["userId"];
+
+                            new App_Code.AuditLogModel().InsertAuditLog(l);
+
                             lbMessage.Text = "Insert into full time employee was successful!";
                         }
                         catch
@@ -948,6 +955,13 @@ namespace EMS_PSS
                         try
                         {
                             command.ExecuteNonQuery();
+
+                            App_Code.Log l = new App_Code.Log();
+                            l.EmployeeId = (int)command.LastInsertedId;
+                            l.Action = "COMPLETED PARTTIME";
+                            l.UserId = (string)Session["userId"];
+
+                            new App_Code.AuditLogModel().InsertAuditLog(l);
 
                             lbMessage.Text = "Insert into part time employee was successful!";
                         }
@@ -1058,6 +1072,13 @@ namespace EMS_PSS
                         {
                             command.ExecuteNonQuery();
 
+                            App_Code.Log l = new App_Code.Log();
+                            l.EmployeeId = (int)command.LastInsertedId;
+                            l.Action = "COMPLETED SEASONAL";
+                            l.UserId = (string)Session["userId"];
+
+                            new App_Code.AuditLogModel().InsertAuditLog(l);
+
                             lbMessage.Text = "Insert into seasonal employee was successful!";
                         }
                         catch
@@ -1164,6 +1185,13 @@ namespace EMS_PSS
                         try
                         {
                             command.ExecuteNonQuery();
+
+                            App_Code.Log l = new App_Code.Log();
+                            l.EmployeeId = (int)command.LastInsertedId;
+                            l.Action = "COMPLETED CONTRACT";
+                            l.UserId = (string)Session["userId"];
+
+                            new App_Code.AuditLogModel().InsertAuditLog(l);
 
                             lbMessage.Text = "Insert into seasonal employee was successful!";
                         }

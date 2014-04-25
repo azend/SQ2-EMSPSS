@@ -91,7 +91,11 @@ namespace EMS_PSS
                             }
                         }
                         
+                        App_Code.Log l = new App_Code.Log();
+                        l.Action = "RAN WEEKLY HOURS REPORT";
+                        l.UserId = (string)Session["userId"];
 
+                        new App_Code.AuditLogModel().InsertAuditLog(l);
                         break;
 
                     case System.Data.ConnectionState.Closed:

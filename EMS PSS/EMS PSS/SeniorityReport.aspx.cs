@@ -223,6 +223,13 @@ namespace EMS_PSS
 
                             company = new List<List<string>>();
 
+
+                            App_Code.Log l = new App_Code.Log();
+                            l.Action = "RAN SENIORITY REPORT";
+                            l.UserId = (string)Session["userId"];
+
+                            new App_Code.AuditLogModel().InsertAuditLog(l);
+
                             break;
 
                         case System.Data.ConnectionState.Closed:
