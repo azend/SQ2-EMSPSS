@@ -341,6 +341,70 @@ namespace AllEmployees
         }
 
         /// <summary>
+        /// Method name: SetDateofTermination
+        /// 
+        /// Purpose: Validates the dateOfTermination attribute.  Ensures it can only
+        /// be in the format yyyy-MM-dd .
+        /// 
+        /// Returns: true if valid, false if not
+        /// </summary>
+        /// <param name="toValidate">the string to be parsed</param>
+        /// <returns></returns>
+        public bool SetDateofTermination(string toValidate)
+        {
+            bool returnVal = false;
+            string expectedFormat = "yyyy-MM-dd";
+            bool result = DateTime.TryParseExact(
+                toValidate,
+                expectedFormat,
+                System.Globalization.CultureInfo.InvariantCulture,
+                System.Globalization.DateTimeStyles.None,
+                out dateOfTermination);
+            if (result || toValidate == "")
+            {
+                returnVal = true;
+                ////Logging.Log("FulltimeEmployee.SetDateofTermination", "Date of Termination Set (" + DateofTermination.ToShortDateString() + ") - VALID");
+            }
+            else
+            {
+                ////Logging.Log("FulltimeEmployee.SetDateofTermination", "Date of Termination Set (" + toValidate + ") - INVALID");
+            }
+            return returnVal;
+        }
+
+
+        /// <summary>
+        /// Method name: SetDateofHire
+        /// 
+        /// Purpose: Validates the dateOfHire attribute.  Ensures it can only
+        /// be in the format yyyy-MM-dd .
+        /// </summary>
+        /// <param name="toValidate">The value to be parsed.</param>
+        /// <returns>A bool indicating success or fail.</returns>
+        public bool SetDateofHire(string toValidate)
+        {
+            bool returnVal = false;
+            string expectedFormat = "yyyy-MM-dd";
+            bool result = DateTime.TryParseExact(
+                toValidate,
+                expectedFormat,
+                System.Globalization.CultureInfo.InvariantCulture,
+                System.Globalization.DateTimeStyles.None,
+                out dateOfHire);
+            if (result || toValidate == "")
+            {
+                returnVal = true;
+                ////Logging.Log("FulltimeEmployee.SetDateofHire", "Date of Hire Set (" + DateOfHire.ToShortDateString() + ") - VALID");
+
+            }
+            else
+            {
+                ////Logging.Log("FulltimeEmployee.SetDateofHire", "Date of Hire Set (" + toValidate + ") - INVALID");
+            }
+            return returnVal;
+        }
+
+        /// <summary>
         /// Method name: Details
         /// 
         /// Purpose: Forces children classes to declare this method..

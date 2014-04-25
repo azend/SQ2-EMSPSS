@@ -1,43 +1,43 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CreateUser.aspx.cs" Inherits="EMS_PSS.CreateUser" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/_Layout.Master" AutoEventWireup="true" CodeBehind="CreateUser.aspx.cs" Inherits="EMS_PSS.CreateUser" %>
 
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-AU">
-<head id="Head1" runat="server">
-    <script type="text/javascript">
-        window.history.forward();
-        function noBack() { window.history.forward(); }
-    </script>
-
-    <title>EMS-PSS - Create User</title>
-
-    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
-    <meta name="author" content="Internet Splash" />
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <link rel="stylesheet" type="text/css" href="assets/screenprint.css" media="screen, print" />
-</head>
-<body onload="noBack();" onpageshow="if (event.persisted) noBack();" onunload="">
-    <div id="main">
-        <h1>:: <span>EMS</span>PSS ::</h1>
- 	    <div id="content">
-
-
-            <p class="footer">Copyright 2014 Default Team | <!-- leave that in there --> Design by <a href="http://www.internetsplash.com/">Internet Splash</a></p>
-	    </div>
-        <div id="nav">
-            <h4>:: <span>EMS</span>PSS ::</h4>
-            <div id="navcontainer">
-                <ul id="navlist">
-                <li class="active">Navigation</li>
-                <li><a href="#" runat="server" id="liUserHome">Home</a></li>
-                <li><a href="ManageEmployeesPage.aspx">Manage Employees</a></li>
-                <li><a href="ReportsPage.aspx">Reports</a></li>
-                <li><a href="AuditLog.aspx">Audit Log</a></li>
-                <li><a href="CreateUser.aspx">Create New User</a></li>
-                <li class="active nobo"><div class="userInfo" id="userInfo" runat="server"></div></li>
-                </ul>
-            </div>
+<asp:Content ID="Content" ContentPlaceHolderID="content" runat="server">
+    <form id="searchEmployeeForm" runat="server">
+        <div id="menuView">
+            <blockquote><strong>Create new user</strong></blockquote>
+            <table>
+                <tr>
+                    <td><asp:label id="lbUserID" runat="server">Username:</asp:label></td>
+                    <td><asp:TextBox id="tbUserID" runat="server" /></td>
+                </tr>
+                <tr>
+                    <td><asp:label id="lbUserPass" runat="server">Password:</asp:label></td>
+                    <td><asp:TextBox id="tbUserPass" runat="server" /></td>
+                </tr>
+                <tr>
+                    <td><asp:label id="lbFirstName" runat="server">First Name:</asp:label></td>
+                    <td><asp:TextBox id="tbFirstName" runat="server" /></td>
+                </tr>
+                <tr>
+                    <td><asp:label id="lbLastName" runat="server">Last Name:</asp:label></td>
+                    <td><asp:TextBox id="tbLastName" runat="server" /></td>
+                </tr>
+                <tr>
+                    <td><asp:Label id="lbUserType" runat="server">User Type:</asp:Label></td>
+                    <td><asp:RadioButton id="rbUserTypeGen" Checked="true" text="GENERAL" GroupName="gnUserType" runat="server" /> 
+                        <asp:RadioButton id="rbUserTypeAdmin" text="ADMIN" GroupName="gnUserType" runat="server" /></td>
+                </tr>
+                <tr>
+                    <td><asp:Button id="btnSubmit" runat="server" text="Create" onClick="Submit_Click" /></td>
+                    <td><asp:Button id="btnReset" runat="server" text="Reset" onClick="Reset_Click" /></td>
+                </tr>
+            </table>
+            <div class="clearfix"></div>
+            <asp:label id="lbMessage" runat="server"></asp:label> 
         </div>
-    </div>
-</body>
-</html>
+    </form>
+</asp:Content>
+<asp:Content ID="Debug" ContentPlaceHolderID="debug" runat="server">
+    <li class="active nobo">
+        <div class="userInfo" id="userInfo" runat="server"></div>
+    </li>
+</asp:Content>

@@ -13,15 +13,6 @@ namespace EMS_PSS {
     public partial class ManageEmployeesPage {
         
         /// <summary>
-        /// Head1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
-        
-        /// <summary>
         /// form1 control.
         /// </summary>
         /// <remarks>
@@ -56,15 +47,6 @@ namespace EMS_PSS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnEditEmployee;
-        
-        /// <summary>
-        /// liUserHome control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor liUserHome;
         
         /// <summary>
         /// userInfo control.

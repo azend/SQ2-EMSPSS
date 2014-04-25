@@ -1,49 +1,20 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ManageEmployeesPage.aspx.cs" Inherits="EMS_PSS.ManageEmployeesPage" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/_Layout.Master" AutoEventWireup="true" CodeBehind="ManageEmployeesPage.aspx.cs" Inherits="EMS_PSS.ManageEmployeesPage" %>
 
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-AU">
-<head id="Head1" runat="server">
-    <script type="text/javascript">
-        window.history.forward();
-        function noBack() { window.history.forward(); }
-    </script>
+<asp:Content ID="Content1" ContentPlaceHolderID="content" runat="server">
+    <form id="form1" runat="server">
 
-    <title>EMS-PSS - Employee Management</title>
-
-    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
-    <meta name="author" content="Internet Splash" />
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <link rel="stylesheet" type="text/css" href="assets/screenprint.css" media="screen, print" />
-</head>
-<body onload="noBack();" onpageshow="if (event.persisted) noBack();" onunload="">
-    <div id="main">
-        <h1>:: <span>EMS</span>PSS ::</h1>
- 	    <div id="content">
-            <form id="form1" runat="server">
-
-                <div id="menuView">
-                    <p>Choose one of the options below</p>
-                    <asp:Button ID="btnCreateEmployee" runat="server" Text="Create New Employee" OnClick="btnCreateEmployee_Click" /><br />
-                    <asp:Button ID="btnSearchEmployee" runat="server" Text="Search Employees" OnClick="btnSearchEmployee_Click" /><br />
-                    <asp:Button ID="btnEditEmployee" runat="server" Text="Edit Employee" OnClick="btnEditEmployee_Click" /><br />
-                </div>
-
-                <div class="clearfix"></div>
-            </form>
-
-            <p class="footer">Copyright 2014 Default Team | <!-- leave that in there --> Design by <a href="http://www.internetsplash.com/">Internet Splash</a></p>
-	    </div>
-        <div id="nav">
-            <h4>:: <span>EMS</span>PSS ::</h4>
-            <div id="navcontainer">
-                <ul id="navlist">
-                <li class="active">Navigation</li>
-                <li><a href="#" runat="server" id="liUserHome">Home</a></li>
-                <li class="active nobo"><div class="userInfo" id="userInfo" runat="server"></div></li>
-                </ul>
-            </div>
+        <div id="menuView">
+            <p>Choose one of the options below</p>
+            <asp:Button ID="btnCreateEmployee" runat="server" Text="Create New Employee" OnClick="btnCreateEmployee_Click" /><br />
+            <asp:Button ID="btnSearchEmployee" runat="server" Text="Search Employees" OnClick="btnSearchEmployee_Click" /><br />
+            <asp:Button ID="btnEditEmployee" runat="server" Text="Edit Employee" OnClick="btnEditEmployee_Click" /><br />
         </div>
-    </div>
-</body>
-</html>
+
+        <div class="clearfix"></div>
+    </form>
+</asp:Content>
+<asp:Content ID="Debug" ContentPlaceHolderID="debug" runat="server">
+    <li class="active nobo">
+        <div class="userInfo" id="userInfo" runat="server"></div>
+    </li>
+</asp:Content>

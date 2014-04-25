@@ -10,52 +10,115 @@
 namespace EMS_PSS {
     
     
-    public partial class CreateEmployee {
+    public partial class SearchEmployee {
         
         /// <summary>
-        /// createEmployeeForm control.
+        /// searchEmployeeForm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm createEmployeeForm;
+        protected global::System.Web.UI.HtmlControls.HtmlForm searchEmployeeForm;
         
         /// <summary>
-        /// Div1 control.
+        /// lbSearchLastName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Div1;
+        protected global::System.Web.UI.WebControls.Label lbSearchLastName;
         
         /// <summary>
-        /// baseEmployee control.
+        /// tbSearchLastName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl baseEmployee;
+        protected global::System.Web.UI.WebControls.TextBox tbSearchLastName;
         
         /// <summary>
-        /// lbEmployeeType control.
+        /// btnSubmit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbEmployeeType;
+        protected global::System.Web.UI.WebControls.Button btnSubmit;
         
         /// <summary>
-        /// ddlEmployeeType control.
+        /// btnReset control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlEmployeeType;
+        protected global::System.Web.UI.WebControls.Button btnReset;
+        
+        /// <summary>
+        /// lbErrorMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbErrorMessage;
+        
+        /// <summary>
+        /// results control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl results;
+        
+        /// <summary>
+        /// editID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl editID;
+        
+        /// <summary>
+        /// lbEditID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbEditID;
+        
+        /// <summary>
+        /// tbEditID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbEditID;
+        
+        /// <summary>
+        /// btnEditEmployee control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEditEmployee;
+        
+        /// <summary>
+        /// editEmployee control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl editEmployee;
         
         /// <summary>
         /// lbFirstName control.
@@ -85,13 +148,13 @@ namespace EMS_PSS {
         protected global::System.Web.UI.WebControls.Label lbLastName;
         
         /// <summary>
-        /// tbLastName control.
+        /// TextBox1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbLastName;
+        protected global::System.Web.UI.WebControls.TextBox TextBox1;
         
         /// <summary>
         /// lbCompany control.
@@ -166,130 +229,13 @@ namespace EMS_PSS {
         protected global::System.Web.UI.WebControls.TextBox tbDateOfBirth;
         
         /// <summary>
-        /// btnSubmit control.
+        /// btnSubmitEmployee control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSubmit;
-        
-        /// <summary>
-        /// btnReset control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnReset;
-        
-        /// <summary>
-        /// fullAndPartTimeEmployee control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl fullAndPartTimeEmployee;
-        
-        /// <summary>
-        /// confirm1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label confirm1;
-        
-        /// <summary>
-        /// btnCommit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCommit;
-        
-        /// <summary>
-        /// btnReset2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnReset2;
-        
-        /// <summary>
-        /// seasonalEmployee control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl seasonalEmployee;
-        
-        /// <summary>
-        /// lbSeason control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbSeason;
-        
-        /// <summary>
-        /// ddlSeason control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlSeason;
-        
-        /// <summary>
-        /// lbYear control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbYear;
-        
-        /// <summary>
-        /// tbYear control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbYear;
-        
-        /// <summary>
-        /// confirm2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label confirm2;
-        
-        /// <summary>
-        /// btnCommit2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCommit2;
-        
-        /// <summary>
-        /// btnReset3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnReset3;
+        protected global::System.Web.UI.WebControls.Button btnSubmitEmployee;
         
         /// <summary>
         /// lbMessage control.

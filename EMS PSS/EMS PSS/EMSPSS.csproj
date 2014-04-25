@@ -47,9 +47,9 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\MySql.Data.6.8.3\lib\net45\MySql.Data.dll</HintPath>
+    <Reference Include="MySql.Data, Version=6.3.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Installer\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -99,6 +99,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\style.css" />
     <Content Include="CreateEmployee.aspx" />
+    <Content Include="CreateUser.aspx" />
     <Content Include="EmployeeManagement\Default.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -117,6 +118,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="SearchEmployee.aspx" />
     <Content Include="SeniorityReport.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -136,6 +138,13 @@
     <Compile Include="AuditLog.aspx.designer.cs">
       <DependentUpon>AuditLog.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CreateUser.aspx.cs">
+      <DependentUpon>CreateUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateUser.aspx.designer.cs">
+      <DependentUpon>CreateUser.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ManageEmployeesPage.aspx.cs">
       <DependentUpon>ManageEmployeesPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -149,6 +158,13 @@
     </Compile>
     <Compile Include="ReportsPage.aspx.designer.cs">
       <DependentUpon>ReportsPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchEmployee.aspx.cs">
+      <DependentUpon>SearchEmployee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchEmployee.aspx.designer.cs">
+      <DependentUpon>SearchEmployee.aspx</DependentUpon>
     </Compile>
     <Compile Include="SeniorityReport.aspx.cs">
       <DependentUpon>SeniorityReport.aspx</DependentUpon>

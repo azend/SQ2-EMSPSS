@@ -32,7 +32,9 @@
             <li><asp:HyperLink ID="userHome" runat="server">Home</asp:HyperLink></li>
             <li><a href="ManageEmployeesPage.aspx">Manage Employees</a></li>
             <li><a href="ReportsPage.aspx">Reports</a></li>
-            <li><a href="#">Time Card</a></li>
+            <li><a href="TimeCardEntry.aspx">Time Card</a></li>
+            <li><a href="AuditLog.aspx">(ADMIN)Audit Log</a></li>
+            <li><a href="CreateUser.aspx">(ADMIN)Create User</a></li>
         
             <asp:ContentPlaceHolder ID="debug" runat="server">
             </asp:ContentPlaceHolder>

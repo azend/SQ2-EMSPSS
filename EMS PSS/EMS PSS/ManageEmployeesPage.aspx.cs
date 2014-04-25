@@ -28,15 +28,6 @@ namespace EMS_PSS
                 "<tr><td>Last Name: </td><td>" + lastName + "</td></tr>" +
                 "<tr><td>User Type: </td><td>" + userType + "</td></tr>" +
                 "</table>";
-
-            if (userType == "GENERAL")
-            {
-                liUserHome.HRef = "GeneralUserPage.aspx";
-            }
-            else if (userType == "ADMIN")
-            {
-                liUserHome.HRef = "AdminPage.aspx";
-            }
         }
 
         protected void btnCreateEmployee_Click(object sender, EventArgs e)
@@ -46,7 +37,7 @@ namespace EMS_PSS
 
         protected void btnSearchEmployee_Click(object sender, EventArgs e)
         {
-            //Response.Redirect("SearchEmployee.aspx");
+            Response.Redirect("SearchEmployee.aspx");
         }
 
         protected void btnEditEmployee_Click(object sender, EventArgs e)
