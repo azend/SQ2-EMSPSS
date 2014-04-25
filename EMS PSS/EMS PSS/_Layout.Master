@@ -34,10 +34,11 @@
             <li><asp:HyperLink ID="userHome" runat="server">Home</asp:HyperLink></li>
             <li><a href="ManageEmployeesPage.aspx">Manage Employees</a></li>
             <li><a href="ReportsPage.aspx">Reports</a></li>
-            <li><a href="TimeCardEntry.aspx">Time Card</a></li>
-            <% if (UserType.Equals("ADMIN")) { %>
-            <li><a href="AuditLog.aspx">(ADMIN)Audit Log</a></li>
-            <li><a href="CreateUser.aspx">(ADMIN)Create User</a></li>
+            <% if (UserType.Equals("GENERAL")) { %>
+                <li><a href="TimeCardEntry.aspx">Time Card</a></li>
+            <% } if (UserType.Equals("ADMIN")) { %>
+                <li><a href="AuditLog.aspx">(ADMIN)Audit Log</a></li>
+                <li><a href="CreateUser.aspx">(ADMIN)Create User</a></li>
             <% } %>
             <li><a href="Login.aspx?action=logout">Logout</a></li>
         
