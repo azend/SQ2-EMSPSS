@@ -33,6 +33,10 @@
                             <td><asp:TextBox id="tbSIN" runat="server" /></td>
                         </tr>
                         <tr>
+                            <td class="auto-style1"><asp:label id="lbDateOfHire" runat="server">Date of Hire*:</asp:label></td>
+                            <td class="auto-style1"><asp:TextBox id="tbDateOfHire" runat="server" /></td>
+                        </tr>
+                        <tr>
                             <td class="auto-style1"><asp:label id="lbDateOfBirth" runat="server">Date of Birth*:</asp:label></td>
                             <td class="auto-style1"><asp:TextBox id="tbDateOfBirth" runat="server" /></td>
                         </tr>
@@ -42,14 +46,14 @@
                             <td><asp:Button id="btnReset" runat="server" text="Reset" onClick="Reset_Click" /></td>
                         </tr>
                     </table>
+                    <p>*Date format in YYYY-MM-DD</p>
                 </div>
 
                 <div id="fullAndPartTimeEmployee" visible="false" runat="server">
                     <blockquote><strong>Full/Part time Employee Specifics</strong></blockquote>
                     <table>
                         <tr>
-                            <td><asp:label id="lbDateOfHire" runat="server">Date of Hire*:</asp:label></td>
-                            <td><asp:TextBox id="tbDateOfHire" runat="server" /></td>
+                            <td><asp:label id="confirm1" runat="server">Are you sure you want to submit?</asp:label></td>
                         </tr>
                     
                         <tr>
@@ -77,15 +81,15 @@
                             <td><asp:label id="lbYear" runat="server">Year:</asp:label></td>
                             <td><asp:TextBox id="tbYear" runat="server" /></td>
                         </tr>
-
+                        <tr>
+                            <td><asp:label id="confirm2" runat="server">Are you sure you want to submit?</asp:label></td>
+                        </tr>
                         <tr>
                             <td><asp:Button id="btnCommit2" runat="server" text="Commit" onClick="btnCommit_Click" /></td>
                             <td><asp:Button id="btnReset3" runat="server" text="Reset" onClick="Reset_Click" /></td>
                         </tr>
                     </table>
                 </div>
-
-                <p>*Date format in YYYY-MM-DD</p>
                 <asp:label id="lbMessage" runat="server"></asp:label>  
             </div>
 

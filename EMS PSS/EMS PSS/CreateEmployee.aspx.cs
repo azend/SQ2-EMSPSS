@@ -90,6 +90,7 @@ namespace EMS_PSS
             employeeSIN = tbSIN.Text;
             employeeCompany = tbCompany.Text;
             employeeDateOfBirth = tbDateOfBirth.Text;
+            employeeDateOfHire = tbDateOfHire.Text;
 
             if (employeeType == "Seasonal")
             {
@@ -136,6 +137,16 @@ namespace EMS_PSS
                 else
                 {
                     lbCompany.ForeColor = System.Drawing.Color.Black;
+                }
+
+                if (!newGuy.SetDateofHire(employeeDateOfHire))
+                {
+                    isValid = false;
+                    lbDateOfHire.ForeColor = System.Drawing.Color.Red;
+                }
+                else
+                {
+                    lbDateOfHire.ForeColor = System.Drawing.Color.Black;
                 }
 
                 if (!newGuy.SetDateOfBirth(employeeDateOfBirth))
@@ -294,6 +305,16 @@ namespace EMS_PSS
                 else
                 {
                     lbCompany.ForeColor = System.Drawing.Color.Black;
+                }
+
+                if (!newGuy.SetDateofHire(employeeDateOfHire))
+                {
+                    isValid = false;
+                    lbDateOfHire.ForeColor = System.Drawing.Color.Red;
+                }
+                else
+                {
+                    lbDateOfHire.ForeColor = System.Drawing.Color.Black;
                 }
 
                 if (!newGuy.SetDateOfBirth(employeeDateOfBirth))

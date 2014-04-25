@@ -204,7 +204,7 @@ namespace EMS_PSS
                                     }
                                     else
                                     {
-                                        service = (nowDay - startDay) + " days";
+                                        service = (nowDay - startDay + DateTime.DaysInMonth(nowYear, nowMonth)) + " days";
                                     }
                                 }
 

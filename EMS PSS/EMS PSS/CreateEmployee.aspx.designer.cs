@@ -130,6 +130,24 @@ namespace EMS_PSS {
         protected global::System.Web.UI.WebControls.TextBox tbSIN;
         
         /// <summary>
+        /// lbDateOfHire control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbDateOfHire;
+        
+        /// <summary>
+        /// tbDateOfHire control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbDateOfHire;
+        
+        /// <summary>
         /// lbDateOfBirth control.
         /// </summary>
         /// <remarks>
@@ -175,22 +193,13 @@ namespace EMS_PSS {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl fullAndPartTimeEmployee;
         
         /// <summary>
-        /// lbDateOfHire control.
+        /// confirm1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbDateOfHire;
-        
-        /// <summary>
-        /// tbDateOfHire control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbDateOfHire;
+        protected global::System.Web.UI.WebControls.Label confirm1;
         
         /// <summary>
         /// btnCommit control.
@@ -254,6 +263,15 @@ namespace EMS_PSS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbYear;
+        
+        /// <summary>
+        /// confirm2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label confirm2;
         
         /// <summary>
         /// btnCommit2 control.
