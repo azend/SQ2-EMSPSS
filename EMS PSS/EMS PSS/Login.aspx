@@ -23,8 +23,7 @@
             <form id="form1" runat="server">
                 <div id="loginPage" class="userInfo" runat="server">
 
-                    <h1>EMS-PSS Login Page</h1>
-
+                    <blockquote><strong>EMS-PSS Login</strong></blockquote>
                     <p>Please enter your Username and Password.</p>
 
                     <table>
@@ -61,7 +60,7 @@
                 <li><a href="#">Link</a></li>
                 <li><a href="#">Link</a></li>
                 <li><a href="#">Link</a></li>
-                <li class="active nobo">EMS slogan here...</li>
+                <li class="active nobo">SVCKR - Helping you manage your employee's since 2014</li>
                 </ul>
             </div>
         </div>

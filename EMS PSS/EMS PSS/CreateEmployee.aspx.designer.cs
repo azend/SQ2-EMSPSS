@@ -13,6 +13,15 @@ namespace EMS_PSS {
     public partial class CreateEmployee {
         
         /// <summary>
+        /// Head1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
+        
+        /// <summary>
         /// form1 control.
         /// </summary>
         /// <remarks>
@@ -22,13 +31,13 @@ namespace EMS_PSS {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// userInfo control.
+        /// Div1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl userInfo;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Div1;
         
         /// <summary>
         /// baseEmployee control.
@@ -281,5 +290,14 @@ namespace EMS_PSS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbMessage;
+        
+        /// <summary>
+        /// userInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl userInfo;
     }
 }
