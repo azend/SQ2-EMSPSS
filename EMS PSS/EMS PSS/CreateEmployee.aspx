@@ -65,7 +65,7 @@
                 </div>
 
                 <div id="fullAndPartTimeEmployee" visible="false" runat="server">
-                    <h1>Full/Part time Employee Specifics</h1>
+                    <blockquote><strong>Full/Part time Employee Specifics</strong></blockquote>
                     <table>
                         <tr>
                             <td><asp:label id="lbDateOfHire" runat="server">Date of Hire*:</asp:label></td>
@@ -80,7 +80,7 @@
                 </div>
 
                 <div id="seasonalEmployee" visible="false" runat="server">
-                    <h1>Seasonal Employee Specifics</h1>
+                    <blockquote><strong>Seasonal Employee Specifics</strong></blockquote>
                     <table>
                         <tr>
                             <td><asp:label id="lbSeason" runat="server">Season:</asp:label></td>
@@ -120,7 +120,7 @@
             <div id="navcontainer">
                 <ul id="navlist">
                 <li class="active">Navigation</li>
-                <li><a href="#" id="current">Home</a></li>
+                <li><a href="GeneralUserPage.aspx" id="current">Home</a></li>
                 <li><a href="#">Link</a></li>
                 <li><a href="#">Link</a></li>
                 <li><a href="#">Link</a></li>
