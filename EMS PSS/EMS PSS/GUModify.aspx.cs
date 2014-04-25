@@ -4,18 +4,20 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using MySql.Data.MySqlClient;
 using AllEmployees;
+using MySql.Data.MySqlClient;
+
 
 namespace EMS_PSS
 {
-    public partial class CreateEmployee : System.Web.UI.Page
+    public partial class GUModify : System.Web.UI.Page
     {
-        private const string mysqlPass = "password";
+        private const string mysqlPass = "admin";
         private string userID;
         private string firstName;
         private string lastName;
         private string userType;
+        private string eid;
         private string employeeFirstName;
         private string employeeLastName;
         private string employeeType;
@@ -25,6 +27,7 @@ namespace EMS_PSS
         private string employeeDateOfHire;
         private string employeeSeason;
         private string employeeYear;
+        private string employeeStatus;
 
 
 
@@ -32,12 +35,12 @@ namespace EMS_PSS
         {
             //check session variables to make sure user did not get to this page illegally
 
-            
 
-            userID = (string)Session["userId"];
+            userID = (string)Session["userID"];
             firstName = (string)Session["firstName"];
             lastName = (string)Session["lastName"];
             userType = (string)Session["userType"];
+            eid = Session["eid"].ToString();
 
             userInfo.InnerHtml = "<table>" +
                 "<tr><td>Username: </td><td>" + userID + "</td></tr>" +
@@ -46,7 +49,135 @@ namespace EMS_PSS
                 "<tr><td>User Type: </td><td>" + userType + "</td></tr>" +
                 "</table>";
 
-            
+            if (!IsPostBack)
+            {
+                string ipAddress = "localhost";
+                string portNumber = "3306";
+                string dataBaseName = "emspss";
+                string userName = "root";
+                string password = mysqlPass;
+
+                string ConnectionString =
+                    "server=" + ipAddress +
+                    ";port=" + portNumber +
+                    ";userid=" + userName +
+                    ";password=" + password +
+                    ";database=" + dataBaseName + ";";
+
+                MySql.Data.MySqlClient.MySqlConnection mySqlConnection = new MySql.Data.MySqlClient.MySqlConnection();
+
+                mySqlConnection.ConnectionString = ConnectionString;
+
+                try
+                {
+                    mySqlConnection.Open();
+
+                    switch (mySqlConnection.State)
+                    {
+                        case System.Data.ConnectionState.Open:
+
+                            string query = "SELECT hiringCompanyName, employFirstName, employLastName, employSIN, employeeType, dateOfHire, dateOfBirth, employeeStatus FROM Employee WHERE eId = " + eid + ";";
+                            MySqlCommand command = new MySqlCommand(query, mySqlConnection);
+                            // Connection has been made
+                            using (MySqlDataReader reader = command.ExecuteReader())
+                            {
+                                while (reader.Read())
+                                {
+                                    try
+                                    {
+                                        employeeCompany = reader[0].ToString();
+                                        employeeFirstName = reader[1].ToString();
+                                        employeeLastName = reader[2].ToString();
+                                        employeeSIN = reader[3].ToString();
+                                        employeeType = reader[4].ToString();
+                                        employeeDateOfHire = ((DateTime)reader[5]).ToString("yyyy-MM-dd");
+                                        employeeDateOfBirth = ((DateTime)reader[6]).ToString("yyyy-MM-dd");
+                                        employeeStatus = reader[7].ToString();
+                                    }
+                                    catch
+                                    {
+                                    }
+                                }
+                            }
+
+                            if (employeeType == "SEASONAL")
+                            {
+                                string secondQuery = "SELECT season FROM seasonalEmployee WHERE eId = " + eid + ";";
+                                MySqlCommand secondCommand = new MySqlCommand(secondQuery, mySqlConnection);
+                                // Connection has been made
+                                using (MySqlDataReader reader = secondCommand.ExecuteReader())
+                                {
+                                    while (reader.Read())
+                                    {
+                                        try
+                                        {
+                                            employeeSeason = reader[0].ToString();
+                                        }
+                                        catch
+                                        {
+                                        }
+                                    }
+                                }
+                            }
+
+                            string[] season = employeeSeason.Split(' ');
+                            employeeSeason = season[0];
+                            employeeYear = season[1];
+
+
+                            break;
+
+                        case System.Data.ConnectionState.Closed:
+                            lbMessage.Text = "Connection could not be made to the database.";
+                            // Connection could not be made
+
+                            break;
+
+                        default:
+                            // Connection is actively doing something
+                            break;
+
+                    }
+                }
+                catch
+                {
+                }
+                finally
+                {
+                    if (mySqlConnection.State != System.Data.ConnectionState.Closed)
+                    {
+                        // Close the connection as a good Garbage Collecting practice
+                        mySqlConnection.Close();
+                    }
+                }
+
+                tbFirstName.Text = employeeFirstName;
+                tbLastName.Text = employeeLastName;
+                tbCompany.Text = employeeCompany;
+                tbSIN.Text = employeeSIN;
+                tbDateOfHire.Text = employeeDateOfHire;
+                tbDateOfBirth.Text = employeeDateOfBirth;
+                if (employeeType == "FULLTIME")
+                {
+                    ddlEmployeeType.SelectedValue = "Full-time";
+                }
+                else if (employeeType == "PARTTIME")
+                {
+                    ddlEmployeeType.SelectedValue = "Part-time";
+                }
+                else if (employeeType == "SEASONAL")
+                {
+                    ddlEmployeeType.SelectedValue = "Seasonal";
+                }
+                if (employeeSeason != "")
+                {
+                    ddlSeason.SelectedValue = employeeSeason;
+                }
+                if (employeeYear != "")
+                {
+                    tbYear.Text = employeeYear;
+                }
+            }
         }
 
         protected void Submit_Click(object sender, EventArgs e)
@@ -174,9 +305,9 @@ namespace EMS_PSS
                 {
                     //enter employee into database as a general user
                     //MUST ALSO CHECK that the SIN/name/date of birth fields are unique together
-                    if (InsertIntoEmployee(newGuy, "SEASONAL"))
+                    if (UpdateEmployee(newGuy, "SEASONAL"))
                     {
-                        InsertIntoSeasonalEmployee(newGuy);
+                        UpdateSeasonalEmployee(newGuy);
                     }
                 }
                 else
@@ -253,10 +384,7 @@ namespace EMS_PSS
                 {
                     //enter employee into database as a general user
                     //MUST ALSO CHECK that the SIN/name/date of birth fields are unique together
-                    if (InsertIntoEmployee(newGuy, "FULLTIME"))
-                    {
-                        InsertIntoFullTimeEmployee(newGuy);
-                    }
+                    UpdateEmployee(newGuy, "FULLTIME");
                 }
                 else
                 {
@@ -342,10 +470,7 @@ namespace EMS_PSS
                 {
                     //enter employee into database as a general user
                     //MUST ALSO CHECK that the SIN/name/date of birth fields are unique together
-                    if (InsertIntoEmployee(newGuy, "PARTTIME"))
-                    {
-                        InsertIntoPartTimeEmployee(newGuy);
-                    }
+                    UpdateEmployee(newGuy, "PARTTIME");
                 }
                 else
                 {
@@ -356,14 +481,14 @@ namespace EMS_PSS
         }
 
 
-        protected bool InsertIntoEmployee(Employee newGuy, string employeeType)
+        protected bool UpdateEmployee(Employee newGuy, string employeeType)
         {
             bool success = true;
             string ipAddress = "localhost";
             string portNumber = "3306";
             string dataBaseName = "emspss";
-            string userName = "emspss";
-            string password = "Fattymilk123";
+            string userName = "root";
+            string password = "admin";
 
             string ConnectionString =
                 "server=" + ipAddress +
@@ -384,18 +509,13 @@ namespace EMS_PSS
                 {
                     case System.Data.ConnectionState.Open:
 
-                        string query = "INSERT INTO Employee " +
-                            "(hiringCompanyName, employFirstName, employLastName, employSIN, employeeStatus, employeeType, dateOfHire, dateOfTerm, dateOfBirth) " +
-                            "VALUES (" +
-                            "'" + newGuy.Company + "', " +
-                            "'" + newGuy.FirstName + "', " +
-                            "'" + newGuy.LastName + "', " +
-                            "'" + newGuy.Sin + "', " +
-                            "'INCOMPLETE', " +
-                            "'" + employeeType + "', " +
-                            "'" + newGuy.DateOfHire.ToString("yyyy-MM-dd") + "', " +
-                            "'" + newGuy.DateofTermination.ToString("yyyy-MM-dd") + "', " +
-                            "'" + newGuy.DateOfBirth.ToString("yyyy-MM-dd") + "');";
+                        string query = "UPDATE Employee SET hiringCompanyName = '" + newGuy.Company + "', employFirstName = '" + newGuy.FirstName +
+                            "', employLastName = '" + newGuy.LastName + "', employSIN = '" + newGuy.Sin + 
+                            "', employeeStatus = '" + employeeStatus + "', employeeType = '" + employeeType + 
+                            "', dateOfHire = '" + newGuy.DateOfHire.ToString("yyyy-MM-dd") + 
+                            "', dateOfTerm = '" + newGuy.DateofTermination.ToString("yyyy-MM-dd") + 
+                            "', dateOfBirth = '" + newGuy.DateOfBirth.ToString("yyyy-MM-dd") + 
+                            "' WHERE eId = " + eid + ";";
                         MySqlCommand command = new MySqlCommand(query, mySqlConnection);
                         // Connection has been made
 
@@ -403,19 +523,12 @@ namespace EMS_PSS
                         {
                             command.ExecuteNonQuery();
 
-                            App_Code.Log l = new App_Code.Log();
-                            l.EmployeeId = (int)command.LastInsertedId;
-                            l.Action = "CREATE";
-                            l.UserId = (string)Session["userId"];
-
-                            new App_Code.AuditLogModel().InsertAuditLog(l);
-
-                            lbMessage.Text = "Insert into employee was successful!";
+                            lbMessage.Text = "Update on employee was successful!";
                         }
                         catch
                         {
                             //insert did not work
-                            lbMessage.Text = "Insert into employee was not successful!";
+                            lbMessage.Text = "Update on employee was not successful!";
                             success = false;
                             break;
                         }
@@ -435,114 +548,7 @@ namespace EMS_PSS
             }
             catch
             {
-                lbMessage.Text = "Insert into employee was not successful!!";
-                success = false;
-            }
-            finally
-            {
-                if (mySqlConnection.State != System.Data.ConnectionState.Closed)
-                {
-                    // Close the connection as a good Garbage Collecting practice
-                    mySqlConnection.Close();
-                }
-            }
-
-            return success;
-        }
-
-        public bool InsertIntoFullTimeEmployee(FulltimeEmployee newGuy)
-        {
-            bool success = true;
-            string ipAddress = "localhost";
-            string portNumber = "3306";
-            string dataBaseName = "emspss";
-            string userName = "root";
-            string password = mysqlPass;
-            string employID;
-            string ConnectionString =
-                "server=" + ipAddress +
-                ";port=" + portNumber +
-                ";userid=" + userName +
-                ";password=" + password +
-                ";database=" + dataBaseName + ";";
-
-            MySql.Data.MySqlClient.MySqlConnection mySqlConnection = new MySql.Data.MySqlClient.MySqlConnection();
-
-            mySqlConnection.ConnectionString = ConnectionString;
-
-            try
-            {
-                mySqlConnection.Open();
-
-                switch (mySqlConnection.State)
-                {
-                    case System.Data.ConnectionState.Open:
-
-                        string query = "SELECT eID FROM Employee WHERE " +
-                                        "employFirstName = '" + newGuy.FirstName + "' AND " +
-                                        "employLastName = '" + newGuy.LastName + "' AND " +
-                                        "employSIN = '" + newGuy.Sin + "' AND " +
-                                        "employeeType = 'FULLTIME';";
-
-                        MySqlCommand command = new MySqlCommand(query, mySqlConnection);
-
-                        using (MySqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                try
-                                {
-                                    employID = reader.GetString(0);
-
-                                    query = "INSERT INTO FullTimeEmployee (EId) VALUES (" +
-                                        employID + ");";
-                                }
-                                catch
-                                {
-                                    lbMessage.Text = "Insert into full time employee was not successful!";
-                                    success = false;
-
-                                    break;
-                                }
-
-
-                            }
-
-                        }
-
-                        command.CommandText = query;
-
-                        try
-                        {
-                            command.ExecuteNonQuery();
-
-                            lbMessage.Text = "Insert into full time employee was successful!";
-                        }
-                        catch
-                        {
-                            //insert did not work
-                            lbMessage.Text = "Insert into full time employee was not successful!";
-                            success = false;
-                            break;
-                        }
-
-                        break;
-
-                    case System.Data.ConnectionState.Closed:
-                        // Connection could not be made
-                        lbMessage.Text = "Insert into full time employee was not successful!";
-                        success = false;
-                        break;
-
-                    default:
-                        // Connection is actively doing something
-                        break;
-                }
-
-            }
-            catch
-            {
-                lbMessage.Text = "Insert into full time employee was not successful!";
+                lbMessage.Text = "Update on employee was not successful!!";
                 success = false;
             }
             finally
@@ -558,8 +564,7 @@ namespace EMS_PSS
         }
 
 
-
-        public bool InsertIntoPartTimeEmployee(ParttimeEmployee newGuy)
+        public bool UpdateSeasonalEmployee(SeasonalEmployee newGuy)
         {
             bool success = true;
             string ipAddress = "localhost";
@@ -567,115 +572,6 @@ namespace EMS_PSS
             string dataBaseName = "emspss";
             string userName = "root";
             string password = mysqlPass;
-            string employID;
-            string ConnectionString =
-                "server=" + ipAddress +
-                ";port=" + portNumber +
-                ";userid=" + userName +
-                ";password=" + password +
-                ";database=" + dataBaseName + ";";
-
-            MySql.Data.MySqlClient.MySqlConnection mySqlConnection = new MySql.Data.MySqlClient.MySqlConnection();
-
-            mySqlConnection.ConnectionString = ConnectionString;
-
-            try
-            {
-                mySqlConnection.Open();
-
-                switch (mySqlConnection.State)
-                {
-                    case System.Data.ConnectionState.Open:
-
-                        string query = "SELECT eID FROM Employee WHERE " +
-                                        "employFirstName = '" + newGuy.FirstName + "' AND " +
-                                        "employLastName = '" + newGuy.LastName + "' AND " +
-                                        "employSIN = '" + newGuy.Sin + "' AND " +
-                                        "employeeType = 'PARTTIME';";
-
-                        MySqlCommand command = new MySqlCommand(query, mySqlConnection);
-
-                        using (MySqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                try
-                                {
-                                    employID = reader.GetString(0);
-
-                                    query = "INSERT INTO PartTimeEmployee (EId) VALUES (" +
-                                        employID + ");";
-                                }
-                                catch
-                                {
-                                    lbMessage.Text = "Insert into part time employee was not successful!";
-                                    success = false;
-
-                                    break;
-                                }
-
-
-                            }
-
-                        }
-
-                        command.CommandText = query;
-
-                        try
-                        {
-                            command.ExecuteNonQuery();
-
-                            lbMessage.Text = "Insert into part time employee was successful!";
-                        }
-                        catch
-                        {
-                            //insert did not work
-                            lbMessage.Text = "Insert into part time employee was not successful!";
-                            success = false;
-                            break;
-                        }
-
-                        break;
-
-                    case System.Data.ConnectionState.Closed:
-                        // Connection could not be made
-                        lbMessage.Text = "Insert into part time employee was not successful!";
-                        success = false;
-                        break;
-
-                    default:
-                        // Connection is actively doing something
-                        break;
-                }
-
-            }
-            catch
-            {
-                lbMessage.Text = "Insert into part time employee was not successful!";
-                success = false;
-            }
-            finally
-            {
-                if (mySqlConnection.State != System.Data.ConnectionState.Closed)
-                {
-                    // Close the connection as a good Garbage Collecting practice
-                    mySqlConnection.Close();
-                }
-            }
-
-            return success;
-        }
-
-
-        public bool InsertIntoSeasonalEmployee(SeasonalEmployee newGuy)
-        {
-            bool success = true;
-            string ipAddress = "localhost";
-            string portNumber = "3306";
-            string dataBaseName = "emspss";
-            string userName = "root";
-            string password = mysqlPass;
-            string employID;
             string dateBuilder = newGuy.SeasonYear;
             string ConnectionString =
                 "server=" + ipAddress +
@@ -696,39 +592,10 @@ namespace EMS_PSS
                 {
                     case System.Data.ConnectionState.Open:
 
-                        string query = "SELECT eID FROM Employee WHERE " +
-                                        "employFirstName = '" + newGuy.FirstName + "' AND " +
-                                        "employLastName = '" + newGuy.LastName + "' AND " +
-                                        "employSIN = '" + newGuy.Sin + "' AND " +
-                                        "employeeType = 'SEASONAL';";
+                        string query = "UPDATE SeasonalEmployee SET season = '" + newGuy.SeasonYear + "' WHERE eId = " + eid + ";"; 
 
 
                         MySqlCommand command = new MySqlCommand(query, mySqlConnection);
-
-                        using (MySqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                try
-                                {
-                                    employID = reader.GetString(0);
-
-                                    query = "INSERT INTO SeasonalEmployee (EId, season) VALUES (" +
-                                        employID + ", '" +
-                                        dateBuilder + "');";
-                                }
-                                catch
-                                {
-                                    lbMessage.Text = "Insert into seasonal employee was not successful!";
-                                    success = false;
-
-                                    break;
-                                }
-
-
-                            }
-
-                        }
 
                         command.CommandText = query;
 
@@ -736,12 +603,12 @@ namespace EMS_PSS
                         {
                             command.ExecuteNonQuery();
 
-                            lbMessage.Text = "Insert into seasonal employee was successful!";
+                            lbMessage.Text = "Update on seasonal employee was successful!";
                         }
                         catch
                         {
                             //insert did not work
-                            lbMessage.Text = "Insert into seasonal employee was not successful!";
+                            lbMessage.Text = "Update on seasonal employee was not successful!";
                             success = false;
                             break;
                         }
@@ -750,7 +617,7 @@ namespace EMS_PSS
 
                     case System.Data.ConnectionState.Closed:
                         // Connection could not be made
-                        lbMessage.Text = "Insert into seasonal employee was not successful!";
+                        lbMessage.Text = "Update on seasonal employee was not successful!";
                         success = false;
                         break;
 
@@ -762,7 +629,7 @@ namespace EMS_PSS
             }
             catch
             {
-                lbMessage.Text = "Insert into seasonal employee was not successful!";
+                lbMessage.Text = "Update on seasonal employee was not successful!";
                 success = false;
             }
             finally
@@ -776,5 +643,6 @@ namespace EMS_PSS
 
             return success;
         }
+        
     }
 }

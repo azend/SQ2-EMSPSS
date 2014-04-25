@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EMS_PSS.EmployeeManagement {
+namespace EMS_PSS {
     
     
-    public partial class Default {
+    public partial class SeniorityReport {
         
         /// <summary>
         /// form1 control.
@@ -22,30 +22,39 @@ namespace EMS_PSS.EmployeeManagement {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// ListView1 control.
+        /// userInfo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView ListView1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl userInfo;
         
         /// <summary>
-        /// EmployeeDataSource control.
+        /// report control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource EmployeeDataSource;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl report;
         
         /// <summary>
-        /// FormView1 control.
+        /// lbErrorMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FormView FormView1;
+        protected global::System.Web.UI.WebControls.Label lbErrorMessage;
+        
+        /// <summary>
+        /// Div1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Div1;
     }
 }

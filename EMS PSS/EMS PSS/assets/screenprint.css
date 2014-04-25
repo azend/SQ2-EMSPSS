@@ -32,7 +32,7 @@ body {
 	z-index:3;
 	}
 	
-	#content {
+	#wrapper {
 	margin-left: 23em;
 	padding-left:2em; 
 	padding-right: 2em;
@@ -46,10 +46,10 @@ body {
 	line-height: 1.3em;
 	background: #898989;
 	margin-bottom: 3em;
-border-top: 0.03em solid #000;
-border-right: 0.03em solid #000;
-border-bottom: 0.03em solid #ccc;
-border-left: 0.03em solid #ccc;
+    border-top: 0.03em solid #000;
+    border-right: 0.03em solid #000;
+    border-bottom: 0.03em solid #ccc;
+    border-left: 0.03em solid #ccc;
 	}
 	
 	#nav {
@@ -153,7 +153,7 @@ padding-top:2em;
 padding-bottom:2em;
 }
 
-#content a {
+#wrapper a {
 color: #ffffff;
 background: #669900;
 text-decoration: none;
@@ -161,7 +161,7 @@ border:0.03em solid #669900;
 padding: 0 0.1em;
 font-weight: bold;
 }
-#content a:hover {
+#wrapper a:hover {
 color: #669900;
 background: #ffffff;
 text-decoration: none;

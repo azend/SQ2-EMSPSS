@@ -10,7 +10,7 @@
 namespace EMS_PSS {
     
     
-    public partial class CreateUser {
+    public partial class SearchEmployee {
         
         /// <summary>
         /// searchEmployeeForm control.
@@ -22,103 +22,22 @@ namespace EMS_PSS {
         protected global::System.Web.UI.HtmlControls.HtmlForm searchEmployeeForm;
         
         /// <summary>
-        /// lbUserID control.
+        /// lbSearchLastName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbUserID;
+        protected global::System.Web.UI.WebControls.Label lbSearchLastName;
         
         /// <summary>
-        /// tbUserID control.
+        /// tbSearchLastName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbUserID;
-        
-        /// <summary>
-        /// lbUserPass control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbUserPass;
-        
-        /// <summary>
-        /// tbUserPass control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbUserPass;
-        
-        /// <summary>
-        /// lbFirstName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbFirstName;
-        
-        /// <summary>
-        /// tbFirstName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbFirstName;
-        
-        /// <summary>
-        /// lbLastName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbLastName;
-        
-        /// <summary>
-        /// tbLastName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbLastName;
-        
-        /// <summary>
-        /// lbUserType control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbUserType;
-        
-        /// <summary>
-        /// rbUserTypeGen control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rbUserTypeGen;
-        
-        /// <summary>
-        /// rbUserTypeAdmin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rbUserTypeAdmin;
+        protected global::System.Web.UI.WebControls.TextBox tbSearchLastName;
         
         /// <summary>
         /// btnSubmit control.
@@ -137,6 +56,60 @@ namespace EMS_PSS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnReset;
+        
+        /// <summary>
+        /// lbErrorMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbErrorMessage;
+        
+        /// <summary>
+        /// results control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl results;
+        
+        /// <summary>
+        /// editID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl editID;
+        
+        /// <summary>
+        /// lbEditID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbEditID;
+        
+        /// <summary>
+        /// tbEditID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbEditID;
+        
+        /// <summary>
+        /// btnEditEmployee control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEditEmployee;
         
         /// <summary>
         /// lbMessage control.

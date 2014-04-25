@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/_Layout.Master" AutoEventWireup="true" CodeBehind="CreateEmployee.aspx.cs" Inherits="EMS_PSS.CreateEmployee" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/_Layout.Master" AutoEventWireup="true" CodeBehind="GUModify.aspx.cs" Inherits="EMS_PSS.GUModify" %>
 <asp:Content ID="Content" ContentPlaceHolderID="content" runat="server">
     <form id="createEmployeeForm" runat="server">
 

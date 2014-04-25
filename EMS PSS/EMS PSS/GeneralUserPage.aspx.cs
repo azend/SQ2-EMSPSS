@@ -22,6 +22,8 @@ namespace EMS_PSS
             lastName = (string)Session["lastName"];
             userType = (string)Session["userType"];
 
+            
+
             userInfo.InnerHtml = "<table>" +
                 "<tr><td>Username: </td><td>" + userID + "</td></tr>" +
                 "<tr><td>First Name: </td><td>" + firstName + "</td></tr>" +
@@ -33,6 +35,11 @@ namespace EMS_PSS
         protected void btnCreateEmployee_Click(object sender, EventArgs e)
         {
             Response.Redirect("CreateEmployee.aspx");
+        }
+
+        protected void btnSeniorityReport_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("SeniorityReport.aspx");
         }
     }
 }

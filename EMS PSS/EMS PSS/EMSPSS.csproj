@@ -47,7 +47,7 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+    <Reference Include="MySql.Data, Version=6.3.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Installer\MySql.Data.dll</HintPath>
     </Reference>
@@ -90,6 +90,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdminPage.aspx" />
+    <Content Include="assets\images\bg.gif" />
+    <Content Include="assets\screenprint.css" />
     <Content Include="AuditLog.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -106,8 +108,10 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="GeneralUserPage.aspx" />
+    <Content Include="assets\images\Thumbs.db" />
     <None Include="Properties\PublishProfiles\default.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="GUModify.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="ManageEmployeesPage.aspx" />
     <Content Include="ReportsPage.aspx" />
@@ -115,10 +119,70 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="SearchEmployee.aspx" />
+    <Content Include="SeniorityReport.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="TimeCardEntry.aspx" />
     <Content Include="Web.config" />
-    <Content Include="_Layout.cshtml" />
+    <Content Include="Web.sitemap" />
+    <Content Include="_Layout.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Code\AuditLogModel.cs" />
+    <Compile Include="App_Code\Log.cs" />
+    <Compile Include="AuditLog.aspx.cs">
+      <DependentUpon>AuditLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AuditLog.aspx.designer.cs">
+      <DependentUpon>AuditLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateUser.aspx.cs">
+      <DependentUpon>CreateUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateUser.aspx.designer.cs">
+      <DependentUpon>CreateUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUModify.aspx.cs">
+      <DependentUpon>GUModify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUModify.aspx.designer.cs">
+      <DependentUpon>GUModify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageEmployeesPage.aspx.cs">
+      <DependentUpon>ManageEmployeesPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageEmployeesPage.aspx.designer.cs">
+      <DependentUpon>ManageEmployeesPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportsPage.aspx.cs">
+      <DependentUpon>ReportsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportsPage.aspx.designer.cs">
+      <DependentUpon>ReportsPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchEmployee.aspx.cs">
+      <DependentUpon>SearchEmployee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchEmployee.aspx.designer.cs">
+      <DependentUpon>SearchEmployee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SeniorityReport.aspx.cs">
+      <DependentUpon>SeniorityReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SeniorityReport.aspx.designer.cs">
+      <DependentUpon>SeniorityReport.aspx</DependentUpon>
+    </Compile>
+    <Content Include="App_Code\Employee.cs" />
+    <Content Include="App_Code\EmployeeModel.cs" />
     <Compile Include="AdminPage.aspx.cs">
       <DependentUpon>AdminPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -127,26 +191,12 @@
       <DependentUpon>AdminPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Code\EmployeeModel.cs" />
-    <Compile Include="AuditLog.aspx.cs">
-      <DependentUpon>AuditLog.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AuditLog.aspx.designer.cs">
-      <DependentUpon>AuditLog.aspx</DependentUpon>
-    </Compile>
     <Compile Include="CreateEmployee.aspx.cs">
       <DependentUpon>CreateEmployee.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="CreateEmployee.aspx.designer.cs">
       <DependentUpon>CreateEmployee.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="CreateUser.aspx.cs">
-      <DependentUpon>CreateUser.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CreateUser.aspx.designer.cs">
-      <DependentUpon>CreateUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="EmployeeManagement\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -169,20 +219,20 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ManageEmployeesPage.aspx.cs">
-      <DependentUpon>ManageEmployeesPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ManageEmployeesPage.aspx.designer.cs">
-      <DependentUpon>ManageEmployeesPage.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReportsPage.aspx.cs">
-      <DependentUpon>ReportsPage.aspx</DependentUpon>
+    <Compile Include="_Layout.Master.cs">
+      <DependentUpon>_Layout.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ReportsPage.aspx.designer.cs">
-      <DependentUpon>ReportsPage.aspx</DependentUpon>
+    <Compile Include="_Layout.Master.designer.cs">
+      <DependentUpon>_Layout.Master</DependentUpon>
+    </Compile>
+    <Compile Include="TimeCardEntry.aspx.cs">
+      <DependentUpon>TimeCardEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TimeCardEntry.aspx.designer.cs">
+      <DependentUpon>TimeCardEntry.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

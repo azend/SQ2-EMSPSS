@@ -18,5 +18,10 @@ namespace EMS_PSS.EmployeeManagement
         {
 
         }
+
+        protected void EmployeeDataSource_Inserting(object sender, ObjectDataSourceMethodEventArgs e)
+        {
+            Console.WriteLine(e.ToString());
+        }
     }
 }

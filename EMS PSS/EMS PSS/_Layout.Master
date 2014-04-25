@@ -1,0 +1,54 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="_Layout.master.cs" Inherits="EMS_PSS._Layout" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-AU">
+<head id="Head1" runat="server">
+
+    <title>EMS-PSS</title>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+    <meta name="author" content="Internet Splash" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" type="text/css" href="assets/screenprint.css" media="screen, print" />
+</head>
+<body>
+    <div id="main">
+        <h1>:: <span>EMS</span>PSS ::</h1>
+ 	    <div id="wrapper">
+            <asp:ContentPlaceHolder ID="content" runat="server">
+            </asp:ContentPlaceHolder>
+
+            <p class="footer">Copyright 2014 Default Team | <!-- leave that in there --> Design by <a href="http://www.internetsplash.com/">Internet Splash</a></p>
+	    </div>
+        
+        <div id="nav">
+        <h4>:: <span>EMS</span>PSS ::</h4>
+        <div id="navcontainer">
+            <ul id="navlist">
+            <% if (IsLoggedIn) { %>
+            <li class="active">Navigation</li>
+            <li><asp:HyperLink ID="userHome" runat="server">Home</asp:HyperLink></li>
+            <li><a href="ManageEmployeesPage.aspx">Manage Employees</a></li>
+            <li><a href="ReportsPage.aspx">Reports</a></li>
+            <li><a href="TimeCardEntry.aspx">Time Card</a></li>
+            <% if (UserType.Equals("ADMIN")) { %>
+            <li><a href="AuditLog.aspx">(ADMIN)Audit Log</a></li>
+            <li><a href="CreateUser.aspx">(ADMIN)Create User</a></li>
+            <% } %>
+        
+            <asp:ContentPlaceHolder ID="debug" runat="server">
+            </asp:ContentPlaceHolder>
+            <% } %>
+            </ul>
+        </div>
+    </div>
+        
+        
+    </div>
+</body>
+</html>
+

@@ -10,7 +10,7 @@
 namespace EMS_PSS {
     
     
-    public partial class CreateEmployee {
+    public partial class GUModify {
         
         /// <summary>
         /// createEmployeeForm control.
