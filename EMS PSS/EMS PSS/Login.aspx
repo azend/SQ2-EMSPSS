@@ -5,6 +5,9 @@
         <div id="loginPage" class="userInfo" runat="server">
 
             <blockquote><strong>EMS-PSS Login</strong></blockquote>
+            <asp:Label ID="lblLogout" runat="server" Text="Label" Visible="False">
+                <b>You've successfully logged out.</b>
+            </asp:Label>
             <p>Please enter your Username and Password.</p>
 
             <table>

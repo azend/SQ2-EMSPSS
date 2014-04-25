@@ -39,6 +39,7 @@
             <li><a href="AuditLog.aspx">(ADMIN)Audit Log</a></li>
             <li><a href="CreateUser.aspx">(ADMIN)Create User</a></li>
             <% } %>
+            <li><a href="Login.aspx?action=logout">Logout</a></li>
         
             <asp:ContentPlaceHolder ID="debug" runat="server">
             </asp:ContentPlaceHolder>
