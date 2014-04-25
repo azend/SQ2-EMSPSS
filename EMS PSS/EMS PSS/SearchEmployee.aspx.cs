@@ -11,7 +11,7 @@ namespace EMS_PSS
 {
     public partial class SearchEmployee : System.Web.UI.Page
     {
-        private const string mysqlPass = "admin";
+        private const string mysqlPass = "Fattymilk123";
         private string userID;
         private string firstName;
         private string lastName;
@@ -39,7 +39,7 @@ namespace EMS_PSS
             string ipAddress = "localhost";
             string portNumber = "3306";
             string dataBaseName = "emspss";
-            string userName = "root";
+            string userName = "emspss";
             string password = mysqlPass;
             string empLastName = tbSearchLastName.Text;
 

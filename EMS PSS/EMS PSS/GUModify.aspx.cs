@@ -12,7 +12,7 @@ namespace EMS_PSS
 {
     public partial class GUModify : System.Web.UI.Page
     {
-        private const string mysqlPass = "admin";
+        private const string mysqlPass = "Fattymilk123";
         private string userID;
         private string firstName;
         private string lastName;
@@ -54,7 +54,7 @@ namespace EMS_PSS
                 string ipAddress = "localhost";
                 string portNumber = "3306";
                 string dataBaseName = "emspss";
-                string userName = "root";
+                string userName = "emspss";
                 string password = mysqlPass;
 
                 string ConnectionString =
@@ -488,8 +488,8 @@ namespace EMS_PSS
             string ipAddress = "localhost";
             string portNumber = "3306";
             string dataBaseName = "emspss";
-            string userName = "root";
-            string password = "admin";
+            string userName = "emspss";
+            string password = "Fattymilk123";
 
             string ConnectionString =
                 "server=" + ipAddress +
@@ -571,7 +571,7 @@ namespace EMS_PSS
             string ipAddress = "localhost";
             string portNumber = "3306";
             string dataBaseName = "emspss";
-            string userName = "root";
+            string userName = "emspss";
             string password = mysqlPass;
             string dateBuilder = newGuy.SeasonYear;
             string ConnectionString =

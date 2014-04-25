@@ -11,7 +11,7 @@ namespace EMS_PSS
 {
     public partial class TimeCardEntry : System.Web.UI.Page
     {
-        private string mySqlPass = "admin";
+        private string mySqlPass = "Fattymilk123";
         private string userID;
         private string firstName;
         private string lastName;
@@ -56,7 +56,7 @@ namespace EMS_PSS
             string ipAddress = "localhost";
             string portNumber = "3306";
             string dataBaseName = "emspss";
-            string userName = "root";
+            string userName = "emspss";
             string password = mySqlPass;
             bool success = false;
             string ConnectionString =
@@ -156,7 +156,7 @@ namespace EMS_PSS
             string ipAddress = "localhost";
             string portNumber = "3306";
             string dataBaseName = "emspss";
-            string userName = "root";
+            string userName = "emspss";
             string password = mySqlPass;
 
             string ConnectionString =
@@ -266,7 +266,7 @@ namespace EMS_PSS
                     string ipAddress = "localhost";
                     string portNumber = "3306";
                     string dataBaseName = "emspss";
-                    string userName = "root";
+                    string userName = "emspss";
                     string password = mySqlPass;
 
                     string ConnectionString =
