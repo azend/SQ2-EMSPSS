@@ -43,5 +43,15 @@ namespace EMS_PSS
         {
             Response.Redirect("CreateEmployee.aspx");
         }
+
+        protected void btnSearchEmployee_Click(object sender, EventArgs e)
+        {
+            //Response.Redirect("SearchEmployee.aspx");
+        }
+
+        protected void btnEditEmployee_Click(object sender, EventArgs e)
+        {
+            //Response.Redirect("EditEmployee.aspx");
+        }
     }
 }
