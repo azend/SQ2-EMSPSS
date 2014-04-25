@@ -121,14 +121,7 @@
                 <ul id="navlist">
                 <li class="active">Navigation</li>
                 <li><a runat="server" id="liUserHome" href="#">Home</a></li>
-                <li><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
-                <li class="active nobo">
-                <div class="userInfo" id="userInfo" runat="server">
-                </div></li>
+                <li class="active nobo"><div class="userInfo" id="userInfo" runat="server"></div></li>
                 </ul>
             </div>
         </div>

@@ -10,7 +10,7 @@
 namespace EMS_PSS {
     
     
-    public partial class AdminPage {
+    public partial class AuditLog {
         
         /// <summary>
         /// Head1 control.

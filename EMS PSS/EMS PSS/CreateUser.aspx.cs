@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace EMS_PSS
 {
-    public partial class AdminPage : System.Web.UI.Page
+    public partial class CreateUser : System.Web.UI.Page
     {
         private string userID;
         private string firstName;
@@ -28,6 +28,15 @@ namespace EMS_PSS
                 "<tr><td>Last Name: </td><td>" + lastName + "</td></tr>" +
                 "<tr><td>User Type: </td><td>" + userType + "</td></tr>" +
                 "</table>";
+
+            if (userType == "GENERAL")
+            {
+                liUserHome.HRef = "GeneralUserPage.aspx";
+            }
+            else if (userType == "ADMIN")
+            {
+                liUserHome.HRef = "AdminPage.aspx";
+            }
         }
     }
 }

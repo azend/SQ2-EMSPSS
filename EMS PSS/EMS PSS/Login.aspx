@@ -55,12 +55,7 @@
                 <ul id="navlist">
                 <li class="active">Navigation</li>
                 <li><a href="#" id="current">Home</a></li>
-                <li><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
-                <li class="active nobo">SVCKR - Helping you manage your employee's since 2014</li>
+                <li class="active nobo">Helping you manage your employee's since 2014</li>
                 </ul>
             </div>
         </div>

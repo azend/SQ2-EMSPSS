@@ -20,16 +20,9 @@
     <div id="main">
         <h1>:: <span>EMS</span>PSS ::</h1>
  	    <div id="content">
-
-        <form id="form1" runat="server">
-
-            <div id="menuView">
-                <p>Choose one of the options below</p>
-                <asp:Button ID="btnCreateEmployee" runat="server" Text="Create New Employee" OnClick="btnCreateEmployee_Click" /><br />
-            </div>
-
-            <div class="clearfix"></div>
-        </form>
+            <p>Welcome Admin.<br />
+                Select an option from the navigation menu to the left to begin.
+            </p>
 
             <p class="footer">Copyright 2014 Default Team | <!-- leave that in there --> Design by <a href="http://www.internetsplash.com/">Internet Splash</a></p>
 	    </div>
@@ -39,14 +32,11 @@
                 <ul id="navlist">
                 <li class="active">Navigation</li>
                 <li><a href="AdminPage.aspx" id="current">Home</a></li>
-                <li><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
-                <li class="active nobo">
-                <div class="userInfo" id="userInfo" runat="server">
-                </div></li>
+                <li><a href="ManageEmployeesPage.aspx">Manage Employees</a></li>
+                <li><a href="ReportsPage.aspx">Reports</a></li>
+                <li><a href="AuditLog.aspx">Audit Log</a></li>
+                <li><a href="CreateUser.aspx">Create New User</a></li>
+                <li class="active nobo"><div class="userInfo" id="userInfo" runat="server"></div></li>
                 </ul>
             </div>
         </div>

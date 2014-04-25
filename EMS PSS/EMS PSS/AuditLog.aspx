@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="GeneralUserPage.aspx.cs" Inherits="EMS_PSS.GeneralUserPage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AuditLog.aspx.cs" Inherits="EMS_PSS.AuditLog" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-AU">
@@ -20,9 +20,7 @@
     <div id="main">
         <h1>:: <span>EMS</span>PSS ::</h1>
  	    <div id="content">
-            <p>Welcome.<br />
-                Select an option from the navigation menu to the left to begin.
-            </p>
+            <p>Audit Log stuff here...</p>
             
             <p class="footer">Copyright 2014 Default Team | <!-- leave that in there --> Design by <a href="http://www.internetsplash.com/">Internet Splash</a></p>
 	    </div>
@@ -31,10 +29,11 @@
             <div id="navcontainer">
                 <ul id="navlist">
                 <li class="active">Navigation</li>
-                <li><a href="GeneralUserPage.aspx" id="current">Home</a></li>
+                <li><a href="AdminPage.aspx" id="liUserHomet">Home</a></li>
                 <li><a href="ManageEmployeesPage.aspx">Manage Employees</a></li>
                 <li><a href="ReportsPage.aspx">Reports</a></li>
-                <li><a href="#">Time Card</a></li>
+                <li><a href="AuditLog.aspx">Audit Log</a></li>
+                <li><a href="CreateUser.aspx">Create New User</a></li>
                 <li class="active nobo"><div class="userInfo" id="userInfo" runat="server"></div></li>
                 </ul>
             </div>
