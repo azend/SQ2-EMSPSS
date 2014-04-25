@@ -29,5 +29,15 @@ namespace EMS_PSS
                 "<tr><td>User Type: </td><td>" + userType + "</td></tr>" +
                 "</table>";
         }
+
+        protected void btnSeniorityReport_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("SeniorityReport.aspx");
+        }
+
+        protected void btnWeeklyHoursWorkedReport_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("SeniorityReport.aspx");
+        }
     }
 }

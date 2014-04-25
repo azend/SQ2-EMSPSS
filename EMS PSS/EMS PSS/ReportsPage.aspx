@@ -5,8 +5,8 @@
 
                 <div id="menuView">
                     <p>Choose one of the options below</p>
-                    <asp:Button ID="btnSeniorityReport" runat="server" Text="Generate Seniority Report" /><br />
-                    <asp:Button ID="btnWeeklyHoursWorkedReport" runat="server" Text="Generate Weekly Hours Worked Report" />
+                    <asp:Button ID="btnSeniorityReport" runat="server" Text="Generate Seniority Report" OnClick="btnSeniorityReport_Click" /><br />
+                    <asp:Button ID="btnWeeklyHoursWorkedReport" runat="server" Text="Generate Weekly Hours Worked Report" OnClick="btnWeeklyHoursWorkedReport_Click" />
                 </div>
 
                 <div class="clearfix"></div>
