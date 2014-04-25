@@ -34,5 +34,10 @@ namespace EMS_PSS
         {
             Response.Redirect("CreateEmployee.aspx");
         }
+
+        protected void btnSeniorityReport_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("SeniorityReport.aspx");
+        }
     }
 }
