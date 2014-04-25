@@ -10,14 +10,18 @@
                     <td><asp:TextBox id="tbLastName" runat="server" /></td>
                 </tr>
                 <tr>
-                    <td><asp:Button id="btnSubmit" runat="server" text="Submit" onClick="Submit_Click" /></td>
-                    <td><asp:Button id="btnReset" runat="server" text="Reset" onClick="Reset_Click" /></td>
+                    <td><asp:Button id="btnSubmit" runat="server" text="Search" onClick="Submit_Click" /></td>
+                    <td><asp:Button id="btnReset" runat="server" text="Reset" onClick="Reset_Click" />
                 </tr>
             </table>
             <div class="clearfix"></div>
 
+            <div>
+                <asp:label id="lbErrorMessage" runat="server"></asp:label>
+            </div>
+
             <!-- Display Results -->
-            <div class="employeeInfo" id="Div1" runat="server"></div>
+            <div class="employeeInfo" id="results" runat="server"></div>
             
         </div>
     </form>

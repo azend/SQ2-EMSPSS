@@ -58,13 +58,22 @@ namespace EMS_PSS {
         protected global::System.Web.UI.WebControls.Button btnReset;
         
         /// <summary>
-        /// Div1 control.
+        /// lbErrorMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Div1;
+        protected global::System.Web.UI.WebControls.Label lbErrorMessage;
+        
+        /// <summary>
+        /// results control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl results;
         
         /// <summary>
         /// userInfo control.

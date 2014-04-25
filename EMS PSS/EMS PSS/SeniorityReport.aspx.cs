@@ -166,7 +166,7 @@ namespace EMS_PSS
                             int nowMonth = DateTime.Now.Month;
                             int nowDay = DateTime.Now.Day;
 
-                            report.InnerHtml += "<b>Seniority Report     (" + comp + ") .</br><table border = 2>" +
+                            report.InnerHtml += "<b>Seniority Report</b>     (" + comp + ") .</br><table border = 2>" +
                                 "<tr><td>Employee Name</td><td>SIN</td><td>Type</td><td>Date of Hire</td><td>Years of Service</td></tr>";
                             foreach (List<string> employee in company)
                             {
