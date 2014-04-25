@@ -4,12 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using MySql.Data.MySqlClient;
 using AllEmployees;
+using MySql.Data.MySqlClient;
 
 namespace EMS_PSS
 {
-    public partial class CreateEmployee : System.Web.UI.Page
+    public partial class CreateEmployeeA : System.Web.UI.Page
     {
         private const string mysqlPass = "admin";
         private string userID;
@@ -25,6 +25,11 @@ namespace EMS_PSS
         private string employeeDateOfHire;
         private string employeeSeason;
         private string employeeYear;
+        private string employeeSalary;
+        private string employeeWage;
+        private string employeePiecePay;
+        private string employeeDateOfTerm;
+        private string employeeFixedAmount;
 
 
 
@@ -57,9 +62,27 @@ namespace EMS_PSS
                 seasonalEmployee.Visible = true;
                 baseEmployee.Visible = false;
             }
+            else if (employeeType == "Contract")
+            {
+                contractEmployee.Visible = true;
+                baseEmployee.Visible = false;
+            }
+            else if (employeeType == "Full-time")
+            {
+                fullAndPartTimeEmployee.Visible = true;
+                lbWage.Visible = false;
+                tbWage.Visible = false;
+                lbSalary.Visible = true;
+                tbSalary.Visible = true;
+                baseEmployee.Visible = false;
+            }
             else
             {
                 fullAndPartTimeEmployee.Visible = true;
+                lbWage.Visible = true;
+                tbWage.Visible = true;
+                lbSalary.Visible = false;
+                tbSalary.Visible = false;
                 baseEmployee.Visible = false;
             }
         }
@@ -73,7 +96,13 @@ namespace EMS_PSS
             tbDateOfBirth.Text = "";
             tbDateOfHire.Text = "";
             tbYear.Text = "";
+            tbFixedAmount.Text = "";
+            tbPiecePay.Text = "";
+            tbSalary.Text = "";
+            tbWage.Text = "";
+            tbContractEnd.Text = "";            
 
+            contractEmployee.Visible = false;
             seasonalEmployee.Visible = false;
             fullAndPartTimeEmployee.Visible = false;
             baseEmployee.Visible = true;
@@ -91,6 +120,12 @@ namespace EMS_PSS
             employeeCompany = tbCompany.Text;
             employeeDateOfBirth = tbDateOfBirth.Text;
             employeeDateOfHire = tbDateOfHire.Text;
+            employeeDateOfTerm = tbContractEnd.Text;
+            employeeFixedAmount = tbFixedAmount.Text;
+            employeePiecePay = tbPiecePay.Text;
+            employeeSalary = tbSalary.Text;
+            employeeWage = tbWage.Text;
+
 
             if (employeeType == "Seasonal")
             {
@@ -98,6 +133,12 @@ namespace EMS_PSS
                 employeeYear = tbYear.Text;
 
                 SeasonalEmployee newGuy = new SeasonalEmployee();
+
+                if (!newGuy.SetPiecePay(employeePiecePay))
+                {
+                    isValid = false;
+                    lbPiecePay.ForeColor = System.Drawing.Color.Red;
+                }
 
                 if (!newGuy.SetFirstName(employeeFirstName))
                 {
@@ -188,6 +229,16 @@ namespace EMS_PSS
                 employeeDateOfHire = tbDateOfHire.Text;
                 FulltimeEmployee newGuy = new FulltimeEmployee();
 
+                if (!newGuy.SetSalary(employeeSalary))
+                {
+                    isValid = false;
+                    lbSalary.ForeColor = System.Drawing.Color.Red;
+                }
+                else
+                {
+                    lbSalary.ForeColor = System.Drawing.Color.Black;
+                }
+
                 if (!newGuy.SetFirstName(employeeFirstName))
                 {
                     isValid = false;
@@ -262,10 +313,20 @@ namespace EMS_PSS
                     //tell user employee could not be entered
                 }
             }
-            else//part-time
+            else if (employeeType == "Part-time") //part-time
             {
                 employeeDateOfHire = tbDateOfHire.Text;
                 ParttimeEmployee newGuy = new ParttimeEmployee();
+
+                if (!newGuy.SetHourlyRate(employeeWage))
+                {
+                    isValid = false;
+                    lbWage.ForeColor = System.Drawing.Color.Red;
+                }
+                else
+                {
+                    lbWage.ForeColor = System.Drawing.Color.Black;
+                }
 
                 if (!newGuy.SetFirstName(employeeFirstName))
                 {
@@ -351,6 +412,104 @@ namespace EMS_PSS
                     //tell user employee could not be entered
                 }
             }
+            else
+            {
+                ContractEmployee newGuy = new ContractEmployee();
+
+                if (!newGuy.SetContractStopDate(employeeDateOfTerm))
+                {
+                    isValid = false;
+                    lbSalary.ForeColor = System.Drawing.Color.Red;
+                }
+                else
+                {
+                    lbSalary.ForeColor = System.Drawing.Color.Black;
+                }
+
+                if (!newGuy.SetFixedContractAmount(employeeFixedAmount))
+                {
+                    isValid = false;
+                    lbSalary.ForeColor = System.Drawing.Color.Red;
+                }
+                else
+                {
+                    lbSalary.ForeColor = System.Drawing.Color.Black;
+                }
+
+                if (!newGuy.SetFirstName(employeeFirstName))
+                {
+                    isValid = false;
+                    lbFirstName.ForeColor = System.Drawing.Color.Red;
+                }
+                else
+                {
+                    lbFirstName.ForeColor = System.Drawing.Color.Black;
+                }
+
+                if (!newGuy.SetLastName(employeeLastName))
+                {
+                    isValid = false;
+                    lbLastName.ForeColor = System.Drawing.Color.Red;
+                }
+                else
+                {
+                    lbLastName.ForeColor = System.Drawing.Color.Black;
+                }
+
+                if (!newGuy.SetSin(employeeSIN))
+                {
+                    isValid = false;
+                    lbSIN.ForeColor = System.Drawing.Color.Red;
+                }
+                else
+                {
+                    lbSIN.ForeColor = System.Drawing.Color.Black;
+                }
+
+                if (!newGuy.SetCompany(employeeCompany))
+                {
+                    isValid = false;
+                    lbCompany.ForeColor = System.Drawing.Color.Red;
+                }
+                else
+                {
+                    lbCompany.ForeColor = System.Drawing.Color.Black;
+                }
+
+                if (!newGuy.SetDateOfBirth(employeeDateOfBirth))
+                {
+                    isValid = false;
+                    lbDateOfBirth.ForeColor = System.Drawing.Color.Red;
+                }
+                else
+                {
+                    lbDateOfBirth.ForeColor = System.Drawing.Color.Black;
+                }
+
+                if (!newGuy.SetDateofHire(employeeDateOfHire))
+                {
+                    isValid = false;
+                    lbDateOfHire.ForeColor = System.Drawing.Color.Red;
+                }
+                else
+                {
+                    lbDateOfHire.ForeColor = System.Drawing.Color.Black;
+                }
+
+                if (isValid)
+                {
+                    //enter employee into database as a general user
+                    //MUST ALSO CHECK that the SIN/name/date of birth fields are unique together
+                    if (InsertIntoEmployee(newGuy, "CONTRACT"))
+                    {
+                        InsertIntoContractEmployee(newGuy);
+                    }
+                }
+                else
+                {
+                    //tell user employee could not be entered
+                }
+            }
 
         }
 
@@ -361,8 +520,8 @@ namespace EMS_PSS
             string ipAddress = "localhost";
             string portNumber = "3306";
             string dataBaseName = "emspss";
-            string userName = "emspss";
-            string password = "Fattymilk123";
+            string userName = "root";
+            string password = mysqlPass;
 
             string ConnectionString =
                 "server=" + ipAddress +
@@ -775,5 +934,115 @@ namespace EMS_PSS
 
             return success;
         }
+
+        public bool InsertIntoContractEmployee(ContractEmployee newGuy)
+        {
+            bool success = true;
+            string ipAddress = "localhost";
+            string portNumber = "3306";
+            string dataBaseName = "emspss";
+            string userName = "root";
+            string password = mysqlPass;
+            string employID;
+            string ConnectionString =
+                "server=" + ipAddress +
+                ";port=" + portNumber +
+                ";userid=" + userName +
+                ";password=" + password +
+                ";database=" + dataBaseName + ";";
+
+            MySql.Data.MySqlClient.MySqlConnection mySqlConnection = new MySql.Data.MySqlClient.MySqlConnection();
+
+            mySqlConnection.ConnectionString = ConnectionString;
+
+            try
+            {
+                mySqlConnection.Open();
+
+                switch (mySqlConnection.State)
+                {
+                    case System.Data.ConnectionState.Open:
+
+                        string query = "SELECT eID FROM Employee WHERE " +
+                                        "employFirstName = '" + newGuy.FirstName + "' AND " +
+                                        "employLastName = '" + newGuy.LastName + "' AND " +
+                                        "employSIN = '" + newGuy.Sin + "' AND " +
+                                        "employeeType = 'CONTRACT';";
+
+
+                        MySqlCommand command = new MySqlCommand(query, mySqlConnection);
+
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                try
+                                {
+                                    employID = reader.GetString(0);
+
+                                    query = "INSERT INTO ContractEmployee (EId, fixedAmount) VALUES (" +
+                                        employID + ", '" +
+                                        newGuy.FixedContractAmount + "');";
+                                }
+                                catch
+                                {
+                                    lbMessage.Text = "Insert into seasonal employee was not successful!";
+                                    success = false;
+
+                                    break;
+                                }
+
+
+                            }
+
+                        }
+
+                        command.CommandText = query;
+
+                        try
+                        {
+                            command.ExecuteNonQuery();
+
+                            lbMessage.Text = "Insert into seasonal employee was successful!";
+                        }
+                        catch
+                        {
+                            //insert did not work
+                            lbMessage.Text = "Insert into seasonal employee was not successful!";
+                            success = false;
+                            break;
+                        }
+
+                        break;
+
+                    case System.Data.ConnectionState.Closed:
+                        // Connection could not be made
+                        lbMessage.Text = "Insert into seasonal employee was not successful!";
+                        success = false;
+                        break;
+
+                    default:
+                        // Connection is actively doing something
+                        break;
+                }
+
+            }
+            catch
+            {
+                lbMessage.Text = "Insert into seasonal employee was not successful!";
+                success = false;
+            }
+            finally
+            {
+                if (mySqlConnection.State != System.Data.ConnectionState.Closed)
+                {
+                    // Close the connection as a good Garbage Collecting practice
+                    mySqlConnection.Close();
+                }
+            }
+
+            return success;
+        }
+        
     }
 }
