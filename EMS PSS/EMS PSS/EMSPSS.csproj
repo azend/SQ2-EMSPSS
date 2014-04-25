@@ -89,10 +89,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ActuallyComplete.aspx" />
     <Content Include="AdminPage.aspx" />
     <Content Include="assets\images\bg.gif" />
     <Content Include="assets\screenprint.css" />
     <Content Include="AuditLog.aspx" />
+    <Content Include="CompleteEmployee.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -131,6 +133,13 @@
     <Content Include="_Layout.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActuallyComplete.aspx.cs">
+      <DependentUpon>ActuallyComplete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActuallyComplete.aspx.designer.cs">
+      <DependentUpon>ActuallyComplete.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Code\AuditLogModel.cs" />
     <Compile Include="App_Code\Log.cs" />
     <Compile Include="AuditLog.aspx.cs">
@@ -139,6 +148,13 @@
     </Compile>
     <Compile Include="AuditLog.aspx.designer.cs">
       <DependentUpon>AuditLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CompleteEmployee.aspx.cs">
+      <DependentUpon>CompleteEmployee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CompleteEmployee.aspx.designer.cs">
+      <DependentUpon>CompleteEmployee.aspx</DependentUpon>
     </Compile>
     <Compile Include="CreateEmployeeA.aspx.cs">
       <DependentUpon>CreateEmployeeA.aspx</DependentUpon>

@@ -1,18 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TimeCardEntry.aspx.cs" Inherits="EMS_PSS.TimeCardEntry" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/_Layout.Master" AutoEventWireup="true" CodeBehind="TimeCardEntry.aspx.cs" Inherits="EMS_PSS.TimeCardEntry" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>EMS - TimeCards</title>
-    <style type="text/css">
-        .auto-style1 {
-            width: 149px;
-        }
-    </style>
-</head>
-<body>
-    <form id="form1" runat="server">
+<asp:Content ID="Content" ContentPlaceHolderID="content" runat="server">
+  <form id="form1" runat="server">
     <div id="heading">
     <h1>TimeCard Entry</h1>
     </div>
@@ -90,5 +79,9 @@
              <asp:Label ID="lbMessage" runat="server" Text="Label"></asp:Label>
         </div >
     </form>
-</body>
-</html>
+</asp:Content>
+<asp:Content ID="Debug" ContentPlaceHolderID="debug" runat="server">
+    <li class="active nobo">
+        <div class="userInfo" id="Div1" runat="server"></div>
+    </li>
+</asp:Content>

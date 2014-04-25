@@ -8,6 +8,7 @@
             <asp:Button ID="btnCreateEmployee" runat="server" Text="Create New Employee" OnClick="btnCreateEmployee_Click" /><br />
             <asp:Button ID="btnSearchEmployee" runat="server" Text="Search Employees" OnClick="btnSearchEmployee_Click" /><br />
             <asp:Button ID="btnEditEmployee" runat="server" Text="Edit Employee" OnClick="btnEditEmployee_Click" /><br />
+            <asp:Button ID="btnCompleteEmployee" runat="server" Text="Complete Employee" visible="false" OnClick="btnCompleteEmployee_Click" /><br />
         </div>
 
         <div class="clearfix"></div>

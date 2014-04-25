@@ -10,34 +10,61 @@
 namespace EMS_PSS {
     
     
-    public partial class ManageEmployeesPage {
+    public partial class CompleteEmployee {
         
         /// <summary>
-        /// form1 control.
+        /// searchEmployeeForm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm searchEmployeeForm;
         
         /// <summary>
-        /// btnCreateEmployee control.
+        /// lbErrorMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCreateEmployee;
+        protected global::System.Web.UI.WebControls.Label lbErrorMessage;
         
         /// <summary>
-        /// btnSearchEmployee control.
+        /// results control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSearchEmployee;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl results;
+        
+        /// <summary>
+        /// editID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl editID;
+        
+        /// <summary>
+        /// lbEditID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbEditID;
+        
+        /// <summary>
+        /// tbEditID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbEditID;
         
         /// <summary>
         /// btnEditEmployee control.
@@ -49,13 +76,13 @@ namespace EMS_PSS {
         protected global::System.Web.UI.WebControls.Button btnEditEmployee;
         
         /// <summary>
-        /// btnCompleteEmployee control.
+        /// lbMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCompleteEmployee;
+        protected global::System.Web.UI.WebControls.Label lbMessage;
         
         /// <summary>
         /// userInfo control.

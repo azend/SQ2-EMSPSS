@@ -28,6 +28,10 @@ namespace EMS_PSS
                 "<tr><td>Last Name: </td><td>" + lastName + "</td></tr>" +
                 "<tr><td>User Type: </td><td>" + userType + "</td></tr>" +
                 "</table>";
+            if (userType == "ADMIN")
+            {
+                btnCompleteEmployee.Visible = true;
+            }
         }
 
         protected void btnCreateEmployee_Click(object sender, EventArgs e)
@@ -50,6 +54,11 @@ namespace EMS_PSS
         protected void btnEditEmployee_Click(object sender, EventArgs e)
         {
             //Response.Redirect("EditEmployee.aspx");
+        }
+
+        protected void btnCompleteEmployee_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CompleteEmployee.aspx");
         }
     }
 }
