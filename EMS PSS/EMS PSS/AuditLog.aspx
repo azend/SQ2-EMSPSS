@@ -5,7 +5,10 @@
     <form runat="server">
     <asp:ListView ID="AuditLogListView" runat="server" DataSourceID="AuditLogDataSource">
         <AlternatingItemTemplate>
-            <span style="">EmployeeId:
+            <span style="">LogId:
+            <asp:Label ID="LogIdLabel" runat="server" Text='<%# Eval("LogId") %>' />
+            <br />
+            EmployeeId:
             <asp:Label ID="EmployeeIdLabel" runat="server" Text='<%# Eval("EmployeeId") %>' />
             <br />
             Action:
@@ -30,7 +33,10 @@
             </span>
         </AlternatingItemTemplate>
         <EditItemTemplate>
-            <span style="">EmployeeId:
+            <span style="">LogId:
+            <asp:TextBox ID="LogIdTextBox" runat="server" Text='<%# Bind("LogId") %>' />
+            <br />
+            EmployeeId:
             <asp:TextBox ID="EmployeeIdTextBox" runat="server" Text='<%# Bind("EmployeeId") %>' />
             <br />
             Action:
@@ -61,7 +67,10 @@
             <span>No data was returned.</span>
         </EmptyDataTemplate>
         <InsertItemTemplate>
-            <span style="">EmployeeId:
+            <span style="">LogId:
+            <asp:TextBox ID="LogIdTextBox" runat="server" Text='<%# Bind("LogId") %>' />
+            <br />
+            EmployeeId:
             <asp:TextBox ID="EmployeeIdTextBox" runat="server" Text='<%# Bind("EmployeeId") %>' />
             <br />
             Action:
@@ -89,7 +98,10 @@
             </span>
         </InsertItemTemplate>
         <ItemTemplate>
-            <span style="">EmployeeId:
+            <span style="">LogId:
+            <asp:Label ID="LogIdLabel" runat="server" Text='<%# Eval("LogId") %>' />
+            <br />
+            EmployeeId:
             <asp:Label ID="EmployeeIdLabel" runat="server" Text='<%# Eval("EmployeeId") %>' />
             <br />
             Action:
@@ -121,7 +133,10 @@
             </div>
         </LayoutTemplate>
         <SelectedItemTemplate>
-            <span style="">EmployeeId:
+            <span style="">LogId:
+            <asp:Label ID="LogIdLabel" runat="server" Text='<%# Eval("LogId") %>' />
+            <br />
+            EmployeeId:
             <asp:Label ID="EmployeeIdLabel" runat="server" Text='<%# Eval("EmployeeId") %>' />
             <br />
             Action:
@@ -146,7 +161,7 @@
             </span>
         </SelectedItemTemplate>
     </asp:ListView>
-    <asp:ObjectDataSource ID="AuditLogDataSource" runat="server" DataObjectTypeName="EMS_PSS.App_Code.Log" InsertMethod="InsertAuditLog" SelectMethod="GetAuditLogs" TypeName="EMS_PSS.App_Code.LoggingModel"></asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="AuditLogDataSource" runat="server" DataObjectTypeName="EMS_PSS.App_Code.Log" InsertMethod="InsertAuditLog" SelectMethod="GetAuditLogs" TypeName="EMS_PSS.App_Code.AuditLogModel"></asp:ObjectDataSource>
     </form>
 </asp:Content>
 <asp:Content ID="Debug" ContentPlaceHolderID="debug" runat="server">

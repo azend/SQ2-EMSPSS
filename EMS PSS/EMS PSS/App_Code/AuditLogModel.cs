@@ -38,7 +38,7 @@ namespace EMS_PSS.App_Code
                     case System.Data.ConnectionState.Open:
 
                         string query = "INSERT INTO AuditLog (eId, action, userId, attributeChanged, oldValue, newValue, eventTime) " +
-                                        "VALUES (@eId, @action, @userId, @attributeChanged, @oldValue, @newValue, @eventTime";
+                                        "VALUES (@eId, @action, @userId, @attributeChanged, @oldValue, @newValue, @eventTime)";
                         MySqlCommand command = new MySqlCommand(query, mySqlConnection);
                         command.Parameters.AddWithValue("@eId", l.EmployeeId);
                         command.Parameters.AddWithValue("@action", l.Action);

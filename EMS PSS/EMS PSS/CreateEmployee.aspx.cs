@@ -361,8 +361,8 @@ namespace EMS_PSS
             string ipAddress = "localhost";
             string portNumber = "3306";
             string dataBaseName = "emspss";
-            string userName = "root";
-            string password = "admin";
+            string userName = "emspss";
+            string password = "Fattymilk123";
 
             string ConnectionString =
                 "server=" + ipAddress +
@@ -401,6 +401,12 @@ namespace EMS_PSS
                         try
                         {
                             command.ExecuteNonQuery();
+
+                            App_Code.Log l = new App_Code.Log();
+                            l.EmployeeId = (int)command.LastInsertedId;
+                            l.Action = "CREATE";
+
+                            new App_Code.AuditLogModel().InsertAuditLog(l);
 
                             lbMessage.Text = "Insert into employee was successful!";
                         }
