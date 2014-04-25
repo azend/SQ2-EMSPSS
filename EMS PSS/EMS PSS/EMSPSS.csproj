@@ -130,6 +130,8 @@
     <Content Include="_Layout.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Code\AuditLogModel.cs" />
+    <Compile Include="App_Code\Log.cs" />
     <Compile Include="AuditLog.aspx.cs">
       <DependentUpon>AuditLog.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

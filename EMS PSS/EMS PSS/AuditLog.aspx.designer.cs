@@ -13,13 +13,22 @@ namespace EMS_PSS {
     public partial class AuditLog {
         
         /// <summary>
-        /// searchEmployeeForm control.
+        /// AuditLogListView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm searchEmployeeForm;
+        protected global::System.Web.UI.WebControls.ListView AuditLogListView;
+        
+        /// <summary>
+        /// AuditLogDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource AuditLogDataSource;
         
         /// <summary>
         /// userInfo control.

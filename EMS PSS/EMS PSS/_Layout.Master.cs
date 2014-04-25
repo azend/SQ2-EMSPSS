@@ -11,6 +11,14 @@ namespace EMS_PSS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            // Redirect any unauthenticated users back to the login page so that
+            // they can log in.
+            if (Session["userId"] == null && !Request.Path.StartsWith("/Login"))
+            {
+                Response.Redirect("Login.aspx");
+            }
+
             string userType = (string)Session["userType"];
             if (userType != null)
             {
