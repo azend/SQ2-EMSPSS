@@ -29,5 +29,10 @@ namespace EMS_PSS
                 "<tr><td>User Type: </td><td>" + userType + "</td></tr>" +
                 "</table>";
         }
+
+        protected void btnCreateEmployee_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CreateEmployee.aspx");
+        }
     }
 }

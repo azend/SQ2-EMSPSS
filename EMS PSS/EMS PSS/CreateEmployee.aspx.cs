@@ -46,11 +46,11 @@ namespace EMS_PSS
 
             if (userType == "GENERAL")
             {
-                liUserHome.InnerHtml = "GeneralUserPage.aspx";
+                liUserHome.HRef = "GeneralUserPage.aspx";
             }
             else if (userType == "ADMIN")
             {
-                liUserHome.InnerHtml = "AdminPage.aspx";
+                liUserHome.HRef = "AdminPage.aspx";
             }
         }
 
