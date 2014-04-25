@@ -129,7 +129,7 @@ namespace EMS_PSS
                                 {
                                    try
                                     {
-                                        if (reader[5].ToString() != "INACTIVE")
+                                        if (reader[5].ToString() == "ACTIVE")
                                         {
                                             List<string> employee = new List<string>();
 
