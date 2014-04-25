@@ -29,6 +29,12 @@ namespace EMS_PSS
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            // Check if attempting to log out
+            if (Request.QueryString["action"] != null && Request.QueryString["action"].Equals("logout"))
+            {
+                Logout();
+            }
+
         }
 
 
@@ -219,6 +225,14 @@ namespace EMS_PSS
                 return false;
             }
             
+        }
+
+        protected void Logout()
+        {
+            // Clear any session data we may have collected
+            Session.Clear();
+
+            lblLogout.Visible = true;
         }
 
         protected void reset_Click(object sender, EventArgs e)
