@@ -3,10 +3,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-AU">
 <head id="Head1" runat="server">
-    <script type="text/javascript">
-        window.history.forward();
-        function noBack() { window.history.forward(); }
-    </script>
 
     <title>EMS-PSS</title>
 
@@ -19,7 +15,7 @@
     <meta name="description" content="" />
     <link rel="stylesheet" type="text/css" href="assets/screenprint.css" media="screen, print" />
 </head>
-<body onload="noBack();" onpageshow="if (event.persisted) noBack();" onunload="">
+<body>
     <div id="main">
         <h1>:: <span>EMS</span>PSS ::</h1>
  	    <div id="wrapper">
