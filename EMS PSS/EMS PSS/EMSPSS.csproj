@@ -106,10 +106,18 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="SeniorityReport.aspx" />
     <Content Include="Web.config" />
     <Content Include="_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SeniorityReport.aspx.cs">
+      <DependentUpon>SeniorityReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SeniorityReport.aspx.designer.cs">
+      <DependentUpon>SeniorityReport.aspx</DependentUpon>
+    </Compile>
     <Content Include="App_Code\Employee.cs" />
     <Content Include="App_Code\EmployeeModel.cs" />
     <Compile Include="CreateEmployee.aspx.cs">

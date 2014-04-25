@@ -32,6 +32,8 @@ namespace AllEmployees
         private string employeeType= string.Empty;
         private string sin= string.Empty;
         private string company = "";
+        private DateTime dateOfHire;
+        private DateTime dateOfTermination;
         private DateTime dateOfBirth;
         readonly string[] EmployeeTypes = {"FT","PT","SN","CT"};
 
@@ -68,6 +70,16 @@ namespace AllEmployees
         {
             get { return company; }
             set { company = value; }
+        }
+        public DateTime DateOfHire
+        {
+            get { return dateOfHire; }
+            set { dateOfHire = value; }
+        }
+        public DateTime DateofTermination
+        {
+            get { return dateOfTermination; }
+            set { dateOfTermination = value; }
         }
         //accessors end
 
