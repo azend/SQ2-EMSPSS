@@ -12,14 +12,18 @@ namespace EMS_PSS
         protected void Page_Load(object sender, EventArgs e)
         {
             string userType = (string)Session["userType"];
-            if (userType == "GENERAL")
+            if (userType != null)
             {
-                liUserHome.HRef = "GeneralUserPage.aspx";
+                if (userType.Equals("GENERAL"))
+                {
+                    userHome.NavigateUrl = "GeneralUserPage.aspx";
+                }
+                else if (userType.Equals("ADMIN"))
+                {
+                    userHome.NavigateUrl = "AdminPage.aspx";
+                }
             }
-            else if (userType == "ADMIN")
-            {
-                liUserHome.HRef = "AdminPage.aspx";
-            }
+
         }
     }
 }

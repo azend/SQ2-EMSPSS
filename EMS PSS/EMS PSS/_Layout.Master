@@ -29,7 +29,7 @@
         <div id="navcontainer">
             <ul id="navlist">
             <li class="active">Navigation</li>
-            <li><a runat="server" id="liUserHome" href="#">Home</a></li>
+            <li><asp:HyperLink ID="userHome" runat="server">Home</asp:HyperLink></li>
             <li><a href="ManageEmployeesPage.aspx">Manage Employees</a></li>
             <li><a href="ReportsPage.aspx">Reports</a></li>
             <li><a href="#">Time Card</a></li>

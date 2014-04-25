@@ -3,10 +3,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-AU">
 <head id="Head1" runat="server">
-    <script type="text/javascript">
-        window.history.forward();
-        function noBack() { window.history.forward(); }
-    </script>
 
     <title>EMS-PSS - Login</title>
 
@@ -16,7 +12,7 @@
     <meta name="description" content="" />
     <link rel="stylesheet" type="text/css" href="assets/screenprint.css" media="screen, print" />
 </head>
-<body onload="noBack();" onpageshow="if (event.persisted) noBack();" onunload="">
+<body>
     <div id="main">
         <h1>:: <span>EMS</span>PSS ::</h1>
  	    <div id="wrapper">
@@ -55,7 +51,7 @@
                 <ul id="navlist">
                 <li class="active">Navigation</li>
                 <li><a href="#" id="current">Home</a></li>
-                <li class="active nobo">Helping you manage your employee's since 2014</li>
+                <li class="active nobo">Helping you manage your employees since 2014</li>
                 </ul>
             </div>
         </div>

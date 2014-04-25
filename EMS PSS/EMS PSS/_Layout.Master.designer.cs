@@ -40,13 +40,13 @@ namespace EMS_PSS {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder content;
         
         /// <summary>
-        /// liUserHome control.
+        /// userHome control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor liUserHome;
+        protected global::System.Web.UI.WebControls.HyperLink userHome;
         
         /// <summary>
         /// debug control.
