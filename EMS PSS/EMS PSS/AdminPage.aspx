@@ -25,6 +25,7 @@
 
             <div id="menuView">
                 <p>Choose one of the options below</p>
+                <asp:Button ID="btnCreateEmployee" runat="server" Text="Create New Employee" OnClick="btnCreateEmployee_Click" /><br />
             </div>
 
             <div class="clearfix"></div>

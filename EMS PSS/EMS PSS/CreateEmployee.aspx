@@ -120,7 +120,7 @@
             <div id="navcontainer">
                 <ul id="navlist">
                 <li class="active">Navigation</li>
-                <li><a runat="server" id="liUserHome" href="#" id="current">Home</a></li>
+                <li><a runat="server" id="liUserHome" href="#">Home</a></li>
                 <li><a href="#">Link</a></li>
                 <li><a href="#">Link</a></li>
                 <li><a href="#">Link</a></li>
