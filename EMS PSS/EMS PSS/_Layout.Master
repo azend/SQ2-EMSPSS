@@ -30,7 +30,6 @@
             <ul id="navlist">
             <li class="active">Navigation</li>
             <li><a runat="server" id="liUserHome" href="#">Home</a></li>
-            <li><a href="GeneralUserPage.aspx" id="current">Home</a></li>
             <li><a href="ManageEmployeesPage.aspx">Manage Employees</a></li>
             <li><a href="ReportsPage.aspx">Reports</a></li>
             <li><a href="#">Time Card</a></li>
