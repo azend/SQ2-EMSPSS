@@ -1,3 +1,4 @@
+DROP DATABASE IF exists emspss;
 CREATE DATABASE emspss;
 
 

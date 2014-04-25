@@ -25,10 +25,10 @@ INSERT INTO Employee (hiringCompanyName, employFirstName, employLastName, employ
 ('VeraCorp Inc', 'Sally', 'Struthers', '654852458', 'ACTIVE', 'PARTTIME', '2005-02-14', NULL, '1971-07-03'),
 ('Joe\'s Gas and Feed', 'Ted', 'Martin', '546511247', 'INCOMPLETE', 'PARTTIME', '2012-12-20', NULL, '1995-07-26'),
 ('VeraCorp Inc', 'Alice', 'Kramdon', '876543216', 'INACTIVE', 'PARTTIME', '1990-03-15', '2009-02-14', '1950-09-11'),
-('FF-Fresh Fruit Corp', 'Tom', 'Joad', '325440550', 'ACTIVE', 'SEASONAL', NULL, NULL, '1980-10-20'),
-('FF-Fresh Fruit Corp', 'Pa', 'Joad', '540654654', 'ACTIVE', 'SEASONAL', NULL, NULL, '1950-01-10'),
+('FF-Fresh Fruit Corp', 'Tom', 'Joad', '325440550', 'ACTIVE', 'SEASONAL', '2013-12-01', NULL, '1980-10-20'),
+('FF-Fresh Fruit Corp', 'Pa', 'Joad', '540654654', 'ACTIVE', 'SEASONAL', '2013-12-01', NULL, '1950-01-10'),
 ('FF-Fresh Fruit Corp', 'Al', 'Joad', '252352133', 'INCOMPLETE', 'SEASONAL', NULL, NULL, '1987-04-20'),
-('FF-Fresh Fruit Corp', 'Noah', 'Joad', '984372367', 'INACTIVE', 'SEASONAL', NULL, NULL, '1975-09-22'),
+('FF-Fresh Fruit Corp', 'Noah', 'Joad', '984372367', 'INACTIVE', 'SEASONAL', '2013-09-01', NULL, '1975-09-22'),
 ('VeraCorp Inc', 'poneSDLC', '', '', 'ACTIVE', 'CONTRACT', '2002-11-01', '2014-05-30', '1958-05-05'),
 ('VeraCorp Inc', 'proFO-Code Inc', '', '', 'ACTIVE', 'CONTRACT', '2012-11-01', '2014-10-31', '2005-03-28'),
 ('VeraCorp Inc', 'Sally\'s Cleaning Services Ltd', '', '', 'INCOMPLETE', 'CONTRACT', NULL, NULL, '2010-06-15'),
@@ -49,11 +49,11 @@ INSERT INTO PartTimeEmployee (EId, reason, hourlyRate) VALUES
 (0008, 'RETIRED', 7.56);
 
 /* Load data into SeasonalEmployee */
-INSERT INTO SeasonalEmployee (EId, piecePay, reason) VALUES
-(0009, 2.35, ''),
-(0010, 3.10, ''),
-(0011, 3.10, ''),
-(0012, 1.56, 'SEASON-END');
+INSERT INTO SeasonalEmployee (EId, season, piecePay, reason) VALUES
+(0009, 'WINTER 2013', 2.35, ''),
+(0010, 'WINTER 2013', 3.10, ''),
+(0011, '', 3.10, ''),
+(0012, 'FALL 2013', 1.56, 'SEASON-END');
 
 /* Load data into ContractEmployee */
 INSERT INTO ContractEmployee (EId, fixedAmount) VALUES
