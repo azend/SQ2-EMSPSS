@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="GeneralUserPage.aspx.cs" Inherits="EMS_PSS.GeneralUserPage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdminPage.aspx.cs" Inherits="EMS_PSS.AdminPage" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-AU">
@@ -25,9 +25,6 @@
 
             <div id="menuView">
                 <p>Choose one of the options below</p>
-                <asp:Button ID="btnCreateEmployee" runat="server" Text="Create New Employee" OnClick="btnCreateEmployee_Click" /><br />
-                <asp:Button ID="btnSeniorityReport" runat="server" Text="Generate Seniority Report" /><br />
-                <asp:Button ID="btnWeeklyHoursWorkedReport" runat="server" Text="Generate Weekly Hours Worked Report" />
             </div>
 
             <div class="clearfix"></div>
@@ -40,7 +37,7 @@
             <div id="navcontainer">
                 <ul id="navlist">
                 <li class="active">Navigation</li>
-                <li><a href="GeneralUserPage.aspx" id="current">Home</a></li>
+                <li><a href="AdminPage.aspx" id="current">Home</a></li>
                 <li><a href="#">Link</a></li>
                 <li><a href="#">Link</a></li>
                 <li><a href="#">Link</a></li>
