@@ -9,6 +9,21 @@ namespace EMS_PSS
 {
     public partial class _Layout : System.Web.UI.MasterPage
     {
+        protected bool IsLoggedIn = false;
+        protected string UserType = null;
+        protected void Page_PreRender(object sender, EventArgs e)
+        {
+            if (Session["userId"] != null)
+            {
+                IsLoggedIn = true;
+
+                if (Session["userType"] != null)
+                {
+                    UserType = (string)Session["userType"];
+                }
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
 

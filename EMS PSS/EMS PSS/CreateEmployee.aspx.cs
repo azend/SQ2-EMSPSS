@@ -32,8 +32,9 @@ namespace EMS_PSS
         {
             //check session variables to make sure user did not get to this page illegally
 
+            
 
-            userID = (string)Session["userID"];
+            userID = (string)Session["userId"];
             firstName = (string)Session["firstName"];
             lastName = (string)Session["lastName"];
             userType = (string)Session["userType"];

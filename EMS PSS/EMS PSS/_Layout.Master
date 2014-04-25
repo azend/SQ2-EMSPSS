@@ -24,24 +24,29 @@
 
             <p class="footer">Copyright 2014 Default Team | <!-- leave that in there --> Design by <a href="http://www.internetsplash.com/">Internet Splash</a></p>
 	    </div>
+        
         <div id="nav">
         <h4>:: <span>EMS</span>PSS ::</h4>
         <div id="navcontainer">
             <ul id="navlist">
+            <% if (IsLoggedIn) { %>
             <li class="active">Navigation</li>
             <li><asp:HyperLink ID="userHome" runat="server">Home</asp:HyperLink></li>
             <li><a href="ManageEmployeesPage.aspx">Manage Employees</a></li>
             <li><a href="ReportsPage.aspx">Reports</a></li>
             <li><a href="TimeCardEntry.aspx">Time Card</a></li>
+            <% if (UserType.Equals("ADMIN")) { %>
             <li><a href="AuditLog.aspx">(ADMIN)Audit Log</a></li>
             <li><a href="CreateUser.aspx">(ADMIN)Create User</a></li>
+            <% } %>
         
             <asp:ContentPlaceHolder ID="debug" runat="server">
             </asp:ContentPlaceHolder>
-        
+            <% } %>
             </ul>
         </div>
     </div>
+        
         
     </div>
 </body>
