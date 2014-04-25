@@ -341,13 +341,8 @@ namespace EMS_PSS
             string portNumber = "3306";
             string dataBaseName = "emspss";
             string userName = "root";
-<<<<<<< HEAD
             string password = "admin";
 
-=======
-            string password = mysqlPass;
-            
->>>>>>> 7e7f458ba4fa277ab7740ff348a05b39229fcf8d
             string ConnectionString =
                 "server=" + ipAddress +
                 ";port=" + portNumber +
