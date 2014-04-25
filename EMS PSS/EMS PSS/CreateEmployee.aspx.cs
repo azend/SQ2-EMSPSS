@@ -368,7 +368,7 @@ namespace EMS_PSS
                     case System.Data.ConnectionState.Open:
 
                         string query = "INSERT INTO Employee " +
-                            "(hiringCompanyName, employFirstName, employLastName, employSIN, employeeStatus, employeeType, dateOfBirth) " +
+                            "(hiringCompanyName, employFirstName, employLastName, employSIN, employeeStatus, employeeType, dateOfHire, dateOfTerm, dateOfBirth) " +
                             "VALUES (" +
                             "'" + newGuy.Company + "', " +
                             "'" + newGuy.FirstName + "', " +
@@ -376,6 +376,8 @@ namespace EMS_PSS
                             "'" + newGuy.Sin + "', " +
                             "'INCOMPLETE', " +
                             "'" + employeeType + "', " +
+                            "'" + newGuy.DateOfHire.ToString("yyyy-MM-dd") + "', " +
+                            "'" + newGuy.DateofTermination.ToString("yyyy-MM-dd") + "', " +
                             "'" + newGuy.DateOfBirth.ToString("yyyy-MM-dd") + "');";
                         MySqlCommand command = new MySqlCommand(query, mySqlConnection);
                         // Connection has been made
@@ -468,9 +470,8 @@ namespace EMS_PSS
                                 {
                                     employID = reader.GetString(0);
 
-                                    query = "INSERT INTO FullTimeEmployee (EId, dateOfHire) VALUES (" +
-                                        employID + ", '" +
-                                        newGuy.DateOfHire.ToString("yyyy-MM-dd") + "');";
+                                    query = "INSERT INTO FullTimeEmployee (EId) VALUES (" +
+                                        employID + ");";
                                 }
                                 catch
                                 {
@@ -578,9 +579,8 @@ namespace EMS_PSS
                                 {
                                     employID = reader.GetString(0);
 
-                                    query = "INSERT INTO PartTimeEmployee (EId, dateOfHire) VALUES (" +
-                                        employID + ", '" +
-                                        newGuy.DateOfHire.ToString("yyyy-MM-dd") + "');";
+                                    query = "INSERT INTO PartTimeEmployee (EId) VALUES (" +
+                                        employID + ");";
                                 }
                                 catch
                                 {
@@ -689,7 +689,7 @@ namespace EMS_PSS
                                 {
                                     employID = reader.GetString(0);
 
-                                    query = "INSERT INTO SeasonalEmployee (EId, dateOfHire) VALUES (" +
+                                    query = "INSERT INTO SeasonalEmployee (EId, season) VALUES (" +
                                         employID + ", '" +
                                         dateBuilder + "');";
                                 }

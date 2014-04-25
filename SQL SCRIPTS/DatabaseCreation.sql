@@ -21,6 +21,8 @@ CREATE TABLE Employee
 	employSIN VARCHAR(50),
 	employeeStatus VARCHAR(50),
 	employeeType VARCHAR(50),
+	dateOfHire DATE,
+	dateOfTerm DATE,
 	dateOfBirth DATE,
 	PRIMARY KEY (eid)
 );
@@ -28,29 +30,24 @@ CREATE TABLE Employee
 CREATE TABLE FullTimeEmployee
 (
 	EId INT,
-	dateOfHire DATE,
-	dateOfTerm DATE,
 	reason VARCHAR(50),
-	salary DECIMAL(8,2),
+	salary DECIMAL(14,2),
 	FOREIGN KEY (EId) REFERENCES Employee(eId)
 );
 
 CREATE TABLE PartTimeEmployee
 (
 	EId INT,
-	dateOfHire DATE,
-	dateOfTerm DATE,
 	reason VARCHAR(50),
-	hourlyRate DECIMAL(4,2),
+	hourlyRate DECIMAL(14,2),
 	FOREIGN KEY (EId) REFERENCES Employee(eId)
 );
 
 CREATE TABLE SeasonalEmployee
 (
 	EId INT,
-	dateOfHire DATE,
-	dateOfTerm DATE,
-	piecePay DECIMAL(4,2),
+	season VARCHAR(50),
+	piecePay DECIMAL(14,2),
 	reason VARCHAR(50),
 	FOREIGN KEY (EId) REFERENCES Employee(eId)
 );
@@ -58,8 +55,6 @@ CREATE TABLE SeasonalEmployee
 CREATE TABLE ContractEmployee
 (
 	EId INT,
-	dateOfIncorp DATE,
-	contractStart DATE,
-	contractStop DATE,
+	fixedAmount DECIMAL(14,2),
 	FOREIGN KEY (EId) REFERENCES Employee(eId)
 );
