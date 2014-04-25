@@ -22,6 +22,8 @@ namespace EMS_PSS
 {
     public partial class Login : System.Web.UI.Page
     {
+        // !Change to match your DB password
+        private static string mysqlPass = "password";
         private static string userType;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -108,7 +110,7 @@ namespace EMS_PSS
             string portNumber = "3306";
             string dataBaseName = "emspss";
             string userName = "root";
-            string password = "admin";
+            string password = mysqlPass;
 
             string ConnectionString = 
                 "server=" + ipAddress + 
