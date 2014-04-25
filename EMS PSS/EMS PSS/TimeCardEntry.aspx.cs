@@ -88,6 +88,12 @@ namespace EMS_PSS
                         {
                             command.ExecuteNonQuery();
 
+                            App_Code.Log l = new App_Code.Log();
+                            l.Action = "ADDED WORKWEEK";
+                            l.UserId = (string)Session["userId"];
+
+                            new App_Code.AuditLogModel().InsertAuditLog(l);
+
                             lbMessage.Text = "New work week added successfully!";
                         }
                         catch
@@ -286,6 +292,13 @@ namespace EMS_PSS
                                 try
                                 {
                                     command.ExecuteNonQuery();
+
+                                    App_Code.Log l = new App_Code.Log();
+                                    l.Action = "ADDED TIME CARD";
+                                    l.UserId = (string)Session["userId"];
+
+                                    new App_Code.AuditLogModel().InsertAuditLog(l);
+
                                     lbMessage.Text = "Time card entry was a success!";
                                 }
                                 catch(Exception except)
