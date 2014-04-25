@@ -8,7 +8,7 @@
         function noBack() { window.history.forward(); }
     </script>
 
-    <title>EMS-PSS</title>
+    <title>EMS-PSS - Login</title>
 
     <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
     <meta name="author" content="Internet Splash" />
@@ -55,12 +55,7 @@
                 <ul id="navlist">
                 <li class="active">Navigation</li>
                 <li><a href="#" id="current">Home</a></li>
-                <li><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
-                <li class="active nobo">SVCKR - Helping you manage your employee's since 2014</li>
+                <li class="active nobo">Helping you manage your employee's since 2014</li>
                 </ul>
             </div>
         </div>

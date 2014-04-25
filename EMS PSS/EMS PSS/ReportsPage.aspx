@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdminPage.aspx.cs" Inherits="EMS_PSS.AdminPage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ReportsPage.aspx.cs" Inherits="EMS_PSS.ReportsPage" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-AU">
@@ -8,7 +8,7 @@
         function noBack() { window.history.forward(); }
     </script>
 
-    <title>EMS-PSS - Admin Home</title>
+    <title>EMS-PSS - Reports</title>
 
     <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
     <meta name="author" content="Internet Splash" />
@@ -20,9 +20,16 @@
     <div id="main">
         <h1>:: <span>EMS</span>PSS ::</h1>
  	    <div id="content">
-            <p>Welcome Admin.<br />
-                Select an option from the navigation menu to the left to begin.
-            </p>
+            <form id="form1" runat="server">
+
+                <div id="menuView">
+                    <p>Choose one of the options below</p>
+                    <asp:Button ID="btnSeniorityReport" runat="server" Text="Generate Seniority Report" /><br />
+                    <asp:Button ID="btnWeeklyHoursWorkedReport" runat="server" Text="Generate Weekly Hours Worked Report" />
+                </div>
+
+                <div class="clearfix"></div>
+            </form>
 
             <p class="footer">Copyright 2014 Default Team | <!-- leave that in there --> Design by <a href="http://www.internetsplash.com/">Internet Splash</a></p>
 	    </div>
@@ -31,11 +38,7 @@
             <div id="navcontainer">
                 <ul id="navlist">
                 <li class="active">Navigation</li>
-                <li><a href="AdminPage.aspx" id="current">Home</a></li>
-                <li><a href="ManageEmployeesPage.aspx">Manage Employees</a></li>
-                <li><a href="ReportsPage.aspx">Reports</a></li>
-                <li><a href="AuditLog.aspx">Audit Log</a></li>
-                <li><a href="CreateUser.aspx">Create New User</a></li>
+                <li><a href="#" runat="server" id="liUserHome">Home</a></li>
                 <li class="active nobo"><div class="userInfo" id="userInfo" runat="server"></div></li>
                 </ul>
             </div>
@@ -43,4 +46,3 @@
     </div>
 </body>
 </html>
-

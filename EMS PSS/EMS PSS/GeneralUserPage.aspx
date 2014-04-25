@@ -8,7 +8,7 @@
         function noBack() { window.history.forward(); }
     </script>
 
-    <title>EMS-PSS</title>
+    <title>EMS-PSS - General User Home</title>
 
     <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
     <meta name="author" content="Internet Splash" />
@@ -20,19 +20,10 @@
     <div id="main">
         <h1>:: <span>EMS</span>PSS ::</h1>
  	    <div id="content">
-
-        <form id="form1" runat="server">
-
-            <div id="menuView">
-                <p>Choose one of the options below</p>
-                <asp:Button ID="btnCreateEmployee" runat="server" Text="Create New Employee" OnClick="btnCreateEmployee_Click" /><br />
-                <asp:Button ID="btnSeniorityReport" runat="server" Text="Generate Seniority Report" OnClick="btnSeniorityReport_Click" /><br />
-                <asp:Button ID="btnWeeklyHoursWorkedReport" runat="server" Text="Generate Weekly Hours Worked Report" />
-            </div>
-
-            <div class="clearfix"></div>
-        </form>
-
+            <p>Welcome.<br />
+                Select an option from the navigation menu to the left to begin.
+            </p>
+            
             <p class="footer">Copyright 2014 Default Team | <!-- leave that in there --> Design by <a href="http://www.internetsplash.com/">Internet Splash</a></p>
 	    </div>
         <div id="nav">
@@ -41,14 +32,10 @@
                 <ul id="navlist">
                 <li class="active">Navigation</li>
                 <li><a href="GeneralUserPage.aspx" id="current">Home</a></li>
-                <li><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
-                <li class="active nobo">
-                <div class="userInfo" id="userInfo" runat="server">
-                </div></li>
+                <li><a href="ManageEmployeesPage.aspx">Manage Employees</a></li>
+                <li><a href="ReportsPage.aspx">Reports</a></li>
+                <li><a href="TimeCardEntry.aspx">Time Card</a></li>
+                <li class="active nobo"><div class="userInfo" id="userInfo" runat="server"></div></li>
                 </ul>
             </div>
         </div>

@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace EMS_PSS
 {
-    public partial class AdminPage : System.Web.UI.Page
+    public partial class TimeCardEntry : System.Web.UI.Page
     {
         private string userID;
         private string firstName;
@@ -16,7 +16,6 @@ namespace EMS_PSS
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //check session variables to make sure user did not get to this page illegally
             userID = (string)Session["userID"];
             firstName = (string)Session["firstName"];
             lastName = (string)Session["lastName"];
@@ -28,6 +27,17 @@ namespace EMS_PSS
                 "<tr><td>Last Name: </td><td>" + lastName + "</td></tr>" +
                 "<tr><td>User Type: </td><td>" + userType + "</td></tr>" +
                 "</table>";
+        }
+
+        protected void Workweek_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MondayHours.Text = "";
+            TuesdayHours.Text = "";
+            WednesdayHours.Text = "";
+            ThursdayHours.Text = "";
+            FridayHours.Text = "";
+            SaturdayHours.Text = "";
+            SundayHours.Text = "";
         }
     }
 }
