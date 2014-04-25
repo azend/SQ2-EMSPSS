@@ -405,6 +405,7 @@ namespace EMS_PSS
                             App_Code.Log l = new App_Code.Log();
                             l.EmployeeId = (int)command.LastInsertedId;
                             l.Action = "CREATE";
+                            l.UserId = (string)Session["userId"];
 
                             new App_Code.AuditLogModel().InsertAuditLog(l);
 

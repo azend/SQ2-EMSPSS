@@ -11,6 +11,12 @@
             EmployeeId:
             <asp:Label ID="EmployeeIdLabel" runat="server" Text='<%# Eval("EmployeeId") %>' />
             <br />
+            EmployeeFirstName:
+            <asp:Label ID="EmployeeFirstNameLabel" runat="server" Text='<%# Eval("EmployeeFirstName") %>' />
+            <br />
+            EmployeeLastName:
+            <asp:Label ID="EmployeeLastNameLabel" runat="server" Text='<%# Eval("EmployeeLastName") %>' />
+            <br />
             Action:
             <asp:Label ID="ActionLabel" runat="server" Text='<%# Eval("Action") %>' />
             <br />
@@ -38,6 +44,12 @@
             <br />
             EmployeeId:
             <asp:TextBox ID="EmployeeIdTextBox" runat="server" Text='<%# Bind("EmployeeId") %>' />
+            <br />
+            EmployeeFirstName:
+            <asp:TextBox ID="EmployeeFirstNameTextBox" runat="server" Text='<%# Bind("EmployeeFirstName") %>' />
+            <br />
+            EmployeeLastName:
+            <asp:TextBox ID="EmployeeLastNameTextBox" runat="server" Text='<%# Bind("EmployeeLastName") %>' />
             <br />
             Action:
             <asp:TextBox ID="ActionTextBox" runat="server" Text='<%# Bind("Action") %>' />
@@ -73,6 +85,12 @@
             EmployeeId:
             <asp:TextBox ID="EmployeeIdTextBox" runat="server" Text='<%# Bind("EmployeeId") %>' />
             <br />
+            EmployeeFirstName:
+            <asp:TextBox ID="EmployeeFirstNameTextBox" runat="server" Text='<%# Bind("EmployeeFirstName") %>' />
+            <br />
+            EmployeeLastName:
+            <asp:TextBox ID="EmployeeLastNameTextBox" runat="server" Text='<%# Bind("EmployeeLastName") %>' />
+            <br />
             Action:
             <asp:TextBox ID="ActionTextBox" runat="server" Text='<%# Bind("Action") %>' />
             <br />
@@ -98,28 +116,31 @@
             </span>
         </InsertItemTemplate>
         <ItemTemplate>
-            <span style="">LogId:
+            <span style="">Log Id:
             <asp:Label ID="LogIdLabel" runat="server" Text='<%# Eval("LogId") %>' />
             <br />
-            EmployeeId:
-            <asp:Label ID="EmployeeIdLabel" runat="server" Text='<%# Eval("EmployeeId") %>' />
+            Employee First Name:
+            <asp:Label ID="EmployeeFirstNameLabel" runat="server" Text='<%# Eval("EmployeeFirstName") %>' />
+            <br />
+            Employee Last Name:
+            <asp:Label ID="EmployeeLastNameLabel" runat="server" Text='<%# Eval("EmployeeLastName") %>' />
             <br />
             Action:
             <asp:Label ID="ActionLabel" runat="server" Text='<%# Eval("Action") %>' />
             <br />
-            UserId:
+            User Id:
             <asp:Label ID="UserIdLabel" runat="server" Text='<%# Eval("UserId") %>' />
             <br />
-            AttributeChanged:
+            Attribute Changed:
             <asp:Label ID="AttributeChangedLabel" runat="server" Text='<%# Eval("AttributeChanged") %>' />
             <br />
-            OldValue:
+            Old Value:
             <asp:Label ID="OldValueLabel" runat="server" Text='<%# Eval("OldValue") %>' />
             <br />
-            NewValue:
+            New Value:
             <asp:Label ID="NewValueLabel" runat="server" Text='<%# Eval("NewValue") %>' />
             <br />
-            EventTime:
+            Event Time:
             <asp:Label ID="EventTimeLabel" runat="server" Text='<%# Eval("EventTime") %>' />
             <br />
             <br />
@@ -138,6 +159,12 @@
             <br />
             EmployeeId:
             <asp:Label ID="EmployeeIdLabel" runat="server" Text='<%# Eval("EmployeeId") %>' />
+            <br />
+            EmployeeFirstName:
+            <asp:Label ID="EmployeeFirstNameLabel" runat="server" Text='<%# Eval("EmployeeFirstName") %>' />
+            <br />
+            EmployeeLastName:
+            <asp:Label ID="EmployeeLastNameLabel" runat="server" Text='<%# Eval("EmployeeLastName") %>' />
             <br />
             Action:
             <asp:Label ID="ActionLabel" runat="server" Text='<%# Eval("Action") %>' />

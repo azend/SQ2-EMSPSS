@@ -63,7 +63,7 @@ CREATE TABLE AuditLog
 (
 	auditLogId INT NOT NULL AUTO_INCREMENT,
 	eId INT,
-	action VARCHAR(15),
+	action VARCHAR(50),
 	userId VARCHAR(50),
 	attributeChanged VARCHAR(50),
 	oldValue VARCHAR(100),

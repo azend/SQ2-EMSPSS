@@ -46,7 +46,15 @@ namespace EMS_PSS.App_Code
                         command.Parameters.AddWithValue("@attributeChanged", l.AttributeChanged);
                         command.Parameters.AddWithValue("@oldValue", l.OldValue);
                         command.Parameters.AddWithValue("@newValue", l.NewValue);
-                        command.Parameters.AddWithValue("@eventTime", l.EventTime);
+                        if (l.EventTime != null && l.EventTime != DateTime.MinValue)
+                        {
+                            command.Parameters.AddWithValue("@eventTime", l.EventTime);
+                        }
+                        else
+                        {
+                            command.Parameters.AddWithValue("@eventTime", DateTime.Now);
+                        }
+                        
                         // Connection has been made
 
                         command.ExecuteNonQuery();
@@ -106,7 +114,7 @@ namespace EMS_PSS.App_Code
                 {
                     case System.Data.ConnectionState.Open:
 
-                        string query = "SELECT auditLogId, eId, action, userId, attributeChanged, oldValue, newValue, eventTime FROM AuditLog;";
+                        string query = "SELECT auditLogId, AuditLog.eId, action, userId, attributeChanged, oldValue, newValue, eventTime, employFirstName, employLastName FROM AuditLog INNER JOIN Employee ON AuditLog.eId=Employee.eId";
                         MySqlCommand command = new MySqlCommand(query, mySqlConnection);
                         // Connection has been made
                         using (MySqlDataReader reader = command.ExecuteReader())
@@ -150,6 +158,16 @@ namespace EMS_PSS.App_Code
                                 if (!reader.IsDBNull(7))
                                 {
                                     log.EventTime = reader.GetDateTime(7);
+                                }
+
+                                if (!reader.IsDBNull(8))
+                                {
+                                    log.EmployeeFirstName = reader.GetString(8);
+                                }
+
+                                if (!reader.IsDBNull(9))
+                                {
+                                    log.EmployeeLastName = reader.GetString(9);
                                 }
                                 
                                 logs.Add(log);
