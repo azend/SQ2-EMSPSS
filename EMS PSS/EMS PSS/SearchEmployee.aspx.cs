@@ -11,6 +11,7 @@ namespace EMS_PSS
 {
     public partial class SearchEmployee : System.Web.UI.Page
     {
+        private const string mysqlPass = "password";
         private string userID;
         private string firstName;
         private string lastName;
@@ -39,8 +40,8 @@ namespace EMS_PSS
             string portNumber = "3306";
             string dataBaseName = "emspss";
             string userName = "root";
-            string password = "admin";
-            string empLastName = tbLastName.Text;
+            string password = mysqlPass;
+            string empLastName = tbSearchLastName.Text;
 
             string ConnectionString =
                 "server=" + ipAddress +
@@ -109,6 +110,10 @@ namespace EMS_PSS
                                     employee[3] + "</td><td>" + employee[4] + "</td><td>" + employee[5] + "</td></tr>";
                             }
                             results.InnerHtml += "</table></br></br>";
+
+                            // Enable results and editID form
+                            results.Visible = true;
+                            editID.Visible = true;
                         }
 
                         break;
@@ -138,9 +143,30 @@ namespace EMS_PSS
             }
         }
 
+        protected void SubmitEdit_Click(object sender, EventArgs e)
+        {
+            // !Populate edit form with employee data
+            //lbFirstName.Text = "<Name here...>";
+            //lbLastName.Text = "";
+            //lbSIN.Text = "";
+            //lbDateOfHire = "";
+            //lbDateOfBirth = "";
+            //lbCompany = "";
+
+            editEmployee.Visible = true;
+        }
+
         protected void Reset_Click(object sender, EventArgs e)
         {
-            tbLastName.Text = "";
+            tbSearchLastName.Text = "";
+            results.Visible = false;
+            editID.Visible = false;
+            editEmployee.Visible = false;
+        }
+
+        protected void SubmitNewEmployee_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
