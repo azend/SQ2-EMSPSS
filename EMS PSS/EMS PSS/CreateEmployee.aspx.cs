@@ -43,6 +43,15 @@ namespace EMS_PSS
                 "<tr><td>Last Name: </td><td>" + lastName + "</td></tr>" +
                 "<tr><td>User Type: </td><td>" + userType + "</td></tr>" +
                 "</table>";
+
+            if (userType == "GENERAL")
+            {
+                liUserHome.InnerHtml = "GeneralUserPage.aspx";
+            }
+            else if (userType == "ADMIN")
+            {
+                liUserHome.InnerHtml = "AdminPage.aspx";
+            }
         }
 
         protected void Submit_Click(object sender, EventArgs e)

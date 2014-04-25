@@ -67,7 +67,8 @@ namespace EMS_PSS
                     else if (userType == "ADMIN")
                     {
                         //go to admin user page
-                        loginPage.Visible = false;
+                        //loginPage.Visible = false;
+                        Response.Redirect("AdminPage.aspx");
                     }
                 }
                 else
